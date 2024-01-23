@@ -14,6 +14,13 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         raleway: ['Raleway', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif']
+      },
+      colors : {
+        custom : {
+          additional: '#74777E',
+          primary: '#FF6E30',
+          background: '#EDEEF1'
+        }
       }
     },
   },
