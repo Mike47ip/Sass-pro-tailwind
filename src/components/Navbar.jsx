@@ -4,7 +4,7 @@ const Navbar = () => {
  return (
   <>
    <div className="NavWrapper flex px-28 py-12 font-inter font-semibold items-center justify-between">
-    <div className="w-32">
+    <div className="w-36">
      <img src={solo} alt="" />
     </div>
     <ul className="flex gap-10 text-custom-additional">

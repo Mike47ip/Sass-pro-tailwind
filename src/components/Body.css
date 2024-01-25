@@ -1,0 +1,13 @@
+.Paragraph {
+ min-width: 591px;
+}
+
+.Figures {
+ min-width: 1000px;
+}
+
+.gradient {
+ background: -webkit-linear-gradient(359.67deg, #fea989 0.02%, #99b4db 98.92%);
+ background: -o-linear-gradient(359.67deg, #fea989 0.02%, #99b4db 98.92%);
+ background: linear-gradient(90.33deg, #fea989 0.02%, #99b4db 98.92%);
+}
