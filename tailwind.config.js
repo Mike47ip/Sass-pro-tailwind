@@ -19,7 +19,9 @@ export default {
         custom : {
           additional: '#74777E',
           primary: '#FF6E30',
-          background: '#EDEEF1'
+          background: '#EDEEF1',
+          blackboard: '#2C353D',
+          textboard: '#55606B'
         }
       }
     },

@@ -3,6 +3,15 @@ import { useSpring, animated } from "react-spring";
 import "./Body.css";
 import Figures from "../assets/Images/Figures.png";
 import bike from "../assets/Images/bike.png";
+import goldlines from "../assets/Images/goldlines.png";
+import rotashow from "../assets/Images/rotashow.png";
+import travelers from "../assets/Images/travelers.png";
+import velocity from "../assets/Images/velocity.png";
+import waves from "../assets/Images/waves.png";
+import iphone from "../assets/Images/iphone.png";
+import stairs from "../assets/Images/stairs.png";
+import chat1 from "../assets/Images/chat1.png";
+import chat2 from "../assets/Images/chat2.png";
 
 const AnimatedDiv = animated.div;
 
@@ -76,9 +85,43 @@ const Body = () => {
       </AnimatedDiv>
       <img className="Figures overflow-hidden" src={Figures} alt="" />
      </div>
-     <div></div>
     </div>
+    <p className="text-center">Thousands of teams worldwide are using Solo</p>
+    <div className="flex justify-center gap-4 pt-5 pb-32">
+     <img src={goldlines} alt="" />
+     <img src={rotashow} alt="" />
+     <img src={travelers} alt="" />
+     <img src={velocity} alt="" />
+     <img src={goldlines} alt="" />
+     <img src={waves} alt="" />
+    </div>
+   </section>
 
+   <section>
+    <div className="BoardWrapper flex justify-center">
+     <div className="black-board bg-custom-blackboard w-4/5 h-[604px] rounded-3xl px-22">
+      <img className="relative top-[-4%] left-[17%] z-20" src={iphone} alt="" />
+      <img
+       className="relative top-[-37%] left-[-1%] z-10"
+       src={stairs}
+       alt=""
+      />
+      <img className="relative top-[-120%] z-20" src={chat1} alt="" />
+      <img
+       className="relative top-[-157%] left-[26%] z-20"
+       src={chat2}
+       alt=""
+      />
+      <div className="flex flex-col gap-8 relative top-[-165%] left-[60%] z-20 text-white">
+       <p className="font-inter font-semibold text-5xl">
+        Keeping it all <br /> together
+       </p>
+       <p className="text-custom-textboard font-inter">
+        Just invite your team, Solo does all the <br /> heavy-lifting.
+       </p>
+      </div>
+     </div>
+    </div>
     <div className="gradient w-full h-96"></div>
    </section>
    <section className="relative overflow-hidden">
