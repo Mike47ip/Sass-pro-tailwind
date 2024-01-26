@@ -86,7 +86,7 @@ const Body = () => {
       <img className="Figures overflow-hidden" src={Figures} alt="" />
      </div>
     </div>
-    <p className="text-center">Thousands of teams worldwide are using Solo</p>
+    <p className="text-center text-custom-textboard font-inter">Thousands of teams worldwide are using Solo</p>
     <div className="flex justify-center gap-4 pt-5 pb-32">
      <img src={goldlines} alt="" />
      <img src={rotashow} alt="" />
