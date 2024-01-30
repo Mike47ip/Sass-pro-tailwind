@@ -11,3 +11,29 @@
  background: -o-linear-gradient(359.67deg, #fea989 0.02%, #99b4db 98.92%);
  background: linear-gradient(90.33deg, #fea989 0.02%, #99b4db 98.92%);
 }
+
+@keyframes moveChat1 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px); /* Adjust the distance as needed */
+  }
+}
+@keyframes moveChat2 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px); /* Adjust the distance as needed */
+  }
+}
+
+.chat1 {
+  animation: moveChat1 4s ease-in infinite; /* Adjust the duration as needed */
+}
+.chat2 {
+  animation: moveChat2 4s ease-in infinite; /* Adjust the duration as needed */
+}
+
+

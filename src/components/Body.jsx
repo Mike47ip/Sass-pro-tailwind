@@ -25,18 +25,20 @@ const Body = () => {
   config: { tension: 250, friction: 20 },
  });
 
+ const keeping = useSpring({
+  opacity: isVisible ? 1 : 0,
+  transform: isVisible ? "translateY(0)" : "translateY(70px)",
+  config: { tension: 1000, friction: 20, duration: 300 },
+ });
+
  const chat1Props = useSpring({
-  loop: { reverse: true }, // Reverse the animation when reaching the end
-  from: { y: 0 },
-  to: { y: 20 },
-  config: { tension: 70, friction: 20 },
+  opacity: isVisible ? 1 : 0,
+  config: { tension: 70, friction: 20, duration: 1000 },
  });
 
  const chat2Props = useSpring({
-  loop: { reverse: true }, // Reverse the animation when reaching the end
-  from: { y: 0 },
-  to: { y: -20 },
-  config: { tension: 70, friction: 20 },
+  opacity: isVisible ? 1 : 0,
+  config: { tension: 70, friction: 20, duration: 1000 },
  });
 
  useEffect(() => {
@@ -45,7 +47,7 @@ const Body = () => {
   const handleScroll = () => {
    const scrollPosition = window.scrollY;
    const windowHeight = window.innerHeight;
-   const threshold = windowHeight * 0.1;
+   const threshold = windowHeight * 1.5;
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
@@ -127,19 +129,18 @@ const Body = () => {
        alt=""
       />
       <AnimatedDiv
+       className={`chat1`}
        style={{
         ...chat1Props,
-        opacity: isVisible ? 1 : 0,
-        zIndex: isVisible ? 1 : -1,
        }}
       >
        <img className="relative mt-[-700px] z-20" src={chat1} alt="" />
       </AnimatedDiv>
+
       <AnimatedDiv
+       className={`chat2`}
        style={{
         ...chat2Props,
-        opacity: isVisible ? 1 : 0,
-        zIndex: isVisible ? 1 : -1,
        }}
       >
        <img
@@ -148,14 +149,20 @@ const Body = () => {
         alt=""
        />
       </AnimatedDiv>
+
       <img className="ml-[-7%] mt-[7%]" src={concave} alt="" />
       <div className="flex flex-col gap-8 relative top-[-40%] left-[60%] z-20 text-white">
        <p className="font-inter font-semibold text-5xl">
-        Keeping it all <br /> together
+        <AnimatedDiv style={keeping}>
+         Keeping it all <br /> together
+        </AnimatedDiv>
        </p>
        <p className="text-custom-textboard font-inter font-bold">
         Just invite your team, Solo does all the <br /> heavy-lifting.
        </p>
+       <button className="px-3 py-4 text-white w-[200px] border-solid border-2 rounded-2xl font-inter font-bold hover:bg-white hover:text-black transform trasition-all ease-in">
+        Schedule a demo
+       </button>
       </div>
      </div>
     </div>
