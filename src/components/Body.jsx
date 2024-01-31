@@ -18,6 +18,7 @@ const AnimatedDiv = animated.div;
 
 const Body = () => {
  const [isVisible, setIsVisible] = useState(false);
+ const [isBikeVisible, setIsBikeVisible] = useState(false);
 
  const props = useSpring({
   opacity: isVisible ? 1 : 0,
@@ -26,18 +27,18 @@ const Body = () => {
  });
 
  const keeping = useSpring({
-  opacity: isVisible ? 1 : 0,
-  transform: isVisible ? "translateY(0)" : "translateY(70px)",
+  opacity: isBikeVisible ? 1 : 0,
+  transform: isBikeVisible ? "translateY(0)" : "translateY(70px)",
   config: { tension: 1000, friction: 20, duration: 300 },
  });
 
  const chat1Props = useSpring({
-  opacity: isVisible ? 1 : 0,
+  opacity: isBikeVisible ? 1 : 0,
   config: { tension: 70, friction: 20, duration: 1000 },
  });
 
  const chat2Props = useSpring({
-  opacity: isVisible ? 1 : 0,
+  opacity: isBikeVisible ? 1 : 0,
   config: { tension: 70, friction: 20, duration: 1000 },
  });
 
@@ -47,12 +48,16 @@ const Body = () => {
   const handleScroll = () => {
    const scrollPosition = window.scrollY;
    const windowHeight = window.innerHeight;
-   const threshold = windowHeight * 1.5;
+   const threshold = windowHeight * 0.1;
+   const bikeThreshold = windowHeight * 1.5;
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
    // Set isVisible to true only when scrolling down and beyond the threshold
    setIsVisible(scrollDirection === "down" && scrollPosition > threshold);
+
+  
+   setIsBikeVisible(scrollPosition > bikeThreshold);
 
    lastScrollTop = scrollPosition;
   };
@@ -74,7 +79,7 @@ const Body = () => {
       <p className="font-bold text-sm py-5">RISK-FREE 30 DAY TRIAL</p>
       <div className="font-inter font-bold text-7xl leading-none">
        The best way <br /> to organize <br />{" "}
-       <AnimatedDiv style={props} className={isVisible ? "animate" : ""}>
+       <AnimatedDiv style={props}>
         your work.
        </AnimatedDiv>
       </div>
@@ -95,8 +100,8 @@ const Body = () => {
        style={{
         ...useSpring({
          opacity: isVisible ? 1 : 0,
-         transform: isVisible ? "translate(0, 0)" : "translate(100px, -100px)",
-         config: { tension: 250, friction: 20 },
+         transform: isVisible ? "translate(0, 0)" : "translate(100px, -170px)",
+         config: { tension: 100, friction: 20 },
         }),
        }}
        className={isVisible ? "animate" : ""}
