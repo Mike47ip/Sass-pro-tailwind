@@ -21,7 +21,9 @@ export default {
           primary: '#FF6E30',
           background: '#EDEEF1',
           blackboard: '#2C353D',
-          textboard: '#55606B'
+          textboard: '#55606B',
+          graytext: '#748FB5',
+          border: '#DCE0E9'
         }
       }
     },
