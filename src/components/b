@@ -48,18 +48,20 @@ const Body = () => {
  const fastProps = useSpring({
   opacity: isFastVisible ? 1 : 0,
   transform: isFastVisible ? "translateY(0)" : "translateY(50px)",
-  config: { tension: 250, friction: 21 },
+  config: { tension: 250, friction: 20 },
  });
 
  useEffect(() => {
   let lastScrollTop = 0;
+
+  console.log('isFastVisible:', isFastVisible);
 
   const handleScroll = () => {
    const scrollPosition = window.scrollY;
    const windowHeight = window.innerHeight;
    const threshold = windowHeight * 0.1;
    const bikeThreshold = windowHeight * 1.5;
-   const fastThreshold = windowHeight * 2.9;
+   const fastThreshold = windowHeight * 1.5;
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
@@ -79,7 +81,7 @@ const Body = () => {
   return () => {
    window.removeEventListener("scroll", handleScroll);
   };
- }, []); // Empty dependencies array to run once on mount
+ }, [isVisible, isBikeVisible, isFastVisible]); // Empty dependencies array to run once on mount
 
  return (
   <>

@@ -23,7 +23,10 @@ export default {
           blackboard: '#2C353D',
           textboard: '#55606B',
           graytext: '#748FB5',
-          border: '#DCE0E9'
+          border: '#DCE0E9',
+          boldtext: '#272E35',
+          deepcoral: '#FC4B00',
+          whiteboard: '#F6F6F7'
         }
       }
     },
