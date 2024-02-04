@@ -12,6 +12,7 @@ const Projects = () => {
  const AnimatedDiv = animated.div;
  const [isSeeVisible, setIsSeeVisible] = useState(false);
  const [isArrowVisible, setIsArrowVisible] = useState(false);
+ const [isStayVisible, setIsStayVisible] = useState(false);
 
  const seeProps = useSpring({
   opacity: isSeeVisible ? 1 : 0,
@@ -19,10 +20,16 @@ const Projects = () => {
   config: { tension: 250, friction: 21 },
  });
 
- const arrowProps = seeProps({
-  opacity: isSeeVisible ? 1 : 0,
-  transform: isSeeVisible ? "translateY(0)" : "translateY(50px)",
-  config: { tension: 250, friction: 21 },
+ const arrowProps = useSpring({
+  opacity: isArrowVisible ? 1 : 0,
+  transform: isArrowVisible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 21, mass: 2 },
+ });
+
+ const stayProps = useSpring({
+  opacity: isStayVisible ? 1 : 0,
+  transform: isStayVisible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 21, mass: 2 },
  });
 
  useEffect(() => {
@@ -33,6 +40,7 @@ const Projects = () => {
    const windowHeight = window.innerHeight;
    const seeThreshold = windowHeight * 4.3;
    const arrowThreshold = windowHeight * 4.7;
+   const stayThreshold = windowHeight * 5;
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
@@ -40,7 +48,8 @@ const Projects = () => {
    setIsSeeVisible(scrollDirection === "down" && scrollPosition > seeThreshold);
 
    //  setIsBikeVisible(scrollPosition > bikeThreshold);
-   //  setIsFastVisible(scrollPosition > fastThreshold);
+   setIsArrowVisible(scrollPosition > arrowThreshold);
+   setIsStayVisible(scrollPosition > stayThreshold);
 
    lastScrollTop = scrollPosition;
   };
@@ -65,13 +74,17 @@ const Projects = () => {
     <div className="flex justify-center gap-36 pt-[140px]">
      <img className="" src={card1} alt="" />
      <div className="flex flex-col items-start">
-      <img
-       className="arrow object-contain left-[-40%] pt-5 relative"
-       src={arrow}
-       alt=""
-      />
+      <AnimatedDiv style={arrowProps}>
+       <img
+        className="arrow object-contain left-[-44%] pt-5 relative"
+        src={arrow}
+        alt=""
+       />
+      </AnimatedDiv>
       <p className="font-poppins text-4xl font-semibold">
-       Stay focused <br /> whenever, wherever
+       <AnimatedDiv style={stayProps}>
+        Stay focused <br /> whenever, wherever
+       </AnimatedDiv>
       </p>
       <p className="font-inter text-lg font-medium leading-6 py-7 ">
        We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
