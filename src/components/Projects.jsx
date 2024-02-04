@@ -7,12 +7,21 @@ import chatpro from "../assets/Images/chatpro.png";
 import card3 from "../assets/Images/card3.png";
 import plane from "../assets/Images/plane.png";
 import figure2 from "../assets/Images/figure2.png";
+import scube from "../assets/Images/scube.png";
+import triangle from "../assets/Images/triangle.png";
 
 const Projects = () => {
  const AnimatedDiv = animated.div;
  const [isSeeVisible, setIsSeeVisible] = useState(false);
  const [isArrowVisible, setIsArrowVisible] = useState(false);
  const [isStayVisible, setIsStayVisible] = useState(false);
+ const [isShareVisible, setIsShareVisible] = useState(false);
+ const [isShareChatVisible, setIsShareChatVisible] = useState(false);
+ const [isPlaneVisible, setIsPlaneVisible] = useState(false);
+ const [isCollaboVisible, setIsCollaboVisible] = useState(false);
+ const [isScubeVisible, setIsScubeVisible] = useState(false);
+ const [isTriangleVisible, setIsTriangleVisible] = useState(false);
+ const [isCollaCubeVisible, setIsCollaCubeVisible] = useState(false);
 
  const seeProps = useSpring({
   opacity: isSeeVisible ? 1 : 0,
@@ -32,6 +41,48 @@ const Projects = () => {
   config: { tension: 250, friction: 21, mass: 2 },
  });
 
+ const shareProps = useSpring({
+  opacity: isShareVisible ? 1 : 0,
+  transform: isShareVisible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 21, mass: 2 },
+ });
+
+ const shareChatProps = useSpring({
+  opacity: isShareChatVisible ? 1 : 0,
+  transform: isShareChatVisible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 21, mass: 2 },
+ });
+
+ const planeProps = useSpring({
+  opacity: isPlaneVisible ? 1 : 0,
+  transform: isPlaneVisible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 21, mass: 2 },
+ });
+
+ const collaboProps = useSpring({
+  opacity: isCollaboVisible ? 1 : 0,
+  transform: isCollaboVisible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 21, mass: 2 },
+ });
+
+ const scubeProps = useSpring({
+  opacity: isScubeVisible ? 1 : 0,
+  transform: isScubeVisible ? "translateY(0)" : "translateY(60px)",
+  config: { tension: 250, friction: 21, mass: 2 },
+ });
+
+ const triangleProps = useSpring({
+  opacity: isTriangleVisible ? 1 : 0,
+  transform: isTriangleVisible ? "translateY(0)" : "translateY(60px)",
+  config: { tension: 250, friction: 21, mass: 2 },
+ });
+
+ const collaCubeProps = useSpring({
+  opacity: isCollaCubeVisible ? 1 : 0,
+  transform: isCollaCubeVisible ? "translateY(0)" : "translateY(60px)",
+  config: { tension: 250, friction: 21, mass: 2 },
+ });
+
  useEffect(() => {
   let lastScrollTop = 0;
 
@@ -41,15 +92,28 @@ const Projects = () => {
    const seeThreshold = windowHeight * 4.3;
    const arrowThreshold = windowHeight * 4.7;
    const stayThreshold = windowHeight * 5;
+   const shareThreshold = windowHeight * 6;
+   const shareChatProps = windowHeight * 5.8;
+   const sharePlaneProps = windowHeight * 7;
+   const collaboPlaneProps = windowHeight * 7.3;
+   const scubeProps1 = windowHeight * 4.8;
+   const triangleProps1 = windowHeight * 6.2;
+   const collaCube = windowHeight * 7.2;
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
    // Set isVisible to true only when scrolling down and beyond the threshold
    setIsSeeVisible(scrollDirection === "down" && scrollPosition > seeThreshold);
 
-   //  setIsBikeVisible(scrollPosition > bikeThreshold);
    setIsArrowVisible(scrollPosition > arrowThreshold);
    setIsStayVisible(scrollPosition > stayThreshold);
+   setIsShareVisible(scrollPosition > shareThreshold);
+   setIsShareChatVisible(scrollPosition > shareChatProps);
+   setIsPlaneVisible(scrollPosition > sharePlaneProps);
+   setIsCollaboVisible(scrollPosition > collaboPlaneProps);
+   setIsScubeVisible(scrollPosition > scubeProps1);
+   setIsTriangleVisible(scrollPosition > triangleProps1);
+   setIsCollaCubeVisible(scrollPosition > collaCube);
 
    lastScrollTop = scrollPosition;
   };
@@ -61,17 +125,24 @@ const Projects = () => {
   return () => {
    window.removeEventListener("scroll", handleScroll);
   };
- }, []); // Empty dependencies array to run once on mount
+ }, []);
 
  return (
   <>
    <section>
-    <p className="text-5xl font-semibold text-center pt-4 font-poppins leading-none">
+    <p className="text-5xl font-semibold text-center pt-4 font-poppins leading-none ">
      <AnimatedDiv style={seeProps}>
       See what you can do <br /> in one app
      </AnimatedDiv>
     </p>
-    <div className="flex justify-center gap-36 pt-[140px]">
+    <div className="flex justify-center gap-36 pt-[140px] right-[10%] relative">
+     <AnimatedDiv style={scubeProps}>
+      <img
+       className="object-contain left-[100%] mt-[100%] relative"
+       src={scube}
+       alt=""
+      />
+     </AnimatedDiv>
      <img className="" src={card1} alt="" />
      <div className="flex flex-col items-start">
       <AnimatedDiv style={arrowProps}>
@@ -96,15 +167,24 @@ const Projects = () => {
      </div>
     </div>
     <div className="flex justify-center gap-36 pt-[140px]">
-     <img className="" src={card2} alt="" />
+     <div className="flex flex-col">
+      <img className="" src={card2} alt="" />
+      <AnimatedDiv style={triangleProps}>
+       <img className="top-[-29px] relative" src={triangle} alt="" />
+      </AnimatedDiv>
+     </div>
      <div className="flex flex-col items-start">
-      <img
-       className="arrow object-contain left-[-44%] pt-5 relative"
-       src={chatpro}
-       alt=""
-      />
+      <AnimatedDiv style={shareChatProps}>
+       <img
+        className="arrow object-contain left-[-44%] pt-5 relative"
+        src={chatpro}
+        alt=""
+       />
+      </AnimatedDiv>
       <p className="font-poppins text-4xl font-semibold">
-       Share files at the <br /> right time
+       <AnimatedDiv style={shareProps}>
+        Share files at the <br /> right time
+       </AnimatedDiv>
       </p>
       <p className="font-inter text-lg font-medium leading-6 py-7 ">
        We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
@@ -115,20 +195,33 @@ const Projects = () => {
       </button>
      </div>
     </div>
-    <div className="flex justify-center gap-36 pt-[140px]">
-     <img className="" src={card3} alt="" />
-     <div className="flex flex-col items-start">
+    <div className="flex justify-center gap-36 pt-[140px] right-[10%]  relative">
+     <AnimatedDiv className="z-20" style={collaCubeProps}>
       <img
-       className="arrow object-contain left-[-44%] pt-5 relative"
-       src={plane}
+       className="relative w-20 object-contain left-[1100%] top-[40%] z-20"
+       src={scube}
        alt=""
       />
+     </AnimatedDiv>
+     <img className="relative z-10" src={card3} alt="" />
+     <div className="flex flex-col items-start">
+      <AnimatedDiv style={planeProps}>
+       <img
+        className="arrow object-contain left-[-44%] pt-5 relative"
+        src={plane}
+        alt=""
+       />
+      </AnimatedDiv>
       <p className="font-poppins text-4xl font-semibold">
-       Collaborate from <br /> anywhere
+       <AnimatedDiv style={collaboProps}>
+        Collaborate from <br /> anywhere
+       </AnimatedDiv>
       </p>
       <p className="font-inter text-lg font-medium leading-6 py-7 ">
-       We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
-       <br /> around the world
+       <AnimatedDiv>
+        We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
+        <br /> around the world
+       </AnimatedDiv>
       </p>
       <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
        Get Solo Desktop
@@ -154,7 +247,7 @@ const Projects = () => {
        </button>
       </div>
       <img
-       className="object-contain right-[27`%] relative"
+       className="object-contain right-[27%] relative"
        src={figure2}
        alt=""
       />
