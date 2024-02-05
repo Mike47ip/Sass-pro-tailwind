@@ -79,7 +79,7 @@ const Body = () => {
   return () => {
    window.removeEventListener("scroll", handleScroll);
   };
- }, []); // Empty dependencies array to run once on mount
+ }, []); 
 
  return (
   <>
