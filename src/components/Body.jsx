@@ -14,7 +14,6 @@ import chat1 from "../assets/Images/chat1.png";
 import chat2 from "../assets/Images/chat2.png";
 import concave from "../assets/Images/concave.png";
 import cubes from "../assets/Images/cubes.png";
-import Projects from "./Projects";
 
 const AnimatedDiv = animated.div;
 
@@ -79,7 +78,7 @@ const Body = () => {
   return () => {
    window.removeEventListener("scroll", handleScroll);
   };
- }, []); 
+ }, []);
 
  return (
   <>
@@ -295,26 +294,6 @@ const Body = () => {
     <p className="text-center text-custom-graytext font-bold pt-6">
      AMAZING FEATURES
     </p>
-    <Projects />
-    {/* dummy dive */}
-    <div className="Paragraph pl-24 pr-5 pt-32">
-     <p className="font-bold text-sm py-5">RISK-FREE 30 DAY TRIAL</p>
-     <div className="font-inter font-bold text-7xl leading-none">
-      The best way <br /> to organize <br />{" "}
-      <AnimatedDiv style={props}>your work.</AnimatedDiv>
-     </div>
-     <div className=" text-xl pt-6">
-      Organize your tasks, lists and reminders in one app.
-     </div>
-     <div className="flex gap-6 pt-10 text-lg font-inter">
-      <button className="bg-custom-primary px-6 py-4 font-bold text-white rounded-2xl">
-       Try it free
-      </button>
-      <button className="flex items-center gap-2 font-semibold  border-2 border-black border-solid rounded-2xl px-6 py-3">
-       <ion-icon name="play"></ion-icon>Watch how it works
-      </button>
-     </div>
-    </div>
    </section>
   </>
  );

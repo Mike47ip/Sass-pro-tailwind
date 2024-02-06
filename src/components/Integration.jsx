@@ -16,6 +16,7 @@ import hand from "../assets/Images/hand.svg";
 import play from "../assets/Images/play.svg";
 import clock from "../assets/Images/clock.svg";
 import star from "../assets/Images/star-fill.svg";
+import Bricks from "../assets/Images/Bricks.png";
 
 export const Integration = () => {
  return (
@@ -177,11 +178,12 @@ export const Integration = () => {
      What people <br /> are saying
     </h3>
 
-    <div className="flex justify-center gap-14 p-8 overflow-x-auto  ">
+    <div className="flex justify-center gap-24 p-8 overflow-x-auto">
      <div className="min-w-[20rem] font-poppins font-semibold text-2xl  text-center ">
       <p className=" h-[200px]">
        &quot;I used to have a hard time figuring out how to organize online
-       meetings, Solo helped me to find a great solution!&quot;
+       meetings, Solo helped me to find a great solution and stay ahead of
+       time&quot;
       </p>
       <div className="flex justify-center gap-5 pt-8">
        <img src={star} alt="" />
@@ -279,6 +281,28 @@ export const Integration = () => {
       <span className="font-poppins text-custom-textboard text-base font-medium">
        via. Apple Store
       </span>
+     </div>
+    </div>
+    <div className="pt-24 flex justify-center">
+     <div className="bg-custom-blackboard flex justify-start items-center w-11/12 h-[41rem] shadow-lg rounded-3xl">
+      <div className="min-w-[65%] px-28 relative ">
+       <h1 className="font-poppins text-7xl leading-snug font-semibold tracking-tight text-white">
+        Get started <br /> with Solo <br /> today
+       </h1>
+       <div className="text-custom-textboard font-poppins text-lg pt-6 ">
+        We&apos;re a growing family of 382,081 designers and <br /> makers from
+        around the world
+       </div>
+       <button className="bg-custom-primary px-6 py-4 mt-10 text-xl font-bold text-white rounded-2xl hover:bg-custom-deepcoral">
+        Try it free
+       </button>
+      </div>
+
+      <img
+       className="MegaBricks object-contain relative right-[35%] min-w-[85%] mt-48"
+       src={Bricks}
+       alt=""
+      />
      </div>
     </div>
    </section>
