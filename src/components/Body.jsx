@@ -295,9 +295,7 @@ const Body = () => {
     <p className="text-center text-custom-graytext font-bold pt-6">
      AMAZING FEATURES
     </p>
-
     <Projects />
-
     {/* dummy dive */}
     <div className="Paragraph pl-24 pr-5 pt-32">
      <p className="font-bold text-sm py-5">RISK-FREE 30 DAY TRIAL</p>

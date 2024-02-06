@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { Svg } from "./svg";
+import { Integration } from "./Integration";
 import card1 from "../assets/Images/card1.png";
 import arrow from "../assets/Images/arrow.png";
 import card2 from "../assets/Images/card2.png";
@@ -171,7 +172,7 @@ const Projects = () => {
        </AnimatedDiv>
       </p>
       <p className="font-inter text-lg font-medium leading-6 py-7 ">
-       We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
+       We&apos;re a growing family of 382,081 <br /> designers and makers from
        <br /> around the world
       </p>border
       <button className="flex text-lg items-center gap-2 font-bold  -2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
@@ -283,6 +284,8 @@ const Projects = () => {
      </div>
     </div>
     <Svg />
+    <Integration />
+
 
 
    </section>
