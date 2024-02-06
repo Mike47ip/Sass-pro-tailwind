@@ -142,8 +142,10 @@ const Projects = () => {
  }, []);
 
  return (
+
+
   <>
-   <section>
+
     <p className="text-5xl font-semibold text-center pt-4 font-poppins leading-none ">
      <AnimatedDiv style={seeProps}>
       See what you can do <br /> in one app
@@ -174,8 +176,8 @@ const Projects = () => {
       <p className="font-inter text-lg font-medium leading-6 py-7 ">
        We&apos;re a growing family of 382,081 <br /> designers and makers from
        <br /> around the world
-      </p>border
-      <button className="flex text-lg items-center gap-2 font-bold  -2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+      </p>
+      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
        Watch how it works
       </button>
      </div>
@@ -272,7 +274,7 @@ const Projects = () => {
        alt=""
       />
       <img
-       className="object-contain absolute left-[80%]"
+       className="object-contain absolute right-[1%]"
        src={megaChat2}
        alt=""
       />
@@ -288,7 +290,9 @@ const Projects = () => {
 
 
 
-   </section>
+
+
+
   </>
  );
 };

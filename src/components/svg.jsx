@@ -1,7 +1,7 @@
 export const Svg = () => {
  return (
   <>
-   <div className="grid grid-cols-4 gap-12 py-24 px-12 ">
+   <div className="grid grid-cols-4 gap-12 py-24 px-16 ">
     <div className=" font-poppins w-[90%]">
      <svg
       xmlns="http://www.w3.org/2000/svg"

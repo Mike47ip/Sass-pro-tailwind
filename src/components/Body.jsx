@@ -133,38 +133,30 @@ const Body = () => {
 
    <section>
     <div className="BoardWrapper flex justify-center">
-     <div className="black-board bg-custom-blackboard w-4/5 h-[604px] rounded-3xl px-22">
-      <img className="relative top-[-4%] left-[17%] z-20" src={iphone} alt="" />
-      <img
-       className="relative top-[-37%] left-[-1%] z-10"
-       src={stairs}
-       alt=""
-      />
-      <AnimatedDiv
-       className={`chat1`}
-       style={{
-        ...chat1Props,
-       }}
-      >
-       <img className="relative mt-[-700px] z-20" src={chat1} alt="" />
-      </AnimatedDiv>
-
-      <AnimatedDiv
-       className={`chat2`}
-       style={{
-        ...chat2Props,
-       }}
-      >
-       <img
-        className="relative mt-[-200px] left-[26%] z-20"
-        src={chat2}
-        alt=""
-       />
-      </AnimatedDiv>
-
-      <img className="ml-[-7%] mt-[7%]" src={concave} alt="" />
-      <div className="flex flex-col gap-8 relative top-[-40%] left-[60%] z-20 text-white">
-       <p className="font-inter font-semibold text-5xl">
+     <div className="flex justify-center items-start black-board bg-custom-blackboard w-11/12 h-[690px] rounded-3xl px-22">
+      <div className="w-[50%]">
+       <AnimatedDiv
+        className="chat1"
+        style={{
+         ...chat1Props,
+        }}
+       >
+        <img className="relative mt-] z-40 left-[-10%] mt-[20%]" src={chat1} alt="" />
+       </AnimatedDiv>
+       <AnimatedDiv
+        className="chat2"
+        style={{
+         ...chat2Props,
+        }}
+       >
+        <img className="relative mt-[-200px] left-[37%]" src={chat2} alt="" />
+       </AnimatedDiv>
+       <img className="absolute top-[170%] left-[19%] w-[16.7rem] z-20" src={iphone} alt="" />
+       <img className="absolute z-10 left-[7%] mt-[-1%]" src={stairs} alt="" />
+       <img className="ml-[-29%] mt-[7%]" src={concave} alt="" />
+      </div>
+      <div className="flex flex-col gap-8 relative w-[35%] top-[30%] z-20 text-white">
+       <p className="font-inter font-semibold text-6xl">
         <AnimatedDiv style={keeping}>
          Keeping it all <br /> together
         </AnimatedDiv>
@@ -179,7 +171,7 @@ const Body = () => {
      </div>
     </div>
     <div className="gradientContainer flex justify-center">
-     <div className="gradient w-[75%] rounded-b-2xl flex justify-center items-center">
+     <div className="gradient w-[75rem] h-[15rem] rounded-b-2xl flex justify-center items-center">
       <ul className="p-10 flex  font-poppins gap-24">
        <li className="px-10 py-5 flex flex-col gap-4 text ">
         <span className="text-7xl font-semibold">
