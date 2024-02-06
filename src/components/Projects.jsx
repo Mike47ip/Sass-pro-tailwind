@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
+import { Svg } from "./svg";
+import { Integration } from "./Integration";
 import card1 from "../assets/Images/card1.png";
 import arrow from "../assets/Images/arrow.png";
 import card2 from "../assets/Images/card2.png";
@@ -9,6 +11,9 @@ import plane from "../assets/Images/plane.png";
 import figure2 from "../assets/Images/figure2.png";
 import scube from "../assets/Images/scube.png";
 import triangle from "../assets/Images/triangle.png";
+import ball from "../assets/Images/ball.png";
+import megaChat1 from "../assets/Images/megaChat1.png";
+import megaChat2 from "../assets/Images/megaChat2.png";
 
 const Projects = () => {
  const AnimatedDiv = animated.div;
@@ -22,6 +27,7 @@ const Projects = () => {
  const [isScubeVisible, setIsScubeVisible] = useState(false);
  const [isTriangleVisible, setIsTriangleVisible] = useState(false);
  const [isCollaCubeVisible, setIsCollaCubeVisible] = useState(false);
+ const [isBallVisible, setIsBallVisible] = useState(false);
 
  const seeProps = useSpring({
   opacity: isSeeVisible ? 1 : 0,
@@ -83,6 +89,12 @@ const Projects = () => {
   config: { tension: 250, friction: 21, mass: 2 },
  });
 
+ const ballProps = useSpring({
+  opacity: isBallVisible ? 1 : 0,
+  transform: isBallVisible ? "translateY(0)" : "translateY(60px)",
+  config: { tension: 250, friction: 21, mass: 2 },
+ });
+
  useEffect(() => {
   let lastScrollTop = 0;
 
@@ -99,6 +111,7 @@ const Projects = () => {
    const scubeProps1 = windowHeight * 4.8;
    const triangleProps1 = windowHeight * 6.2;
    const collaCube = windowHeight * 7.2;
+   const ballThreshold = windowHeight * 7.1;
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
@@ -114,6 +127,7 @@ const Projects = () => {
    setIsScubeVisible(scrollPosition > scubeProps1);
    setIsTriangleVisible(scrollPosition > triangleProps1);
    setIsCollaCubeVisible(scrollPosition > collaCube);
+   setIsBallVisible(scrollPosition > ballThreshold);
 
    lastScrollTop = scrollPosition;
   };
@@ -128,8 +142,10 @@ const Projects = () => {
  }, []);
 
  return (
+
+
   <>
-   <section>
+
     <p className="text-5xl font-semibold text-center pt-4 font-poppins leading-none ">
      <AnimatedDiv style={seeProps}>
       See what you can do <br /> in one app
@@ -158,7 +174,7 @@ const Projects = () => {
        </AnimatedDiv>
       </p>
       <p className="font-inter text-lg font-medium leading-6 py-7 ">
-       We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
+       We&apos;re a growing family of 382,081 <br /> designers and makers from
        <br /> around the world
       </p>
       <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
@@ -196,9 +212,15 @@ const Projects = () => {
      </div>
     </div>
     <div className="flex justify-center gap-36 pt-[140px] right-[10%]  relative">
-     <AnimatedDiv className="z-20" style={collaCubeProps}>
+     <AnimatedDiv
+      className="object-contain z-30 absolute left-[15%]"
+      style={ballProps}
+     >
+      <img src={ball} alt="" />
+     </AnimatedDiv>
+     <AnimatedDiv className="z-40" style={collaCubeProps}>
       <img
-       className="relative w-20 object-contain left-[1100%] top-[40%] z-20"
+       className="relative w-20 object-contain left-[1100%] top-[40%]"
        src={scube}
        alt=""
       />
@@ -247,13 +269,30 @@ const Projects = () => {
        </button>
       </div>
       <img
+       className="object-contain absolute left-[55%]"
+       src={megaChat1}
+       alt=""
+      />
+      <img
+       className="object-contain absolute right-[1%]"
+       src={megaChat2}
+       alt=""
+      />
+      <img
        className="object-contain right-[27%] relative"
        src={figure2}
        alt=""
       />
      </div>
     </div>
-   </section>
+    <Svg />
+    <Integration />
+
+
+
+
+
+
   </>
  );
 };
