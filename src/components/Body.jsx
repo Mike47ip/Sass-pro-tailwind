@@ -21,6 +21,7 @@ const Body = () => {
  const [isVisible, setIsVisible] = useState(false);
  const [isBikeVisible, setIsBikeVisible] = useState(false);
  const [isFastVisible, setIsFastVisible] = useState(false);
+ const [isPhonetVisible, setIsPhoneVisible] = useState(false);
 
  const props = useSpring({
   opacity: isVisible ? 1 : 0,
@@ -50,6 +51,12 @@ const Body = () => {
   config: { tension: 250, friction: 21 },
  });
 
+ const phoneProps = useSpring({
+  opacity: isPhonetVisible ? 1 : 0,
+  transform: isPhonetVisible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 60 },
+ });
+
  useEffect(() => {
   let lastScrollTop = 0;
 
@@ -59,6 +66,7 @@ const Body = () => {
    const threshold = windowHeight * 0.1;
    const bikeThreshold = windowHeight * 1.5;
    const fastThreshold = windowHeight * 2.9;
+   const phoneThreshold = windowHeight * 1.7;
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
@@ -67,6 +75,7 @@ const Body = () => {
 
    setIsBikeVisible(scrollPosition > bikeThreshold);
    setIsFastVisible(scrollPosition > fastThreshold);
+   setIsPhoneVisible(scrollPosition > phoneThreshold);
 
    lastScrollTop = scrollPosition;
   };
@@ -141,7 +150,11 @@ const Body = () => {
          ...chat1Props,
         }}
        >
-        <img className="relative mt-] z-40 left-[-10%] mt-[20%]" src={chat1} alt="" />
+        <img
+         className="relative mt-] z-40 left-[-10%] mt-[20%]"
+         src={chat1}
+         alt=""
+        />
        </AnimatedDiv>
        <AnimatedDiv
         className="chat2"
@@ -151,8 +164,13 @@ const Body = () => {
        >
         <img className="relative mt-[-200px] left-[37%]" src={chat2} alt="" />
        </AnimatedDiv>
-       <img className="absolute top-[170%] left-[19%] w-[16.7rem] z-20" src={iphone} alt="" />
-       <img className="absolute z-10 left-[7%] mt-[-1%]" src={stairs} alt="" />
+       <AnimatedDiv
+        className="absolute top-[170%] left-[19%] w-[16.7rem] z-20"
+        style={phoneProps}
+       >
+        <img src={iphone} alt="" />
+       </AnimatedDiv>
+       <img className="absolute z-10 left-[6%] mt-[-2%]" src={stairs} alt="" />
        <img className="ml-[-29%] mt-[7%]" src={concave} alt="" />
       </div>
       <div className="flex flex-col gap-8 relative w-[35%] top-[30%] z-20 text-white">

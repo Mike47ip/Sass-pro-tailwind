@@ -29,11 +29,11 @@
   }
 }
 
-.chat1 {
-  animation: moveChat1 4s ease-in infinite; /* Adjust the duration as needed */
+.chat1, .megaChat1 {
+  animation: moveChat1 4s ease-in-out infinite; /* Adjust the duration as needed */
 }
-.chat2 {
-  animation: moveChat2 4s ease-in infinite; /* Adjust the duration as needed */
+.chat2, .megaChat2 {
+  animation: moveChat2 4s ease-in-out infinite; /* Adjust the duration as needed */
 }
 
 

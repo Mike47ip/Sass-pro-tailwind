@@ -28,6 +28,9 @@ const Projects = () => {
  const [isTriangleVisible, setIsTriangleVisible] = useState(false);
  const [isCollaCubeVisible, setIsCollaCubeVisible] = useState(false);
  const [isBallVisible, setIsBallVisible] = useState(false);
+ const [isHistoryVisible, setIsHIstorylVisible] = useState(false);
+ const [isMegaChat1Visible, setIsMegaChat1lVisible] = useState(false);
+ const [isMegaChat2Visible, setIsMegaChat2lVisible] = useState(false);
 
  const seeProps = useSpring({
   opacity: isSeeVisible ? 1 : 0,
@@ -95,6 +98,22 @@ const Projects = () => {
   config: { tension: 250, friction: 21, mass: 2 },
  });
 
+ const historyProps = useSpring({
+  opacity: isHistoryVisible ? 1 : 0,
+  transform: isHistoryVisible ? "translateY(0)" : "translateY(60px)",
+  config: { tension: 250, friction: 40, mass: 2 },
+ });
+
+ const megaChat1Props = useSpring({
+  opacity: isMegaChat1Visible ? 1 : 0,
+  config: { tension: 70, friction: 20, duration: 1000 },
+ });
+
+ const megaChat2Props = useSpring({
+  opacity: isMegaChat2Visible ? 1 : 0,
+  config: { tension: 70, friction: 20, duration: 1000 },
+ });
+
  useEffect(() => {
   let lastScrollTop = 0;
 
@@ -112,6 +131,9 @@ const Projects = () => {
    const triangleProps1 = windowHeight * 6.2;
    const collaCube = windowHeight * 7.2;
    const ballThreshold = windowHeight * 7.1;
+   const historyThreshold = windowHeight * 8.5;
+   const megaChat1Threshold = windowHeight * 8.5;
+   const megaChat2Threshold = windowHeight * 8.5;
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
@@ -128,6 +150,9 @@ const Projects = () => {
    setIsTriangleVisible(scrollPosition > triangleProps1);
    setIsCollaCubeVisible(scrollPosition > collaCube);
    setIsBallVisible(scrollPosition > ballThreshold);
+   setIsHIstorylVisible(scrollPosition > historyThreshold);
+   setIsMegaChat1lVisible(scrollPosition > megaChat1Threshold);
+   setIsMegaChat2lVisible(scrollPosition > megaChat2Threshold);
 
    lastScrollTop = scrollPosition;
   };
@@ -142,157 +167,152 @@ const Projects = () => {
  }, []);
 
  return (
-
-
   <>
-
-    <p className="text-5xl font-semibold text-center pt-4 font-poppins leading-none ">
-     <AnimatedDiv style={seeProps}>
-      See what you can do <br /> in one app
-     </AnimatedDiv>
-    </p>
-    <div className="flex justify-center gap-36 pt-[140px] right-[10%] relative">
-     <AnimatedDiv style={scubeProps}>
+   <p className="text-5xl font-semibold text-center pt-4 font-poppins leading-none ">
+    <AnimatedDiv style={seeProps}>
+     See what you can do <br /> in one app
+    </AnimatedDiv>
+   </p>
+   <div className="flex justify-center gap-36 pt-[140px] right-[10%] relative">
+    <AnimatedDiv style={scubeProps}>
+     <img
+      className="object-contain left-[100%] mt-[100%] relative"
+      src={scube}
+      alt=""
+     />
+    </AnimatedDiv>
+    <img className="" src={card1} alt="" />
+    <div className="flex flex-col items-start">
+     <AnimatedDiv style={arrowProps}>
       <img
-       className="object-contain left-[100%] mt-[100%] relative"
-       src={scube}
+       className="arrow object-contain left-[-44%] pt-5 relative"
+       src={arrow}
        alt=""
       />
      </AnimatedDiv>
-     <img className="" src={card1} alt="" />
-     <div className="flex flex-col items-start">
-      <AnimatedDiv style={arrowProps}>
-       <img
-        className="arrow object-contain left-[-44%] pt-5 relative"
-        src={arrow}
-        alt=""
-       />
+     <p className="font-poppins text-4xl font-semibold">
+      <AnimatedDiv style={stayProps}>
+       Stay focused <br /> whenever, wherever
       </AnimatedDiv>
-      <p className="font-poppins text-4xl font-semibold">
-       <AnimatedDiv style={stayProps}>
-        Stay focused <br /> whenever, wherever
-       </AnimatedDiv>
-      </p>
-      <p className="font-inter text-lg font-medium leading-6 py-7 ">
-       We&apos;re a growing family of 382,081 <br /> designers and makers from
-       <br /> around the world
-      </p>
-      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
-       Watch how it works
-      </button>
-     </div>
+     </p>
+     <p className="font-inter text-lg font-medium leading-6 py-7 ">
+      We&apos;re a growing family of 382,081 <br /> designers and makers from
+      <br /> around the world
+     </p>
+     <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+      Watch how it works
+     </button>
     </div>
-    <div className="flex justify-center gap-36 pt-[140px]">
-     <div className="flex flex-col">
-      <img className="" src={card2} alt="" />
-      <AnimatedDiv style={triangleProps}>
-       <img className="top-[-29px] relative" src={triangle} alt="" />
+   </div>
+   <div className="flex justify-center gap-36 pt-[140px]">
+    <div className="flex flex-col">
+     <img className="" src={card2} alt="" />
+     <AnimatedDiv style={triangleProps}>
+      <img className="top-[-29px] relative" src={triangle} alt="" />
+     </AnimatedDiv>
+    </div>
+    <div className="flex flex-col items-start">
+     <AnimatedDiv style={shareChatProps}>
+      <img
+       className="arrow object-contain left-[-44%] pt-5 relative"
+       src={chatpro}
+       alt=""
+      />
+     </AnimatedDiv>
+     <p className="font-poppins text-4xl font-semibold">
+      <AnimatedDiv style={shareProps}>
+       Share files at the <br /> right time
       </AnimatedDiv>
-     </div>
-     <div className="flex flex-col items-start">
-      <AnimatedDiv style={shareChatProps}>
-       <img
-        className="arrow object-contain left-[-44%] pt-5 relative"
-        src={chatpro}
-        alt=""
-       />
+     </p>
+     <p className="font-inter text-lg font-medium leading-6 py-7 ">
+      We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
+      <br /> around the world
+     </p>
+     <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+      Watch how it works
+     </button>
+    </div>
+   </div>
+   <div className="flex justify-center gap-36 pt-[140px] right-[10%]  relative">
+    <AnimatedDiv
+     className="object-contain z-30 absolute left-[15%]"
+     style={ballProps}
+    >
+     <img src={ball} alt="" />
+    </AnimatedDiv>
+    <AnimatedDiv className="z-40" style={collaCubeProps}>
+     <img
+      className="relative w-20 object-contain left-[1100%] top-[40%]"
+      src={scube}
+      alt=""
+     />
+    </AnimatedDiv>
+    <img className="relative z-10" src={card3} alt="" />
+    <div className="flex flex-col items-start">
+     <AnimatedDiv style={planeProps}>
+      <img
+       className="arrow object-contain left-[-44%] pt-5 relative"
+       src={plane}
+       alt=""
+      />
+     </AnimatedDiv>
+     <p className="font-poppins text-4xl font-semibold">
+      <AnimatedDiv style={collaboProps}>
+       Collaborate from <br /> anywhere
       </AnimatedDiv>
-      <p className="font-poppins text-4xl font-semibold">
-       <AnimatedDiv style={shareProps}>
-        Share files at the <br /> right time
-       </AnimatedDiv>
-      </p>
-      <p className="font-inter text-lg font-medium leading-6 py-7 ">
+     </p>
+     <p className="font-inter text-lg font-medium leading-6 py-7 ">
+      <AnimatedDiv>
        We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
        <br /> around the world
-      </p>
-      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
-       Watch how it works
-      </button>
-     </div>
-    </div>
-    <div className="flex justify-center gap-36 pt-[140px] right-[10%]  relative">
-     <AnimatedDiv
-      className="object-contain z-30 absolute left-[15%]"
-      style={ballProps}
-     >
-      <img src={ball} alt="" />
-     </AnimatedDiv>
-     <AnimatedDiv className="z-40" style={collaCubeProps}>
-      <img
-       className="relative w-20 object-contain left-[1100%] top-[40%]"
-       src={scube}
-       alt=""
-      />
-     </AnimatedDiv>
-     <img className="relative z-10" src={card3} alt="" />
-     <div className="flex flex-col items-start">
-      <AnimatedDiv style={planeProps}>
-       <img
-        className="arrow object-contain left-[-44%] pt-5 relative"
-        src={plane}
-        alt=""
-       />
       </AnimatedDiv>
-      <p className="font-poppins text-4xl font-semibold">
-       <AnimatedDiv style={collaboProps}>
-        Collaborate from <br /> anywhere
+     </p>
+     <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+      Get Solo Desktop
+     </button>
+    </div>
+   </div>
+
+   <div className="white-board-continter flex justify-center ">
+    <div className="bg-custom-whiteboard w-[90%] rounded-3xl shadow-md p-5 flex">
+     <div className=" ml-20 mt-40 mb-40 min-w-[60%]">
+      <p className="text-custom-graytext font-bold">
+       EASILY FIND WHAT YOU’RE LOOKING FOR
+      </p>
+      <p className="font-poppins font-semibold text-[3.3rem] pt-7 leading-tight">
+       <AnimatedDiv style={historyProps}>
+        History you can <br /> see and search
        </AnimatedDiv>
       </p>
-      <p className="font-inter text-lg font-medium leading-6 py-7 ">
-       <AnimatedDiv>
-        We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
-        <br /> around the world
-       </AnimatedDiv>
+      <p className="font-poppins text-lg py-7 text-custom-boldtext ">
+       We&apos;re a growing family of 382,081 designers <br /> and makers from
+       around the world
       </p>
       <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
-       Get Solo Desktop
+       Learn more
       </button>
      </div>
+     <AnimatedDiv
+      className="megaChat1 object-contain absolute left-[55%]"
+      style={megaChat1Props}
+     >
+      <img src={megaChat1} alt="" />
+     </AnimatedDiv>
+     <AnimatedDiv
+      className="megaChat2 object-contain absolute right-[1%]"
+      style={megaChat2Props}
+     >
+      <img src={megaChat2} alt="" />
+     </AnimatedDiv>
+     <img
+      className="object-contain right-[27%] relative"
+      src={figure2}
+      alt=""
+     />
     </div>
-
-    <div className="white-board-continter flex justify-center ">
-     <div className="bg-custom-whiteboard w-[90%] rounded-3xl shadow-md p-5 flex">
-      <div className=" ml-20 mt-40 mb-40 min-w-[60%]">
-       <p className="text-custom-graytext font-bold">
-        EASILY FIND WHAT YOU’RE LOOKING FOR
-       </p>
-       <p className="font-poppins font-semibold text-[3.3rem] pt-7 leading-tight ">
-        History you can <br /> see and search
-       </p>
-       <p className="font-poppins text-lg py-7 text-custom-boldtext ">
-        We&apos;re a growing family of 382,081 designers <br /> and makers from
-        around the world
-       </p>
-       <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
-        Learn more
-       </button>
-      </div>
-      <img
-       className="object-contain absolute left-[55%]"
-       src={megaChat1}
-       alt=""
-      />
-      <img
-       className="object-contain absolute right-[1%]"
-       src={megaChat2}
-       alt=""
-      />
-      <img
-       className="object-contain right-[27%] relative"
-       src={figure2}
-       alt=""
-      />
-     </div>
-    </div>
-    <Svg />
-    <Integration />
-
-
-
-
-
-
+   </div>
+   <Svg />
+   <Integration />
   </>
  );
 };

@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { useSpring, animated } from "react-spring";
 import atom from "../assets/Images/atom.svg";
 import sketch from "../assets/Images/sketch.svg";
 import google from "../assets/Images/google.svg";
@@ -19,14 +21,65 @@ import star from "../assets/Images/star-fill.svg";
 import Bricks from "../assets/Images/Bricks.png";
 
 export const Integration = () => {
+ const AnimatedDiv = animated.div;
+ const [isPowerVisible, setIsPowerVisible] = useState(false);
+ const [isNotionVisible, setIsNotionVisible] = useState(false);
+ const [isUi8Visible, setIsUi8Visible] = useState(false);
+
+ const powerProps = useSpring({
+  opacity: isPowerVisible ? 1 : 0,
+  transform: isPowerVisible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 35 },
+ });
+
+ const notionProps = useSpring({
+  opacity: isNotionVisible ? 1 : 0,
+  transform: isNotionVisible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 35 },
+ });
+
+ const ui8Props = useSpring({
+  opacity: isUi8Visible ? 1 : 0,
+  transform: isUi8Visible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 35 },
+ });
+
+ useEffect(() => {
+  const handleScroll = () => {
+   const scrollPosition = window.scrollY;
+   const powerfulOffset = document.getElementById("powerful").offsetTop;
+   const notionOffset = document.getElementById("notionDiv").offsetTop;
+   const ui8Offset = document.getElementById("ui8Div").offsetTop;
+   const windowHeight = window.innerHeight;
+   const powerThreshold = powerfulOffset - windowHeight * 0.56; 
+   const notionThreshold = notionOffset - windowHeight * 0.6; 
+   const ui8Threshold = ui8Offset - windowHeight * 0.56; 
+
+   setIsPowerVisible(scrollPosition > powerThreshold);
+   setIsNotionVisible(scrollPosition > notionThreshold);
+   setIsUi8Visible(scrollPosition > ui8Threshold);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+   window.removeEventListener("scroll", handleScroll);
+  };
+ }, []);
+
  return (
   <>
    <section>
     <section className="flex justify-center items-center px-20 gap-[100px]">
      <div className="w-[40%]">
       <p className=" text-custom-graytext font-bold py-4">AMAZING FEATURES</p>
-      <h1 className="font-poppins text-6xl leading-snug font-semibold">
-       Powerfull <br /> Intergrations
+      <h1 id="powerful" className="powerful">
+       <AnimatedDiv
+        style={powerProps}
+        className="powerful font-poppins text-6xl leading-snug font-semibold"
+       >
+        Powerful <br /> integrations
+       </AnimatedDiv>
       </h1>
       <div className="text-custom-textboard font-poppins text-lg pt-6 ">
        We&apos;re a growing family of 382,081 designers and <br /> makers from
@@ -35,45 +88,54 @@ export const Integration = () => {
      </div>
      <div className="grid grid-cols-3 items-center justify-center w-[60%] gap-0">
       <div className="w-[60.33%] flex flex-col gap-12 right-[-15%] relative ">
-       <img
-        className="p-6 bg-white rounded-2xl shadow-lg"
-        src={atom}
-        alt=""
-       ></img>
-       <img
-        className="p-6 bg-white rounded-2xl shadow-lg"
-        src={sketch}
-        alt=""
-       ></img>
+       <AnimatedDiv
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        style={notionProps}
+       >
+        <img src={atom} alt=""></img>
+       </AnimatedDiv>
+       <AnimatedDiv
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-36 h-[128px]"
+        style={ui8Props}
+       >
+        <img src={sketch} alt=""></img>
+       </AnimatedDiv>
       </div>
       <div className=" w-[60.33%] flex flex-col gap-12  ">
-       <img
-        className="p-6 bg-white rounded-2xl shadow-lg"
-        src={notion}
-        alt=""
-       ></img>
-       <img
-        className="p-6 bg-white rounded-2xl shadow-lg"
-        src={ui8}
-        alt=""
-       ></img>
-       <img
-        className="p-6 bg-white rounded-2xl shadow-lg"
-        src={figma}
-        alt=""
-       ></img>
+       <AnimatedDiv
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        id="notionDiv"
+        style={notionProps}
+       >
+        <img src={notion} alt=""></img>
+       </AnimatedDiv>
+       <AnimatedDiv
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        id="ui8Div"
+        style={ui8Props}
+       >
+        <img src={ui8} alt=""></img>
+       </AnimatedDiv>
+       <AnimatedDiv
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        style={ui8Props}
+       >
+        <img src={figma} alt=""></img>
+       </AnimatedDiv>
       </div>
       <div className="w-[60.33%] flex flex-col gap-12 left-[-15%] relative   ">
-       <img
-        className="p-6 bg-white rounded-2xl shadow-lg"
-        src={google}
-        alt=""
-       ></img>
-       <img
-        className="p-6 bg-white rounded-2xl shadow-lg"
-        src={dribbble}
-        alt=""
-       ></img>
+       <AnimatedDiv
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        style={notionProps}
+       >
+        <img src={google} alt=""></img>
+       </AnimatedDiv>
+       <AnimatedDiv
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        style={ui8Props}
+       >
+        <img src={dribbble} alt=""></img>
+       </AnimatedDiv>
       </div>
      </div>
     </section>
