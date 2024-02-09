@@ -141,7 +141,7 @@ export const Integration = () => {
    const increaseThreshold = windowHeight * 16.2;
    const histoThreshold = windowHeight * 16.1;
    const simpleThreshold = windowHeight * 16.3;
-   const whatThreshold = windowHeight * 16.4;
+   const whatThreshold = windowHeight * 17.3;
    const getThreshold = windowHeight * 18.9;
    const megaChatThreshold = windowHeight * 19.1;
 
@@ -192,13 +192,13 @@ export const Integration = () => {
      <div className="grid grid-cols-3 items-center justify-center w-[60%] gap-0">
       <div className="w-[60.33%] flex flex-col gap-12 right-[-15%] relative ">
        <AnimatedDiv
-        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-[125px] h-[125px]"
         style={notionProps}
        >
         <img src={atom} alt=""></img>
        </AnimatedDiv>
        <AnimatedDiv
-        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-36 h-[128px]"
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-[125px] h-[125px]"
         style={ui8Props}
        >
         <img src={sketch} alt=""></img>
@@ -206,21 +206,21 @@ export const Integration = () => {
       </div>
       <div className=" w-[60.33%] flex flex-col gap-12  ">
        <AnimatedDiv
-        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-[125px] h-[125px]"
         id="notionDiv"
         style={notionProps}
        >
         <img src={notion} alt=""></img>
        </AnimatedDiv>
        <AnimatedDiv
-        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-[125px] h-[125px]"
         id="ui8Div"
         style={ui8Props}
        >
         <img src={ui8} alt=""></img>
        </AnimatedDiv>
        <AnimatedDiv
-        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-[125px] h-[125px]"
         style={ui8Props}
        >
         <img src={figma} alt=""></img>
@@ -228,13 +228,13 @@ export const Integration = () => {
       </div>
       <div className="w-[60.33%] flex flex-col gap-12 left-[-15%] relative   ">
        <AnimatedDiv
-        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-[125px] h-[125px]"
         style={notionProps}
        >
         <img src={google} alt=""></img>
        </AnimatedDiv>
        <AnimatedDiv
-        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-35 h-[128px]"
+        className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-[125px] h-[125px]"
         style={ui8Props}
        >
         <img src={dribbble} alt=""></img>
