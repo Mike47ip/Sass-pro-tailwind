@@ -120,17 +120,17 @@ const Projects = () => {
   const handleScroll = () => {
    const scrollPosition = window.scrollY;
    const windowHeight = window.innerHeight;
-   const seeThreshold = windowHeight * 4.3;
-   const arrowThreshold = windowHeight * 4.7;
-   const stayThreshold = windowHeight * 5;
-   const shareThreshold = windowHeight * 6;
-   const shareChatProps = windowHeight * 5.8;
-   const sharePlaneProps = windowHeight * 7;
-   const collaboPlaneProps = windowHeight * 7.3;
-   const scubeProps1 = windowHeight * 4.8;
-   const triangleProps1 = windowHeight * 6.2;
+   const seeThreshold = windowHeight * 4.7;
+   const arrowThreshold = windowHeight * 5.1;
+   const stayThreshold = windowHeight * 5.5;
+   const shareThreshold = windowHeight * 6.6;
+   const shareChatProps = windowHeight * 6.45;
+   const triangleProps1 = windowHeight * 6.9;
+   const sharePlaneProps = windowHeight * 7.8;
+   const collaboPlaneProps = windowHeight * 8.15;
+   const scubeProps1 = windowHeight * 5.2;
    const collaCube = windowHeight * 7.2;
-   const ballThreshold = windowHeight * 7.1;
+   const ballThreshold = windowHeight * 8;
    const historyThreshold = windowHeight * 8.5;
    const megaChat1Threshold = windowHeight * 8.5;
    const megaChat2Threshold = windowHeight * 8.5;

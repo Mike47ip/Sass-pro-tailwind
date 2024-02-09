@@ -65,7 +65,7 @@ const Body = () => {
    const windowHeight = window.innerHeight;
    const threshold = windowHeight * 0.1;
    const bikeThreshold = windowHeight * 1.5;
-   const fastThreshold = windowHeight * 2.9;
+   const fastThreshold = windowHeight * 3.4;
    const phoneThreshold = windowHeight * 1.7;
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
@@ -165,7 +165,7 @@ const Body = () => {
         <img className="relative mt-[-200px] left-[37%]" src={chat2} alt="" />
        </AnimatedDiv>
        <AnimatedDiv
-        className="absolute top-[170%] left-[19%] w-[16.7rem] z-20"
+        className="absolute top-[185%] left-[19%] w-[16.7rem] z-20"
         style={phoneProps}
        >
         <img src={iphone} alt="" />
@@ -189,7 +189,7 @@ const Body = () => {
      </div>
     </div>
     <div className="gradientContainer flex justify-center">
-     <div className="gradient w-[75rem] h-[15rem] rounded-b-2xl flex justify-center items-center">
+     <div className="gradient w-[68rem] h-[15rem] rounded-b-2xl flex justify-center items-center">
       <ul className="p-10 flex  font-poppins gap-24">
        <li className="px-10 py-5 flex flex-col gap-4 text ">
         <span className="text-7xl font-semibold">

@@ -26,7 +26,7 @@ const Footer = () => {
    </div>
    <div className="flex justify-center">
     <div className=" border-custom-textboard border-solid border-t-[1px] w-11/12">
-     <div className="flex justify-between py-7">
+     <div className="flex text-sm justify-between py-7">
       <span>© Solo Inc. Designed by UI8 Team</span>
       <ul className="flex gap-6 ">
        <li className="text-custom-textboard text-[20px]">
