@@ -95,7 +95,7 @@ const Body = () => {
     <div className="flex overflow-hidden">
      <div className="Paragraph pl-24 pr-5 pt-32">
       <p className="font-bold text-sm py-5">RISK-FREE 30 DAY TRIAL</p>
-      <div className="font-inter font-bold text-7xl leading-none">
+      <div className="Props font-inter font-bold text-7xl leading-none">
        The best way <br /> to organize <br />{" "}
        <AnimatedDiv style={props}>your work.</AnimatedDiv>
       </div>
@@ -165,12 +165,12 @@ const Body = () => {
         <img className="relative mt-[-200px] left-[37%]" src={chat2} alt="" />
        </AnimatedDiv>
        <AnimatedDiv
-        className="absolute top-[185%] left-[19%] w-[16.7rem] z-20"
+        className="relative mt-[-42%] left-[19%] w-[16.7rem] z-20"
         style={phoneProps}
        >
         <img src={iphone} alt="" />
        </AnimatedDiv>
-       <img className="absolute z-10 left-[6%] mt-[-2%]" src={stairs} alt="" />
+       <img className="absolute z-10 left-[4%] mt-[-14%]" src={stairs} alt="" />
        <img className="ml-[-29%] mt-[7%]" src={concave} alt="" />
       </div>
       <div className="flex flex-col gap-8 relative w-[35%] top-[30%] z-20 text-white">
