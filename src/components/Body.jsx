@@ -64,9 +64,17 @@ const Body = () => {
    const scrollPosition = window.scrollY;
    const windowHeight = window.innerHeight;
    const threshold = windowHeight * 0.1;
-   const bikeThreshold = windowHeight * 1.5;
-   const fastThreshold = windowHeight * 3.4;
+   let bikeThreshold = windowHeight * 3;
+   if (window.innerWidth < 768) {
+    bikeThreshold = windowHeight * 1.7;
+   } 
+
+   let fastThreshold = windowHeight * 3.4;
+   if (window.innerWidth < 768) {
+    fastThreshold = windowHeight * 4.5;
+   }
    const phoneThreshold = windowHeight * 1.7;
+   console.log("phone:", phoneThreshold);
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
@@ -91,22 +99,24 @@ const Body = () => {
 
  return (
   <>
-   <section className="relative overflow-hidden">
-    <div className="flex overflow-hidden">
-     <div className="Paragraph pl-24 pr-5 pt-32">
-      <p className="font-bold text-sm py-5">RISK-FREE 30 DAY TRIAL</p>
-      <div className="Props font-inter font-bold text-7xl leading-none">
+   <section className="relative">
+    <div className="flex flex-col gap-16 justify-center items-center overflow-hidden ">
+     <div className="Paragraph pt-5">
+      <p className="text-center text-custom-graytext font-bold pb-8">
+       RISK-FREE 30 DAY TRIAL
+      </p>
+      <div className="Props font-inter font-bold text-5xl lg:text-7xl text-center leading-none">
        The best way <br /> to organize <br />{" "}
        <AnimatedDiv style={props}>your work.</AnimatedDiv>
       </div>
-      <div className=" text-xl pt-6">
-       Organize your tasks, lists and reminders in one app.
+      <div className="text-custom-textboard text-center lg:text-start font-poppins text-lg pt-6">
+       Organize your tasks, lists and <br /> reminders in one app.
       </div>
-      <div className="flex gap-6 pt-10 text-lg font-inter">
-       <button className="bg-custom-primary px-6 py-4 font-bold text-white rounded-2xl hover:bg-custom-deepcoral">
+      <div className="flex flex-col justify-center items-center gap-6 pt-10 text-lg font-inter">
+       <button className="bg-custom-primary px-6 py-4 font-bold w-[45%] text-white rounded-2xl hover:bg-custom-deepcoral">
         Try it free
        </button>
-       <button className="flex items-center gap-2 font-semibold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+       <button className="flex justify-center items-center gap-2 font-semibold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
         <ion-icon name="play"></ion-icon>Watch how it works
        </button>
       </div>
@@ -122,15 +132,19 @@ const Body = () => {
        }}
        className={isVisible ? "animate" : ""}
       >
-       <img className="bike absolute" src={bike} alt="" />
+       <img
+        className="bike object-contain max-w-[40%] absolute"
+        src={bike}
+        alt=""
+       />
       </AnimatedDiv>
       <img className="Figures overflow-hidden" src={Figures} alt="" />
      </div>
     </div>
-    <p className="text-center text-custom-textboard font-inter">
+    <p className="hidden lg:block text-center text-custom-textboard font-inter">
      Thousands of teams worldwide are using Solo
     </p>
-    <div className="flex justify-center gap-4 pt-5 pb-32">
+    <div className="hidden lg:flex justify-center gap-4 pt-5 pb-32">
      <img src={goldlines} alt="" />
      <img src={rotashow} alt="" />
      <img src={travelers} alt="" />
@@ -142,7 +156,18 @@ const Body = () => {
 
    <section>
     <div className="BoardWrapper flex justify-center">
-     <div className="flex justify-center items-start black-board bg-custom-blackboard w-11/12 h-[690px] rounded-3xl px-22">
+     <div className="flex flex-col justify-center items-center lg:flex-row lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] rounded-3xl px-22">
+      <div className="flex justify-center items-center  flex-col gap-8 relative lg:w-[35%] lg:top-[30%] z-20 text-white">
+       <p className="font-inter font-semibold text-4xl pt-16">
+        <AnimatedDiv style={keeping}>Keeping it all together</AnimatedDiv>
+       </p>
+       <p className="text-custom-textboard font-inter font-bold">
+        Just invite your team, Solo does all the heavy-lifting.
+       </p>
+       <button className="px-3 py-4 text-white w-[200px] border-solid border-2 rounded-2xl font-inter font-bold hover:bg-white hover:text-black transform trasition-all ease-in">
+        Schedule a demo
+       </button>
+      </div>
       <div className="w-[50%]">
        <AnimatedDiv
         className="chat1"
@@ -151,48 +176,39 @@ const Body = () => {
         }}
        >
         <img
-         className="relative mt-] z-40 left-[-10%] mt-[20%]"
+         className="relative object-contain w-[65%]  ml-[44%] mt-[2%] z-40 lg:left-[-10%] lg:mt-[20%]"
          src={chat1}
          alt=""
         />
        </AnimatedDiv>
        <AnimatedDiv
-        className="chat2"
+        className="chat2 relative object-contain w-[54%] mt-[20%] ml-[-12%] lg:mt-[-200px] z-40 lg:left-[37%]"
         style={{
          ...chat2Props,
         }}
        >
-        <img className="relative mt-[-200px] left-[37%]" src={chat2} alt="" />
+        <img src={chat2} alt="" />
        </AnimatedDiv>
        <AnimatedDiv
-        className="relative mt-[-42%] left-[19%] w-[16.7rem] z-20"
+        className="relative w-[55%] ml-[20%] mt-[-80%] lg:mt-[-42%] lg:left-[19%] lg:w-[6.7rem] z-20"
         style={phoneProps}
        >
         <img src={iphone} alt="" />
        </AnimatedDiv>
-       <img className="absolute z-10 left-[4%] mt-[-14%]" src={stairs} alt="" />
-       <img className="ml-[-29%] mt-[7%]" src={concave} alt="" />
-      </div>
-      <div className="flex flex-col gap-8 relative w-[35%] top-[30%] z-20 text-white">
-       <p className="font-inter font-semibold text-6xl">
-        <AnimatedDiv style={keeping}>
-         Keeping it all <br /> together
-        </AnimatedDiv>
-       </p>
-       <p className="text-custom-textboard font-inter font-bold">
-        Just invite your team, Solo does all the <br /> heavy-lifting.
-       </p>
-       <button className="px-3 py-4 text-white w-[200px] border-solid border-2 rounded-2xl font-inter font-bold hover:bg-white hover:text-black transform trasition-all ease-in">
-        Schedule a demo
-       </button>
+       <img
+        className=" w-[64%] mt-[-15%] ml-[-1%] absolute z-10 lg:left-[4%] lg:mt-[-14%]"
+        src={stairs}
+        alt=""
+       />
+       <img className="hidden ml-[-29%] mt-[7%]" src={concave} alt="" />
       </div>
      </div>
     </div>
     <div className="gradientContainer flex justify-center">
-     <div className="gradient w-[68rem] h-[15rem] rounded-b-2xl flex justify-center items-center">
-      <ul className="p-10 flex  font-poppins gap-24">
+     <div className="gradient w-11/12 mt-[-15px] z-10 lg:h-[15rem] rounded-b-2xl flex justify-center items-center">
+      <ul className="lg:p-10 pt-32 flex flex-col lg:flex-row items-center font-poppins gap-24">
        <li className="px-10 py-5 flex flex-col gap-4 text ">
-        <span className="text-7xl font-semibold">
+        <span className="lg:text-7xl text-6xl font-semibold">
          100<span style={{ verticalAlign: "super", fontSize: "30px" }}>+</span>
         </span>{" "}
         <span className="bg-white text-center p-1 text-xs rounded-2xl shadow-xl">
@@ -200,15 +216,15 @@ const Body = () => {
         </span>
        </li>
        <li className="px-10 py-5 flex flex-col gap-4 ">
-        <span className="text-7xl font-semibold text-center">
+        <span className="lg:text-7xl text-6xl font-semibold text-center">
          28<span style={{ fontSize: "24px" }}>m</span>
         </span>{" "}
         <span className="bg-white text-center p-1 text-xs rounded-2xl shadow-xl">
          Downloads on App Store
         </span>
        </li>
-       <li className="px-10 py-5 flex flex-col gap-4">
-        <span className="text-7xl font-semibold">
+       <li className="px-10 py-5 pb-20 flex flex-col gap-4">
+        <span className="lg:text-7xl text-6xl font-semibold">
          16<span style={{ fontSize: "24px" }}>m</span>
         </span>{" "}
         <span className="bg-white text-center p-1 text-xs rounded-2xl shadow-xl">
@@ -220,10 +236,10 @@ const Body = () => {
     </div>
     <div className="pt-36 font-poppins">
      <p className="text-center text-custom-graytext font-bold">INSTANT SETUP</p>
-     <p className="text-5xl font-semibold text-center pt-4">
+     <p className="text-4xl lg:text-5xl font-semibold text-center pt-4">
       <AnimatedDiv style={fastProps}>Fast, simple & effortless.</AnimatedDiv>
      </p>
-     <div className="flex pt-16 justify-center gap-16">
+     <div className="flex pt-16 flex-col lg:flex-row  justify-center gap-16">
       <div className="flex flex-col items-center gap-4  border-r-4 border-custom-border py-12 pr-16">
        <svg
         className="laptop"

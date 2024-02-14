@@ -1,10 +1,4 @@
-.Paragraph {
- min-width: 591px;
-}
 
-.Figures {
- min-width: 1000px;
-}
 
 .gradient {
  background: -webkit-linear-gradient(359.67deg, #fea989 0.02%, #99b4db 98.92%);
@@ -13,27 +7,49 @@
 }
 
 @keyframes moveChat1 {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(40px); 
-  }
+ 0%,
+ 100% {
+  transform: translateY(0);
+ }
+ 50% {
+  transform: translateY(40px);
+ }
 }
 @keyframes moveChat2 {
-  0%, 100% {
-    transform: translateY(0);
+ 0%,
+ 100% {
+  transform: translateY(0);
+ }
+ 50% {
+  transform: translateY(-40px);
+ }
+}
+
+.chat1,
+.megaChat1,
+#chatAsh {
+ animation: moveChat1 4s ease-in-out infinite;
+}
+.chat2,
+.megaChat2,
+#chatAsh2 {
+ animation: moveChat2 4s ease-in-out infinite;
+}
+
+/* @media (max-width: 1142px) {
+  .MenuList {
+    display: none;
   }
-  50% {
-    transform: translateY(-40px); 
+} */
+
+@media (min-width: 1188px) {
+ .MenuList {
+  display: flex !important;
+ }
+}
+
+@media (max-width: 1187px) {
+  .HamburgerMenu {
+    display: flex;
   }
 }
-
-.chat1, .megaChat1, #chatAsh {
-  animation: moveChat1 4s ease-in-out infinite; 
-}
-.chat2, .megaChat2, #chatAsh2 {
-  animation: moveChat2 4s ease-in-out infinite; 
-}
-
-
