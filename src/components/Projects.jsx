@@ -120,7 +120,10 @@ const Projects = () => {
   const handleScroll = () => {
    const scrollPosition = window.scrollY;
    const windowHeight = window.innerHeight;
-   const seeThreshold = windowHeight * 4.7;
+   let seeThreshold = windowHeight * 4.7;
+   if ( window.innerWidth < 768) {
+    seeThreshold = windowHeight * 7
+   }
    const arrowThreshold = windowHeight * 5.1;
    const stayThreshold = windowHeight * 5.5;
    const shareThreshold = windowHeight * 6.6;
@@ -168,7 +171,7 @@ const Projects = () => {
 
  return (
   <>
-   <p className="text-5xl font-semibold text-center pt-4 font-poppins leading-none ">
+   <p className="text-4xl lg:text-5xl font-semibold text-center pt-4 font-poppins leading-none ">
     <AnimatedDiv style={seeProps}>
      See what you can do <br /> in one app
     </AnimatedDiv>
