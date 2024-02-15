@@ -131,7 +131,10 @@ const Projects = () => {
    const triangleProps1 = windowHeight * 6.9;
    const sharePlaneProps = windowHeight * 7.8;
    const collaboPlaneProps = windowHeight * 8.15;
-   const scubeProps1 = windowHeight * 5.2;
+   let scubeProps1 = windowHeight * 5.2;
+   if (window.innerWidth < 768) {
+    scubeProps1 = windowHeight * 7.5
+   }
    const collaCube = windowHeight * 7.2;
    const ballThreshold = windowHeight * 8;
    const historyThreshold = windowHeight * 8.5;
@@ -176,29 +179,30 @@ const Projects = () => {
      See what you can do <br /> in one app
     </AnimatedDiv>
    </p>
-   <div className="flex justify-center gap-36 pt-[140px] right-[10%] relative">
-    <AnimatedDiv style={scubeProps}>
+   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
+    <AnimatedDiv style={scubeProps}
+     className="object-contain ml-[-72%] absolute z-40" >
      <img
-      className="object-contain left-[100%] mt-[100%] relative"
+      
       src={scube}
       alt=""
      />
     </AnimatedDiv>
-    <img className="" src={card1} alt="" />
+    <img className="pt-10" src={card1} alt="" />
     <div className="flex flex-col items-start">
      <AnimatedDiv style={arrowProps}>
       <img
-       className="arrow object-contain left-[-44%] pt-5 relative"
+       className="arrow hidden lg:block object-contain left-[-44%] pt-5 relative"
        src={arrow}
        alt=""
       />
      </AnimatedDiv>
-     <p className="font-poppins text-4xl font-semibold">
+     <p className="font-poppins text-2xl lg:text-4xl font-semibold">
       <AnimatedDiv style={stayProps}>
        Stay focused <br /> whenever, wherever
       </AnimatedDiv>
      </p>
-     <p className="font-inter text-lg font-medium leading-6 py-7 ">
+     <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7 ">
       We&apos;re a growing family of 382,081 <br /> designers and makers from
       <br /> around the world
      </p>

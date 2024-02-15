@@ -158,7 +158,7 @@ const Body = () => {
     <div className="BoardWrapper flex justify-center">
      <div className="flex flex-col justify-center items-center lg:flex-row lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] rounded-3xl px-22">
       <div className="flex justify-center items-center  flex-col gap-8 relative lg:w-[35%] lg:top-[30%] z-20 text-white">
-       <p className="font-inter font-semibold text-4xl pt-16">
+       <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-[-0%]">
         <AnimatedDiv style={keeping}>Keeping it all together</AnimatedDiv>
        </p>
        <p className="text-custom-textboard font-inter font-bold">
