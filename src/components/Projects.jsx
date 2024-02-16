@@ -121,8 +121,8 @@ const Projects = () => {
    const scrollPosition = window.scrollY;
    const windowHeight = window.innerHeight;
    let seeThreshold = windowHeight * 4.7;
-   if ( window.innerWidth < 768) {
-    seeThreshold = windowHeight * 7
+   if (window.innerWidth < 768) {
+    seeThreshold = windowHeight * 7;
    }
    const arrowThreshold = windowHeight * 5.1;
    const stayThreshold = windowHeight * 5.5;
@@ -130,18 +130,18 @@ const Projects = () => {
    const shareChatProps = windowHeight * 6.45;
    let triangleProps1 = windowHeight * 6.9;
    if (window.innerWidth < 768) {
-    triangleProps1 = windowHeight * 9.5
+    triangleProps1 = windowHeight * 9.5;
    }
    const sharePlaneProps = windowHeight * 7.8;
    const collaboPlaneProps = windowHeight * 8.15;
    let scubeProps1 = windowHeight * 5.2;
    if (window.innerWidth < 768) {
-    scubeProps1 = windowHeight * 7.5
+    scubeProps1 = windowHeight * 8;
    }
    const collaCube = windowHeight * 7.2;
    let ballThreshold = windowHeight * 8;
    if (window.innerWidth < 768) {
-    ballThreshold = windowHeight * 11.3
+    ballThreshold = windowHeight * 11.3;
    }
    const historyThreshold = windowHeight * 8.5;
    const megaChat1Threshold = windowHeight * 8.5;
@@ -186,16 +186,12 @@ const Projects = () => {
     </AnimatedDiv>
    </p>
    <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
-    <div>
-
-    </div>
-    <AnimatedDiv style={scubeProps}
-     className="object-contain ml-[-72%] absolute z-40" >
-     <img
-      
-      src={scube}
-      alt=""
-     />
+    <div></div>
+    <AnimatedDiv
+     style={scubeProps}
+     className="object-contain ml-[-72%] absolute z-40"
+    >
+     <img src={scube} alt="" />
     </AnimatedDiv>
     <img className="pt-10" src={card1} alt="" />
     <div className="flex flex-col items-start">
@@ -289,42 +285,44 @@ const Projects = () => {
     </div>
    </div>
 
-   <div className="white-board-continter flex justify-center ">
-    <div className="bg-custom-whiteboard w-[90%] rounded-3xl shadow-md p-5 flex">
-     <div className=" ml-20 mt-40 mb-40 min-w-[60%]">
-      <p className="text-custom-graytext font-bold">
+   <div className="white-board-continter flex justify-center mt-20">
+    <div className="bg-custom-whiteboard w-[90%] rounded-3xl shadow-lg p-5 flex flex-col-reverse">
+     <div className=" lg:ml-20 lg:mt-40 lg:mb-40 lg:min-w-[60%] relative">
+      <p className="text-custom-graytext text-sm lg:text-base font-bold">
        EASILY FIND WHAT YOU’RE LOOKING FOR
       </p>
-      <p className="font-poppins font-semibold text-[3.3rem] pt-7 leading-tight">
+      <p className="font-poppins font-semibold text-3xl lg:text-[3.3rem] pt-7 leading-tight">
        <AnimatedDiv style={historyProps}>
-        History you can <br /> see and search
+        History you can see and search
        </AnimatedDiv>
       </p>
-      <p className="font-poppins text-lg py-7 text-custom-boldtext ">
+      <p className="font-poppins text-[15px] lg:text-lg py-7 text-custom-textboard ">
        We&apos;re a growing family of 382,081 designers <br /> and makers from
        around the world
       </p>
-      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+      <button className="flex text-lg items-center gap-2 font-bold mb-8 border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
        Learn more
       </button>
      </div>
+     <div className="flex justify-center items-center">
+      <img
+       className="object-contain w-[60%] lg:right-[27%] relative"
+       src={figure2}
+       alt=""
+      />
+     </div>
      <AnimatedDiv
-      className="megaChat1 object-contain absolute left-[55%]"
-      style={megaChat1Props}
-     >
-      <img src={megaChat1} alt="" />
-     </AnimatedDiv>
-     <AnimatedDiv
-      className="megaChat2 object-contain absolute right-[1%]"
+      className="megaChat2 w-[24%] left-[55%] top-[10%] object-contain relative  lg:absolute lg:right-[1%]"
       style={megaChat2Props}
      >
       <img src={megaChat2} alt="" />
      </AnimatedDiv>
-     <img
-      className="object-contain right-[27%] relative"
-      src={figure2}
-      alt=""
-     />
+     <AnimatedDiv
+      className="megaChat1 w-[19%] left-[25%]  object-contain relative mb-[-20%] lg:absolute lg:left-[55%]"
+      style={megaChat1Props}
+     >
+      <img src={megaChat1} alt="" />
+     </AnimatedDiv>
     </div>
    </div>
    <Svg />
