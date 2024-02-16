@@ -1,8 +1,8 @@
 export const Svg = () => {
  return (
   <>
-   <div className="grid grid-cols-4 gap-12 py-24 px-16 ">
-    <div className=" font-poppins w-[90%]">
+   <div className="flex justify-center pl-10  gap-5 py-32 lg:grid lg:grid-cols-4 lg:gap-12 lg:py-24 lg:px-16 ">
+    <div className="text-sm font-poppins w-[90%]">
      <svg
       xmlns="http://www.w3.org/2000/svg"
       width="46"
@@ -18,7 +18,7 @@ export const Svg = () => {
      <p className="h-[50%] py-8 text-2xl font-semibold">Protect Your Data</p>
      <p className="text-custom-textboard">4,729 curated design resources to energize your creative workflow</p>
     </div>
-    <div className=" font-poppins w-[90%]">
+    <div className="text-sm font-poppins w-[90%]">
      <svg
       xmlns="http://www.w3.org/2000/svg"
       width="44"
@@ -33,7 +33,7 @@ export const Svg = () => {
      <p className="h-[50%] py-8 text-2xl font-semibold">Super Smart Search</p>
      <p className="text-custom-textboard">4,729 curated design resources to energize your creative workflow</p>
     </div>
-    <div className=" font-poppins w-[90%]">
+    <div className="text-sm font-poppins w-[90%]">
      <svg
       xmlns="http://www.w3.org/2000/svg"
       width="44"
@@ -48,7 +48,7 @@ export const Svg = () => {
      <p className="h-[50%] py-8 text-2xl font-semibold">Control everything in one place</p>
      <p className="text-custom-textboard">4,729 curated design resources to energize your creative workflow</p>
     </div>
-    <div className=" font-poppins w-[90%]">
+    <div className="hidden lg:block font-poppins w-[90%]">
      <svg
       xmlns="http://www.w3.org/2000/svg"
       width="48"
@@ -63,7 +63,7 @@ export const Svg = () => {
      <p className="h-[50%] py-8 text-2xl font-semibold">Work better together</p>
      <p className="text-custom-textboard">4,729 curated design resources to energize your creative workflow</p>
     </div>
-    <div className=" font-poppins w-[90%]">
+    <div className="hidden lg:block font-poppins w-[90%]">
      <svg
       xmlns="http://www.w3.org/2000/svg"
       width="48"
@@ -78,7 +78,7 @@ export const Svg = () => {
      <p className="h-[50%] py-8 text-2xl font-semibold">24/7 Live Customer Support</p>
      <p className="text-custom-textboard">4,729 curated design resources to energize your creative workflow</p>
     </div>
-    <div className=" font-poppins w-[90%]">
+    <div className="hidden lg:block font-poppins w-[90%]">
      <svg
       xmlns="http://www.w3.org/2000/svg"
       width="44"
@@ -93,7 +93,7 @@ export const Svg = () => {
      <p className="h-[50%] py-8 text-2xl font-semibold">Project Management</p>
      <p className="text-custom-textboard">4,729 curated design resources to energize your creative workflow</p>
     </div>
-    <div className=" font-poppins w-[90%]">
+    <div className="hidden lg:block font-poppins w-[90%]">
      <svg
       xmlns="http://www.w3.org/2000/svg"
       width="48"
@@ -108,7 +108,7 @@ export const Svg = () => {
      <p className="h-[50%] py-8 text-2xl font-semibold">Workflow builder</p>
      <p className="text-custom-textboard">4,729 curated design resources to energize your creative workflow</p>
     </div>
-    <div className=" font-poppins w-[90%]">
+    <div className="hidden lg:block font-poppins w-[90%]">
      <svg
       xmlns="http://www.w3.org/2000/svg"
       width="44"
