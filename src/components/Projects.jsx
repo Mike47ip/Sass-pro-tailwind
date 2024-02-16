@@ -128,7 +128,10 @@ const Projects = () => {
    const stayThreshold = windowHeight * 5.5;
    const shareThreshold = windowHeight * 6.6;
    const shareChatProps = windowHeight * 6.45;
-   const triangleProps1 = windowHeight * 6.9;
+   let triangleProps1 = windowHeight * 6.9;
+   if (window.innerWidth < 768) {
+    triangleProps1 = windowHeight * 9.5
+   }
    const sharePlaneProps = windowHeight * 7.8;
    const collaboPlaneProps = windowHeight * 8.15;
    let scubeProps1 = windowHeight * 5.2;
@@ -136,7 +139,10 @@ const Projects = () => {
     scubeProps1 = windowHeight * 7.5
    }
    const collaCube = windowHeight * 7.2;
-   const ballThreshold = windowHeight * 8;
+   let ballThreshold = windowHeight * 8;
+   if (window.innerWidth < 768) {
+    ballThreshold = windowHeight * 11.3
+   }
    const historyThreshold = windowHeight * 8.5;
    const megaChat1Threshold = windowHeight * 8.5;
    const megaChat2Threshold = windowHeight * 8.5;
@@ -180,6 +186,9 @@ const Projects = () => {
     </AnimatedDiv>
    </p>
    <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
+    <div>
+
+    </div>
     <AnimatedDiv style={scubeProps}
      className="object-contain ml-[-72%] absolute z-40" >
      <img
@@ -197,7 +206,7 @@ const Projects = () => {
        alt=""
       />
      </AnimatedDiv>
-     <p className="font-poppins text-2xl lg:text-4xl font-semibold">
+     <p className="font-poppins pt-20 text-2xl lg:text-4xl font-semibold">
       <AnimatedDiv style={stayProps}>
        Stay focused <br /> whenever, wherever
       </AnimatedDiv>
@@ -211,9 +220,9 @@ const Projects = () => {
      </button>
     </div>
    </div>
-   <div className="flex justify-center gap-36 pt-[140px]">
-    <div className="flex flex-col">
-     <img className="" src={card2} alt="" />
+   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
+    <div className="flex flex-col flex-start">
+     <img className="pt-10" src={card2} alt="" />
      <AnimatedDiv style={triangleProps}>
       <img className="top-[-29px] relative" src={triangle} alt="" />
      </AnimatedDiv>
@@ -221,17 +230,17 @@ const Projects = () => {
     <div className="flex flex-col items-start">
      <AnimatedDiv style={shareChatProps}>
       <img
-       className="arrow object-contain left-[-44%] pt-5 relative"
+       className="chatcard hidden lg:block object-contain left-[-44%] pt-5 relative"
        src={chatpro}
        alt=""
       />
      </AnimatedDiv>
-     <p className="font-poppins text-4xl font-semibold">
+     <p className="font-poppins text-2xl lg:text-4xl font-semibold">
       <AnimatedDiv style={shareProps}>
        Share files at the <br /> right time
       </AnimatedDiv>
      </p>
-     <p className="font-inter text-lg font-medium leading-6 py-7 ">
+     <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7">
       We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
       <br /> around the world
      </p>
@@ -240,9 +249,9 @@ const Projects = () => {
      </button>
     </div>
    </div>
-   <div className="flex justify-center gap-36 pt-[140px] right-[10%]  relative">
+   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
     <AnimatedDiv
-     className="object-contain z-30 absolute left-[15%]"
+     className="object-contain left-[11%] mt-[-30%] z-30 absolute lg:left-[15%]"
      style={ballProps}
     >
      <img src={ball} alt="" />
@@ -258,24 +267,24 @@ const Projects = () => {
     <div className="flex flex-col items-start">
      <AnimatedDiv style={planeProps}>
       <img
-       className="arrow object-contain left-[-44%] pt-5 relative"
+       className="plane hidden lg:block object-contain left-[-44%] pt-5 relative"
        src={plane}
        alt=""
       />
      </AnimatedDiv>
-     <p className="font-poppins text-4xl font-semibold">
+     <p className="font-poppins text-2xl lg:text-4xl font-semibold">
       <AnimatedDiv style={collaboProps}>
        Collaborate from <br /> anywhere
       </AnimatedDiv>
      </p>
-     <p className="font-inter text-lg font-medium leading-6 py-7 ">
+     <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7">
       <AnimatedDiv>
        We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
        <br /> around the world
       </AnimatedDiv>
      </p>
      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
-      Get Solo Desktop
+      Schedule and demo
      </button>
     </div>
    </div>
