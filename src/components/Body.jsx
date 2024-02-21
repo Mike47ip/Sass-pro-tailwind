@@ -68,7 +68,7 @@ const Body = () => {
    if (window.innerWidth < 768) {
     bikeThreshold = windowHeight * 1.7;
    } else if (window.innerWidth > 768) {
-    bikeThreshold = windowHeight * 0.7;
+    bikeThreshold = windowHeight * 1.4;
    }
 
    let fastThreshold = windowHeight * 3.4;
@@ -77,7 +77,10 @@ const Body = () => {
    } else if (window.innerWidth > 768) {
     fastThreshold = windowHeight * 3.8;
    }
-   const phoneThreshold = windowHeight * 1.7;
+   let phoneThreshold = windowHeight * 1.7;
+   if (window.innerWidth > 768) {
+    phoneThreshold = windowHeight * 1.3;
+   }
    console.log("phone:", phoneThreshold);
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
@@ -163,19 +166,19 @@ const Body = () => {
 
    <section>
     <div className="BoardWrapper flex justify-center">
-     <div className="flex flex-col justify-center items-center lg:flex-row lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] rounded-3xl px-22">
-      <div className="flex justify-center items-center  flex-col gap-8 relative lg:w-[35%] lg:top-[30%] z-20 text-white">
-       <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-[-0%]">
-        <AnimatedDiv style={keeping}>Keeping it all together</AnimatedDiv>
+     <div className="flex flex-col md:flex-row-reverse justify-center items-center lg:flex-row lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] md:h-[25rem] rounded-3xl px-22">
+      <div className="flex justify-center items-center md:pr-1 flex-col gap-8 relative md:w-[40%] lg:w-[35%] lg:top-[30%] z-20 text-white md:items-start">
+       <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-0">
+        <AnimatedDiv style={keeping}>Keeping it all <br className="md:block hidden" /> together</AnimatedDiv>
        </p>
-       <p className="text-custom-textboard font-inter px-5 font-bold">
+       <p className="text-custom-textboard md:text-start md:px-0 font-inter px-5 font-bold">
         Just invite your team, Solo does all the heavy-lifting.
        </p>
        <button className="px-3 py-4 text-white w-[200px] border-solid border-2 rounded-2xl font-inter font-bold hover:bg-white hover:text-black transform trasition-all ease-in">
         Schedule a demo
        </button>
       </div>
-      <div className="w-[50%]">
+      <div className="w-[50%] md:mt-[-20%]">
        <AnimatedDiv
         className="chat1"
         style={{
@@ -212,29 +215,29 @@ const Body = () => {
      </div>
     </div>
     <div className="gradientContainer flex justify-center">
-     <div className="gradient w-11/12 mt-[-15px] z-10 lg:h-[15rem] rounded-b-2xl flex justify-center items-center">
-      <ul className="lg:p-10 pt-32 flex flex-col lg:flex-row items-center font-poppins gap-24">
-       <li className="px-10 py-5 flex flex-col gap-4 text ">
-        <span className="lg:text-7xl text-6xl font-semibold">
-         100<span style={{ verticalAlign: "super", fontSize: "30px" }}>+</span>
+     <div className="gradient w-11/12 mt-[-15px] z-10 md:h-[15rem] rounded-b-2xl flex justify-center items-center">
+      <ul className="md:w-[100%] md:p-10 pt-32 flex flex-col md:flex-row md:justify-center  md:items-center font-poppins gap-24 md:gap-11">
+       <li className="px-10 py-5  flex flex-col gap-4">
+        <span className="lg:text-7xl text-6xl font-semibold text-center">
+         100<span style={{ verticalAlign: "super", fontSize: "24px" }}>+</span>
         </span>{" "}
-        <span className="bg-white text-center p-1 text-xs rounded-2xl shadow-xl">
+        <span className="bg-white  md:whitespace-nowrap  text-center p-1 text-xs rounded-2xl shadow-xl">
          Countries supported
         </span>
        </li>
-       <li className="px-10 py-5 flex flex-col gap-4 ">
+       <li className="px-10 py-5  flex flex-col gap-4">
         <span className="lg:text-7xl text-6xl font-semibold text-center">
          28<span style={{ fontSize: "24px" }}>m</span>
         </span>{" "}
-        <span className="bg-white text-center p-1 text-xs rounded-2xl shadow-xl">
+        <span className="bg-white  md:whitespace-nowrap  text-center p-1 text-xs rounded-2xl shadow-xl">
          Downloads on App Store
         </span>
        </li>
-       <li className="px-10 py-5 pb-20 flex flex-col gap-4">
+       <li className="px-10 py-5 md:pt-0 pb-20 md:pb-0 flex flex-col gap-4 text-center">
         <span className="lg:text-7xl text-6xl font-semibold">
          16<span style={{ fontSize: "24px" }}>m</span>
         </span>{" "}
-        <span className="bg-white text-center p-1 text-xs rounded-2xl shadow-xl">
+        <span className="bg-white  md:whitespace-nowrap  text-center p-1 text-xs rounded-2xl shadow-xl">
          Verified Users
         </span>
        </li>
