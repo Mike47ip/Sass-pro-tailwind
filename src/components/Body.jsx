@@ -67,7 +67,7 @@ const Body = () => {
    let bikeThreshold = windowHeight * 3;
    if (window.innerWidth < 768) {
     bikeThreshold = windowHeight * 1.7;
-   } 
+   }
 
    let fastThreshold = windowHeight * 3.4;
    if (window.innerWidth < 768) {
@@ -161,7 +161,7 @@ const Body = () => {
        <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-[-0%]">
         <AnimatedDiv style={keeping}>Keeping it all together</AnimatedDiv>
        </p>
-       <p className="text-custom-textboard font-inter font-bold">
+       <p className="text-custom-textboard font-inter px-5 font-bold">
         Just invite your team, Solo does all the heavy-lifting.
        </p>
        <button className="px-3 py-4 text-white w-[200px] border-solid border-2 rounded-2xl font-inter font-bold hover:bg-white hover:text-black transform trasition-all ease-in">
