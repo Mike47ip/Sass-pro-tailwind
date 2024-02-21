@@ -75,7 +75,7 @@ const Body = () => {
    if (window.innerWidth < 768) {
     fastThreshold = windowHeight * 4.5;
    } else if (window.innerWidth > 768) {
-    fastThreshold = windowHeight * 3.8;
+    fastThreshold = windowHeight * 2.3;
    }
    let phoneThreshold = windowHeight * 1.7;
    if (window.innerWidth > 768) {
@@ -249,8 +249,8 @@ const Body = () => {
      <p className="text-4xl lg:text-5xl font-semibold text-center pt-4">
       <AnimatedDiv style={fastProps}>Fast, simple & effortless.</AnimatedDiv>
      </p>
-     <div className="flex pt-16 flex-col lg:flex-row justify-center items-center gap-6 lg:gap-16">
-      <div className="flex flex-col items-center gap-4 w-1/3  border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
+     <div className="flex pt-16 flex-col md:flex-row justify-center items-center gap-6 lg:gap-16">
+      <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0   border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
        <svg
         className="laptop"
         xmlns="http://www.w3.org/2000/svg"
@@ -268,7 +268,7 @@ const Body = () => {
        </span>
        <p className="opacity-80">Download the app</p>
       </div>
-      <div className="flex flex-col items-center gap-4 w-1/3  border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
+      <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0   border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
        <svg
         className="cloud"
         xmlns="http://www.w3.org/2000/svg"
@@ -286,7 +286,7 @@ const Body = () => {
        </span>
        <p className="opacity-80">Invite teammates</p>
       </div>
-      <div className="flex flex-col items-center gap-4 w-1/3  border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
+      <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0   border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
        <svg
         className="globe"
         xmlns="http://www.w3.org/2000/svg"
@@ -304,7 +304,7 @@ const Body = () => {
        </span>
        <p className="opacity-80">Create workspace</p>
       </div>
-      <div className="flex flex-col items-center gap-4 w-1/3 py-10 ">
+      <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0  py-10 ">
        <svg
         className="chart"
         xmlns="http://www.w3.org/2000/svg"

@@ -24,8 +24,10 @@ const Navbar = () => {
       </button>
      </div>
      <button className="HamburgerMenu w-60 flex  flex-col gap-2 justify-center items-end lg:hidden">
-      <span className="w-[14%] border-2 border-black transform rotate-45 "></span>
-      <span className="w-[14%] border-2 border-black transform relative mt-[-5%]   rotate-[-45deg] "></span>
+      <span className="hidden w-[14%] border-2 border-black transform rotate-45 "></span>
+      <span className="hidden w-[14%] border-2 border-black transform relative mt-[-5%]   rotate-[-45deg] "></span>
+      <span className="w-[14%] border-2 border-black transform "></span>
+      <span className="w-[14%] border-2 border-black transform relative "></span>
      </button>
     </div>
    </div>
