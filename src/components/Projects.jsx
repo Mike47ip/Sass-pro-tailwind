@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { Svg } from "./svg";
 import { Integration } from "./Integration";
@@ -17,6 +17,19 @@ import megaChat2 from "../assets/Images/megaChat2.png";
 
 const Projects = () => {
  const AnimatedDiv = animated.div;
+ const seeRef = useRef(null);
+ const arrowRef = useRef(null);
+ const stayRef = useRef(null);
+ const triangleRef = useRef(null);
+ const shareRef = useRef(null);
+ const sharePropsRef = useRef(null);
+ const ballRef = useRef(null);
+ const collaboCubeRef = useRef(null);
+ const planeRef = useRef(null);
+ const collaboRef = useRef(null);
+ const historyRef = useRef(null);
+ const megaChat2Ref = useRef(null);
+ const megaChat1Ref = useRef(null);
  const [isSeeVisible, setIsSeeVisible] = useState(false);
  const [isArrowVisible, setIsArrowVisible] = useState(false);
  const [isStayVisible, setIsStayVisible] = useState(false);
@@ -114,50 +127,183 @@ const Projects = () => {
   config: { tension: 70, friction: 20, duration: 1000 },
  });
 
+ //  OBERESER API
+
+ const handleIntersection = (ref, setVisible) => {
+  const observer = new IntersectionObserver(
+   ([entry]) => {
+    setVisible(entry.isIntersecting);
+   },
+   { threshold: 1 }
+  );
+
+  if (ref.current) {
+   observer.observe(ref.current);
+  }
+
+  return () => {
+   observer.disconnect();
+  };
+ };
+
  useEffect(() => {
-  let lastScrollTop = 0;
+  return handleIntersection(seeRef, setIsSeeVisible);
+ }, [seeRef]);
+
+ useEffect(() => {
+  return handleIntersection(arrowRef, setIsArrowVisible);
+ }, [arrowRef]);
+
+ useEffect(() => {
+  return handleIntersection(stayRef, setIsStayVisible);
+ }, [stayRef]);
+
+ useEffect(() => {
+  return handleIntersection(triangleRef, setIsTriangleVisible);
+ }, [triangleRef]);
+
+ useEffect(() => {
+  return handleIntersection(shareRef, setIsShareVisible);
+ }, [shareRef]);
+
+ useEffect(() => {
+  return handleIntersection(ballRef, setIsBallVisible);
+ }, [ballRef]);
+
+ useEffect(() => {
+  return handleIntersection(collaboCubeRef, setIsCollaCubeVisible);
+ }, [collaboCubeRef]);
+
+ useEffect(() => {
+  return handleIntersection(planeRef, setIsPlaneVisible);
+ }, [planeRef]);
+
+ useEffect(() => {
+  return handleIntersection(collaboRef, setIsCollaboVisible);
+ }, [collaboRef]);
+
+ useEffect(() => {
+  return handleIntersection(historyRef, setIsHIstorylVisible);
+ }, [historyRef]);
+
+ useEffect(() => {
+  return handleIntersection(megaChat2Ref, setIsMegaChat2lVisible);
+ }, [megaChat2Ref]);
+
+ useEffect(() => {
+  return handleIntersection(megaChat1Ref, setIsMegaChat1lVisible);
+ }, [megaChat1Ref]);
+
+ // FOR SINGLE USE CASE
+
+ //  useEffect(() => {
+ //   const observer = new IntersectionObserver(
+ //    ([entry]) => {
+ //     setIsSeeVisible(entry.isIntersecting);
+ //    },
+ //    { threshold: 0.6 }
+ //   );
+
+ //   if (seeRef.current) {
+ //    observer.observe(seeRef.current);
+ //   }
+
+ //   return () => {
+ //    observer.disconnect();
+ //   };
+ //  }, []);
+
+ //  useEffect(() => {
+ //   const observer = new IntersectionObserver(
+ //    ([entry]) => {
+ //     setIsArrowVisible(entry.isIntersecting);
+ //    },
+ //    { threshold: 0.6 }
+ //   );
+
+ //   if (arrowRef.current) {
+ //    observer.observe(arrowRef.current);
+ //   }
+
+ //   return () => {
+ //    observer.disconnect();
+ //   };
+ //  }, []);
+
+ useEffect(() => {
+  // let lastScrollTop = 0;
 
   const handleScroll = () => {
    const scrollPosition = window.scrollY;
    const windowHeight = window.innerHeight;
-   let seeThreshold = windowHeight * 4.7;
-   if ( window.innerWidth < 768) {
-    seeThreshold = windowHeight * 7
+   //  let seeThreshold = windowHeight * 4.7;
+   //  if (window.innerWidth < 768) {
+   //   seeThreshold = windowHeight * 7;
+   //  }
+   //  const arrowThreshold = windowHeight * 5.1;
+   //  let stayThreshold = windowHeight * 5.5;
+   //  if (window.innerWidth < 768) {
+   //   stayThreshold = windowHeight * 8.3;
+   //  }
+   //  let shareThreshold = windowHeight * 6.6;
+   //  if (window.innerWidth < 768) {
+   //   shareThreshold = windowHeight * 9.8;
+   //  }
+   let shareChatProps = windowHeight * 6.45;
+   if (window.innerWidth < 768) {
+    shareChatProps = windowHeight * 9.7;
    }
-   const arrowThreshold = windowHeight * 5.1;
-   const stayThreshold = windowHeight * 5.5;
-   const shareThreshold = windowHeight * 6.6;
-   const shareChatProps = windowHeight * 6.45;
-   const triangleProps1 = windowHeight * 6.9;
-   const sharePlaneProps = windowHeight * 7.8;
-   const collaboPlaneProps = windowHeight * 8.15;
-   const scubeProps1 = windowHeight * 5.2;
-   const collaCube = windowHeight * 7.2;
-   const ballThreshold = windowHeight * 8;
-   const historyThreshold = windowHeight * 8.5;
-   const megaChat1Threshold = windowHeight * 8.5;
-   const megaChat2Threshold = windowHeight * 8.5;
+   //  let triangleProps1 = windowHeight * 6.9;
+   //  if (window.innerWidth < 768) {
+   //   triangleProps1 = windowHeight * 9.7;
+   //  }
+   //  const sharePlaneProps = windowHeight * 7.8;
+   //  let collaboPlaneProps = windowHeight * 8.15;
+   //  if (window.innerWidth < 768) {
+   //   collaboPlaneProps = windowHeight * 11.7;
+   //  }
+   let scubeProps1 = windowHeight * 5.2;
+   if (window.innerWidth < 768) {
+    scubeProps1 = windowHeight * 8;
+   }
+   //  const collaCube = windowHeight * 7.2;
+   //  let ballThreshold = windowHeight * 8;
+   //  if (window.innerWidth < 768) {
+   //   ballThreshold = windowHeight * 11.3;
+   //  }
+   //  let historyThreshold = windowHeight * 8.5;
+   //  if (window.innerWidth < 768) {
+   //   historyThreshold = windowHeight * 12.5;
+   //  }
+   //  let megaChat1Threshold = windowHeight * 8.5;
+   //  if (window.innerWidth < 768) {
+   //   megaChat1Threshold = windowHeight * 12.2;
+   //  }
+   //  let megaChat2Threshold = windowHeight * 8.5;
+   //  if (window.innerWidth < 768) {
+   //   megaChat2Threshold = windowHeight * 12.3;
+   //  }
 
-   const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
+   //  const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
    // Set isVisible to true only when scrolling down and beyond the threshold
-   setIsSeeVisible(scrollDirection === "down" && scrollPosition > seeThreshold);
+   //  setIsSeeVisible(scrollDirection === "down" && scrollPosition > seeThreshold);
 
-   setIsArrowVisible(scrollPosition > arrowThreshold);
-   setIsStayVisible(scrollPosition > stayThreshold);
-   setIsShareVisible(scrollPosition > shareThreshold);
+   //  setIsArrowVisible(scrollPosition > arrowThreshold);
+   //  setIsStayVisible(scrollPosition > stayThreshold);
+   //  setIsShareVisible(scrollPosition > shareThreshold);
    setIsShareChatVisible(scrollPosition > shareChatProps);
-   setIsPlaneVisible(scrollPosition > sharePlaneProps);
-   setIsCollaboVisible(scrollPosition > collaboPlaneProps);
+   //  setIsPlaneVisible(scrollPosition > sharePlaneProps);
+   //  setIsCollaboVisible(scrollPosition > collaboPlaneProps);
    setIsScubeVisible(scrollPosition > scubeProps1);
-   setIsTriangleVisible(scrollPosition > triangleProps1);
-   setIsCollaCubeVisible(scrollPosition > collaCube);
-   setIsBallVisible(scrollPosition > ballThreshold);
-   setIsHIstorylVisible(scrollPosition > historyThreshold);
-   setIsMegaChat1lVisible(scrollPosition > megaChat1Threshold);
-   setIsMegaChat2lVisible(scrollPosition > megaChat2Threshold);
+   //  setIsTriangleVisible(scrollPosition > triangleProps1);
+   //  setIsCollaCubeVisible(scrollPosition > collaCube);
+   //  setIsBallVisible(scrollPosition > ballThreshold);
+   //  setIsHIstorylVisible(scrollPosition > historyThreshold);
+   //  setIsMegaChat1lVisible(scrollPosition > megaChat1Threshold);
+   //  setIsMegaChat2lVisible(scrollPosition > megaChat2Threshold);
 
-   lastScrollTop = scrollPosition;
+   //  lastScrollTop = scrollPosition;
   };
 
   // Attach the scroll event listener
@@ -172,78 +318,89 @@ const Projects = () => {
  return (
   <>
    <p className="text-4xl lg:text-5xl font-semibold text-center pt-4 font-poppins leading-none ">
-    <AnimatedDiv style={seeProps}>
+    <AnimatedDiv ref={seeRef} style={seeProps}>
      See what you can do <br /> in one app
     </AnimatedDiv>
    </p>
-   <div className="flex justify-center gap-36 pt-[140px] right-[10%] relative">
-    <AnimatedDiv style={scubeProps}>
-     <img
-      className="object-contain left-[100%] mt-[100%] relative"
-      src={scube}
-      alt=""
-     />
+   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
+    <div></div>
+    <AnimatedDiv
+     style={scubeProps}
+     className="object-contain ml-[-72%] absolute z-40"
+    >
+     <img src={scube} alt="" />
     </AnimatedDiv>
-    <img className="" src={card1} alt="" />
+    <img className="pt-10" src={card1} alt="" />
     <div className="flex flex-col items-start">
-     <AnimatedDiv style={arrowProps}>
+     <AnimatedDiv ref={arrowRef} style={arrowProps}>
       <img
-       className="arrow object-contain left-[-44%] pt-5 relative"
+       className="arrow hidden lg:block object-contain left-[-44%] pt-5 relative"
        src={arrow}
        alt=""
       />
      </AnimatedDiv>
-     <p className="font-poppins text-4xl font-semibold">
-      <AnimatedDiv style={stayProps}>
-       Stay focused <br /> whenever, wherever
+     <div className="px-20">
+      <AnimatedDiv
+       className="font-poppins pt-20 text-2xl lg:text-4xl font-semibold"
+       style={stayProps}
+       ref={stayRef}
+      >
+       <p>
+        Stay focused <br /> whenever, wherever
+       </p>
       </AnimatedDiv>
-     </p>
-     <p className="font-inter text-lg font-medium leading-6 py-7 ">
-      We&apos;re a growing family of 382,081 <br /> designers and makers from
-      <br /> around the world
-     </p>
-     <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
-      Watch how it works
-     </button>
+      <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7 ">
+       We&apos;re a growing family of 382,081 <br className="hidden lg:block" />{" "}
+       designers and makers from
+       <br className="hidden lg:block" /> around the world
+      </p>
+      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+       Watch how it works
+      </button>
+     </div>
     </div>
    </div>
-   <div className="flex justify-center gap-36 pt-[140px]">
-    <div className="flex flex-col">
-     <img className="" src={card2} alt="" />
-     <AnimatedDiv style={triangleProps}>
+   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
+    <div className="flex flex-col flex-start">
+     <img className="pt-10" src={card2} alt="" />
+     <AnimatedDiv ref={triangleRef} style={triangleProps}>
       <img className="top-[-29px] relative" src={triangle} alt="" />
      </AnimatedDiv>
     </div>
     <div className="flex flex-col items-start">
-     <AnimatedDiv style={shareChatProps}>
+     <AnimatedDiv ref={shareRef} style={shareChatProps}>
       <img
-       className="arrow object-contain left-[-44%] pt-5 relative"
+       className="chatcard hidden lg:block object-contain left-[-44%] pt-5 relative"
        src={chatpro}
        alt=""
       />
      </AnimatedDiv>
-     <p className="font-poppins text-4xl font-semibold">
-      <AnimatedDiv style={shareProps}>
-       Share files at the <br /> right time
-      </AnimatedDiv>
-     </p>
-     <p className="font-inter text-lg font-medium leading-6 py-7 ">
-      We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
-      <br /> around the world
-     </p>
-     <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
-      Watch how it works
-     </button>
+     <div className="px-20">
+      <p className="font-poppins text-2xl lg:text-4xl font-semibold">
+       <AnimatedDiv ref={sharePropsRef} style={shareProps}>
+        Share files at the <br className="hidden lg:block" /> right time
+       </AnimatedDiv>
+      </p>
+      <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7">
+       We&apos;re a growing family of 382,081 <br className="hidden lg:block" />{" "}
+       designers and makers from <br className="hidden lg:block" /> around the
+       world
+      </p>
+      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+       Watch how it works
+      </button>
+     </div>
     </div>
    </div>
-   <div className="flex justify-center gap-36 pt-[140px] right-[10%]  relative">
+   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
     <AnimatedDiv
-     className="object-contain z-30 absolute left-[15%]"
+     ref={ballRef}
+     className="object-contain left-[11%] mt-[-30%] z-30 absolute lg:left-[15%]"
      style={ballProps}
     >
      <img src={ball} alt="" />
     </AnimatedDiv>
-    <AnimatedDiv className="z-40" style={collaCubeProps}>
+    <AnimatedDiv ref={collaboCubeRef} className="z-40" style={collaCubeProps}>
      <img
       className="relative w-20 object-contain left-[1100%] top-[40%]"
       src={scube}
@@ -252,66 +409,73 @@ const Projects = () => {
     </AnimatedDiv>
     <img className="relative z-10" src={card3} alt="" />
     <div className="flex flex-col items-start">
-     <AnimatedDiv style={planeProps}>
+     <AnimatedDiv ref={planeRef} style={planeProps}>
       <img
-       className="arrow object-contain left-[-44%] pt-5 relative"
+       className="plane hidden lg:block object-contain left-[-44%] pt-5 relative"
        src={plane}
        alt=""
       />
      </AnimatedDiv>
-     <p className="font-poppins text-4xl font-semibold">
-      <AnimatedDiv style={collaboProps}>
-       Collaborate from <br /> anywhere
-      </AnimatedDiv>
-     </p>
-     <p className="font-inter text-lg font-medium leading-6 py-7 ">
-      <AnimatedDiv>
-       We&apos;re a growing family of 382,081 <br /> designers and makers from{" "}
-       <br /> around the world
-      </AnimatedDiv>
-     </p>
-     <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
-      Get Solo Desktop
-     </button>
+     <div className="px-20 ">
+      <p className="font-poppins text-2xl lg:text-4xl font-semibold">
+       <AnimatedDiv ref={collaboRef} style={collaboProps}>
+        Collaborate from <br className="hidden lg:block" /> anywhere
+       </AnimatedDiv>
+      </p>
+      <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7">
+       <AnimatedDiv>
+        We&apos;re a growing family of 382,081{" "}
+        <br className="hidden lg:block" /> designers and makers from{" "}
+        <br className="hidden lg:block" /> around the world
+       </AnimatedDiv>
+      </p>
+      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+       Schedule and demo
+      </button>
+     </div>
     </div>
    </div>
 
-   <div className="white-board-continter flex justify-center ">
-    <div className="bg-custom-whiteboard w-[90%] rounded-3xl shadow-md p-5 flex">
-     <div className=" ml-20 mt-40 mb-40 min-w-[60%]">
-      <p className="text-custom-graytext font-bold">
+   <div className="white-board-continter flex justify-center mt-20">
+    <div className="bg-custom-whiteboard w-[90%] rounded-3xl shadow-lg p-5 flex flex-col-reverse">
+     <div className=" lg:ml-20 lg:mt-40 lg:mb-40 lg:min-w-[60%] relative">
+      <p className="text-custom-graytext text-sm lg:text-base font-bold">
        EASILY FIND WHAT YOU’RE LOOKING FOR
       </p>
-      <p className="font-poppins font-semibold text-[3.3rem] pt-7 leading-tight">
-       <AnimatedDiv style={historyProps}>
-        History you can <br /> see and search
+      <p className="font-poppins font-semibold text-3xl lg:text-[3.3rem] pt-7 leading-tight">
+       <AnimatedDiv ref={historyRef} style={historyProps}>
+        History you can see and search
        </AnimatedDiv>
       </p>
-      <p className="font-poppins text-lg py-7 text-custom-boldtext ">
+      <p className="font-poppins text-[15px] lg:text-lg py-7 text-custom-textboard ">
        We&apos;re a growing family of 382,081 designers <br /> and makers from
        around the world
       </p>
-      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+      <button className="flex text-lg items-center gap-2 font-bold mb-8 border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
        Learn more
       </button>
      </div>
+     <div className="flex justify-center items-center">
+      <img
+       className="object-contain w-[60%] lg:right-[27%] relative"
+       src={figure2}
+       alt=""
+      />
+     </div>
      <AnimatedDiv
-      className="megaChat1 object-contain absolute left-[55%]"
-      style={megaChat1Props}
-     >
-      <img src={megaChat1} alt="" />
-     </AnimatedDiv>
-     <AnimatedDiv
-      className="megaChat2 object-contain absolute right-[1%]"
+      ref={megaChat2Ref}
+      className="megaChat2 w-[24%] left-[55%] top-[10%] object-contain relative  lg:absolute lg:right-[1%]"
       style={megaChat2Props}
      >
       <img src={megaChat2} alt="" />
      </AnimatedDiv>
-     <img
-      className="object-contain right-[27%] relative"
-      src={figure2}
-      alt=""
-     />
+     <AnimatedDiv
+      ref={megaChat1Ref}
+      className="megaChat1 w-[19%] left-[25%]  object-contain relative mb-[-20%] lg:absolute lg:left-[55%]"
+      style={megaChat1Props}
+     >
+      <img src={megaChat1} alt="" />
+     </AnimatedDiv>
     </div>
    </div>
    <Svg />

@@ -6,7 +6,7 @@ const Navbar = () => {
   <>
    <div className="NavWrapper flex px-10 lg:px-28 py-12 font-inter font-semibold items-center justify-between">
     <div className="w-36">
-     <img className="object-contain min-w-20 min-w-36" src={solo} alt="" />
+     <img className="object-contain min-w-36" src={solo} alt="" />
     </div>
     <ul className="MenuList hidden gap-10 text-custom-additional">
      <li>Downloads</li>
