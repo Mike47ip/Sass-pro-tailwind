@@ -456,7 +456,7 @@ export const Integration = () => {
      <div className="relative left-[-10%]">
       <AnimatedDiv style={cloudProps} ref={cloudsRef}>
        <img
-        className="absolute left-[7%] mt-[-14%] lg:right-[365px] lg:mt-[-2%]"
+        className="absolute w-[50%] left-[7%] mt-[-14%] lg:right-[365px] lg:mt-[-2%]"
         src={clouds}
         alt=""
        />
