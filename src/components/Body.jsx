@@ -67,11 +67,15 @@ const Body = () => {
    let bikeThreshold = windowHeight * 3;
    if (window.innerWidth < 768) {
     bikeThreshold = windowHeight * 1.7;
+   } else if (window.innerWidth > 768) {
+    bikeThreshold = windowHeight * 0.7;
    }
 
    let fastThreshold = windowHeight * 3.4;
    if (window.innerWidth < 768) {
     fastThreshold = windowHeight * 4.5;
+   } else if (window.innerWidth > 768) {
+    fastThreshold = windowHeight * 3.8;
    }
    const phoneThreshold = windowHeight * 1.7;
    console.log("phone:", phoneThreshold);
@@ -100,28 +104,28 @@ const Body = () => {
  return (
   <>
    <section className="relative">
-    <div className="flex flex-col gap-16 justify-center items-center overflow-hidden ">
-     <div className="Paragraph pt-5">
+    <div className="flex flex-col gap-16 justify-center items-center overflow-hidden  md:flex-row md:px-14">
+     <div className="Paragraph pt-5 md:flex md:flex-col md:items-start md:min-w-[65%]">
       <p className="text-center text-custom-graytext font-bold pb-8">
        RISK-FREE 30 DAY TRIAL
       </p>
-      <div className="Props font-inter font-bold text-5xl lg:text-7xl text-center leading-none">
+      <div className="Props font-inter font-bold text-5xl lg:text-7xl text-center leading-none md:text-start">
        The best way <br /> to organize <br />{" "}
        <AnimatedDiv style={props}>your work.</AnimatedDiv>
       </div>
       <div className="text-custom-textboard text-center lg:text-start font-poppins text-lg pt-6">
        Organize your tasks, lists and <br /> reminders in one app.
       </div>
-      <div className="flex flex-col justify-center items-center gap-6 pt-10 text-lg font-inter">
-       <button className="bg-custom-primary px-6 py-4 font-bold w-[45%] text-white rounded-2xl hover:bg-custom-deepcoral">
+      <div className="flex flex-col justify-center items-center gap-6 pt-10 text-lg font-inter md:flex-row md:w-[100%] md:justify-start">
+       <button className="bg-custom-primary px-6 md:px-3 md:w-[30%] py-4 font-bold md:text-base w-[45%] text-white rounded-2xl hover:bg-custom-deepcoral">
         Try it free
        </button>
-       <button className="flex justify-center items-center gap-2 font-semibold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+       <button className="flex justify-center items-center gap-2 md:gap-1 md:w-[50%] font-semibold  border-2 border-black border-solid rounded-2xl px-6 md:px-3 md:text-base py-4 hover:bg-black hover:text-white">
         <ion-icon name="play"></ion-icon>Watch how it works
        </button>
       </div>
      </div>
-     <div>
+     <div className="md:w-[50%]">
       <AnimatedDiv
        style={{
         ...useSpring({
@@ -130,27 +134,30 @@ const Body = () => {
          config: { tension: 100, friction: 20 },
         }),
        }}
-       className={isVisible ? "animate" : ""}
+       className="max-w-[80%]"
       >
        <img
-        className="bike object-contain max-w-[40%] absolute"
+        className="bike object-contain max-w-[40%] absolute md:w-[100%] md:mt-[-120%] md:min-w-[150%] md:right-[50%]"
         src={bike}
         alt=""
        />
       </AnimatedDiv>
-      <img className="Figures overflow-hidden" src={Figures} alt="" />
+      <img
+       className="Figures overflow-hidden md:absolute md:w-[90%] md:left-[40%] md:mt-[-30%]"
+       src={Figures}
+       alt=""
+      />
      </div>
     </div>
-    <p className="hidden lg:block text-center text-custom-textboard font-inter">
+    <p className="hidden  md:block text-center md:pt-32  text-custom-textboard font-inter">
      Thousands of teams worldwide are using Solo
     </p>
-    <div className="hidden lg:flex justify-center gap-4 pt-5 pb-32">
-     <img src={goldlines} alt="" />
-     <img src={rotashow} alt="" />
-     <img src={travelers} alt="" />
-     <img src={velocity} alt="" />
-     <img src={goldlines} alt="" />
-     <img src={waves} alt="" />
+    <div className="hidden md: w-[100%] md:flex justify-center items-center px-5 gap-4 pt-5 pb-32">
+     <img className="w-[20%]" src={goldlines} alt="" />
+     <img className="w-[20%]" src={rotashow} alt="" />
+     <img className="w-[20%]" src={travelers} alt="" />
+     <img className="w-[20%]" src={velocity} alt="" />
+     <img className="w-[20%]" src={waves} alt="" />
     </div>
    </section>
 

@@ -30,6 +30,7 @@ const Projects = () => {
  const historyRef = useRef(null);
  const megaChat2Ref = useRef(null);
  const megaChat1Ref = useRef(null);
+ const scubeRef = useRef(null);
  const [isSeeVisible, setIsSeeVisible] = useState(false);
  const [isArrowVisible, setIsArrowVisible] = useState(false);
  const [isStayVisible, setIsStayVisible] = useState(false);
@@ -193,6 +194,11 @@ const Projects = () => {
  useEffect(() => {
   return handleIntersection(megaChat1Ref, setIsMegaChat1lVisible);
  }, [megaChat1Ref]);
+ 
+ useEffect(() => {
+  return handleIntersection(scubeRef, setIsScubeVisible);
+ }, [scubeRef]);
+
 
  // FOR SINGLE USE CASE
 
@@ -262,10 +268,10 @@ const Projects = () => {
    //  if (window.innerWidth < 768) {
    //   collaboPlaneProps = windowHeight * 11.7;
    //  }
-   let scubeProps1 = windowHeight * 5.2;
-   if (window.innerWidth < 768) {
-    scubeProps1 = windowHeight * 8;
-   }
+  //  let scubeProps1 = windowHeight * 5.2;
+  //  if (window.innerWidth < 768) {
+  //   scubeProps1 = windowHeight * 8;
+  //  }
    //  const collaCube = windowHeight * 7.2;
    //  let ballThreshold = windowHeight * 8;
    //  if (window.innerWidth < 768) {
@@ -295,7 +301,7 @@ const Projects = () => {
    setIsShareChatVisible(scrollPosition > shareChatProps);
    //  setIsPlaneVisible(scrollPosition > sharePlaneProps);
    //  setIsCollaboVisible(scrollPosition > collaboPlaneProps);
-   setIsScubeVisible(scrollPosition > scubeProps1);
+  //  setIsScubeVisible(scrollPosition > scubeProps1);
    //  setIsTriangleVisible(scrollPosition > triangleProps1);
    //  setIsCollaCubeVisible(scrollPosition > collaCube);
    //  setIsBallVisible(scrollPosition > ballThreshold);
@@ -326,6 +332,7 @@ const Projects = () => {
     <div></div>
     <AnimatedDiv
      style={scubeProps}
+     ref={scubeRef}
      className="object-contain ml-[-72%] absolute z-40"
     >
      <img src={scube} alt="" />
