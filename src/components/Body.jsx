@@ -108,18 +108,18 @@ const Body = () => {
   <>
    <section className="relative">
     <div className="flex flex-col gap-16 justify-center items-center overflow-hidden  md:flex-row md:px-14">
-     <div className="Paragraph pt-5 md:flex md:flex-col md:items-start md:min-w-[65%]">
-      <p className="text-center text-custom-graytext font-bold pb-8">
+     <div className="Paragraph pt-5 md:flex md:flex-col md:items-start md:min-w-[65%] lg:min-w-[50%]">
+      <p className="text-center text-custom-graytext font-bold pb-8 lg:text-sm">
        RISK-FREE 30 DAY TRIAL
       </p>
-      <div className="Props font-inter font-bold text-5xl lg:text-7xl text-center leading-none md:text-start">
+      <div className="Props font-inter font-bold text-5xl lg:text-5xl text-center leading-none md:text-start ">
        The best way <br /> to organize <br />{" "}
        <AnimatedDiv style={props}>your work.</AnimatedDiv>
       </div>
       <div className="text-custom-textboard text-center lg:text-start font-poppins text-lg pt-6">
        Organize your tasks, lists and <br /> reminders in one app.
       </div>
-      <div className="flex flex-col justify-center items-center gap-6 pt-10 text-lg font-inter md:flex-row md:w-[100%] md:justify-start">
+      <div className="flex flex-col justify-center items-center gap-6 pt-10 text-lg font-inter md:flex-row md:w-[100%] lg:w-[90%] md:justify-start">
        <button className="bg-custom-primary px-6 md:px-3 md:w-[30%] py-4 font-bold md:text-base w-[45%] text-white rounded-2xl hover:bg-custom-deepcoral">
         Try it free
        </button>
@@ -140,13 +140,13 @@ const Body = () => {
        className="max-w-[80%]"
       >
        <img
-        className="bike object-contain max-w-[40%] absolute md:w-[100%] md:mt-[-120%] md:min-w-[150%] md:right-[50%]"
+        className="bike object-contain max-w-[40%] absolute md:w-[100%] md:mt-[-120%] md:min-w-[150%] md:right-[50%] lg:mt-[-50%] lg:right-[43%] lg:min-w-[90%]"
         src={bike}
         alt=""
        />
       </AnimatedDiv>
       <img
-       className="Figures overflow-hidden md:absolute md:w-[90%] md:left-[40%] md:mt-[-30%]"
+       className="Figures overflow-hidden md:absolute md:w-[90%] md:left-[40%] md:mt-[-30%] lg:w-[85%] lg:mt-[-20%]"
        src={Figures}
        alt=""
       />
@@ -166,7 +166,7 @@ const Body = () => {
 
    <section>
     <div className="BoardWrapper flex justify-center">
-     <div className="flex flex-col md:flex-row-reverse justify-center items-center lg:flex-row lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] md:h-[25rem] rounded-3xl px-22">
+     <div className="flex flex-col md:flex-row-reverse justify-center items-center lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] md:h-[25rem] lg:h-[40rem] rounded-3xl px-22">
       <div className="flex justify-center items-center md:pr-1 flex-col gap-8 relative md:w-[40%] lg:w-[35%] lg:top-[30%] z-20 text-white md:items-start">
        <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-0">
         <AnimatedDiv style={keeping}>Keeping it all <br className="md:block hidden" /> together</AnimatedDiv>
@@ -186,13 +186,13 @@ const Body = () => {
         }}
        >
         <img
-         className="relative object-contain w-[65%]  ml-[44%] mt-[2%] z-40 lg:left-[-10%] lg:mt-[20%]"
+         className="relative object-contain w-[65%]   ml-[44%] mt-[2%] z-40 lg:left-[-4%] lg:mt-[45%]"
          src={chat1}
          alt=""
         />
        </AnimatedDiv>
        <AnimatedDiv
-        className="chat2 relative object-contain w-[54%] mt-[20%] ml-[-12%] lg:mt-[-200px] z-40 lg:left-[37%]"
+        className="chat2 relative object-contain w-[54%] mt-[20%] ml-[-12%] lg:mt-[10%] z-40 lg:left-[-4%] lg:w-[53%]"
         style={{
          ...chat2Props,
         }}
@@ -200,13 +200,13 @@ const Body = () => {
         <img src={chat2} alt="" />
        </AnimatedDiv>
        <AnimatedDiv
-        className="relative w-[55%] ml-[20%] mt-[-80%] lg:mt-[-42%] lg:left-[19%] lg:w-[6.7rem] z-20"
+        className="relative w-[55%] ml-[20%] mt-[-80%] lg:mt-[-80%] lg:left-[-4%] lg:w-[77%] z-20 "
         style={phoneProps}
        >
         <img src={iphone} alt="" />
        </AnimatedDiv>
        <img
-        className=" w-[64%] mt-[-15%] ml-[-1%] absolute z-10 lg:left-[4%] lg:mt-[-14%]"
+        className="w-[64%] mt-[-15%] ml-[-1%] absolute z-10 lg:left-[4%] lg:mt-[-17%] lg:w-[67%]"
         src={stairs}
         alt=""
        />
@@ -216,7 +216,7 @@ const Body = () => {
     </div>
     <div className="gradientContainer flex justify-center">
      <div className="gradient w-11/12 mt-[-15px] z-10 md:h-[15rem] rounded-b-2xl flex justify-center items-center">
-      <ul className="md:w-[100%] md:p-10 pt-32 flex flex-col md:flex-row md:justify-center  md:items-center font-poppins gap-24 md:gap-11">
+      <ul className="md:w-[100%] md:p-10 pt-32 flex flex-col md:flex-row md:justify-center  md:items-center font-poppins gap-24 md:gap-11 lg:gap-20">
        <li className="px-10 py-5  flex flex-col gap-4">
         <span className="lg:text-7xl text-6xl font-semibold text-center">
          100<span style={{ verticalAlign: "super", fontSize: "24px" }}>+</span>
