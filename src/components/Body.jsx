@@ -76,6 +76,8 @@ const Body = () => {
     fastThreshold = windowHeight * 4.5;
    } else if (window.innerWidth > 768) {
     fastThreshold = windowHeight * 2.3;
+   } else if (window.innerWidth > 1023) {
+    fastThreshold = windowHeight * 3;
    }
    let phoneThreshold = windowHeight * 1.7;
    if (window.innerWidth > 768) {
@@ -249,7 +251,7 @@ const Body = () => {
      <p className="text-4xl lg:text-5xl font-semibold text-center pt-4">
       <AnimatedDiv style={fastProps}>Fast, simple & effortless.</AnimatedDiv>
      </p>
-     <div className="flex pt-16 flex-col md:flex-row justify-center items-center gap-6 lg:gap-16">
+     <div className="flex pt-16 flex-col md:flex-row justify-center items-center gap-6 lg:gap-16 lg:px-4">
       <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0   border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
        <svg
         className="laptop"
@@ -266,7 +268,7 @@ const Body = () => {
        <span className="bg-custom-graytext text-white px-3 py-1.5 rounded-2xl text-xs">
         Step 1
        </span>
-       <p className="opacity-80">Download the app</p>
+       <p className="opacity-80 lg:whitespace-nowrap">Download the app</p>
       </div>
       <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0   border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
        <svg
@@ -284,7 +286,7 @@ const Body = () => {
        <span className="bg-custom-graytext text-white px-3 py-1.5 rounded-2xl text-xs">
         Step 2
        </span>
-       <p className="opacity-80">Invite teammates</p>
+       <p className="opacity-80 lg:whitespace-nowrap">Invite teammates</p>
       </div>
       <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0   border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
        <svg
@@ -302,7 +304,7 @@ const Body = () => {
        <span className="bg-custom-graytext text-white px-3 py-1.5 rounded-2xl text-xs">
         Step 3
        </span>
-       <p className="opacity-80">Create workspace</p>
+       <p className="opacity-80 lg:whitespace-nowrap">Create workspace</p>
       </div>
       <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0  py-10 ">
        <svg
@@ -320,7 +322,7 @@ const Body = () => {
        <span className="bg-custom-graytext text-white px-3 py-1.5 rounded-2xl text-xs">
         Step 4
        </span>
-       <p className="opacity-80">Track performance</p>
+       <p className="opacity-80 lg:whitespace-nowrap">Track performance</p>
       </div>
      </div>
     </div>
