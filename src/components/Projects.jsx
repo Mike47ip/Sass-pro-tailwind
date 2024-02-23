@@ -194,11 +194,10 @@ const Projects = () => {
  useEffect(() => {
   return handleIntersection(megaChat1Ref, setIsMegaChat1lVisible);
  }, [megaChat1Ref]);
- 
+
  useEffect(() => {
   return handleIntersection(scubeRef, setIsScubeVisible);
  }, [scubeRef]);
-
 
  // FOR SINGLE USE CASE
 
@@ -268,10 +267,10 @@ const Projects = () => {
    //  if (window.innerWidth < 768) {
    //   collaboPlaneProps = windowHeight * 11.7;
    //  }
-  //  let scubeProps1 = windowHeight * 5.2;
-  //  if (window.innerWidth < 768) {
-  //   scubeProps1 = windowHeight * 8;
-  //  }
+   //  let scubeProps1 = windowHeight * 5.2;
+   //  if (window.innerWidth < 768) {
+   //   scubeProps1 = windowHeight * 8;
+   //  }
    //  const collaCube = windowHeight * 7.2;
    //  let ballThreshold = windowHeight * 8;
    //  if (window.innerWidth < 768) {
@@ -301,7 +300,7 @@ const Projects = () => {
    setIsShareChatVisible(scrollPosition > shareChatProps);
    //  setIsPlaneVisible(scrollPosition > sharePlaneProps);
    //  setIsCollaboVisible(scrollPosition > collaboPlaneProps);
-  //  setIsScubeVisible(scrollPosition > scubeProps1);
+   //  setIsScubeVisible(scrollPosition > scubeProps1);
    //  setIsTriangleVisible(scrollPosition > triangleProps1);
    //  setIsCollaCubeVisible(scrollPosition > collaCube);
    //  setIsBallVisible(scrollPosition > ballThreshold);
@@ -328,27 +327,26 @@ const Projects = () => {
      See what you can do <br /> in one app
     </AnimatedDiv>
    </p>
-   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
-    <div></div>
+   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9  lg:pt-[140px] lg:gap-0 relative lg:w-[100%]">
     <AnimatedDiv
      style={scubeProps}
      ref={scubeRef}
-     className="object-contain ml-[-72%] absolute z-40"
+     className="object-contain ml-[-72%] lg:ml-[-86%] lg:mt-[20%] absolute z-40 lg:max-w-[14%]"
     >
      <img src={scube} alt="" />
     </AnimatedDiv>
-    <img className="pt-10" src={card1} alt="" />
-    <div className="flex flex-col items-start">
+    <img className="pt-10 lg:min-w-[54%] lg:pl-[3%] " src={card1} alt="" />
+    <div className="flex flex-col items-start lg:w-[150%]">
      <AnimatedDiv ref={arrowRef} style={arrowProps}>
       <img
-       className="arrow hidden lg:block object-contain left-[-44%] pt-5 relative"
+       className="arrow hidden lg:block object-contain left-[-44%] pt-5 relative lg:w-[70%] lg:left-[-7%]"
        src={arrow}
        alt=""
       />
      </AnimatedDiv>
-     <div className="px-20">
+     <div className="pl-20">
       <AnimatedDiv
-       className="font-poppins pt-20 text-2xl lg:text-4xl font-semibold"
+       className="font-poppins pt-20 text-2xl lg:text-3xl font-semibold lg:pt-0"
        style={stayProps}
        ref={stayRef}
       >
@@ -356,7 +354,7 @@ const Projects = () => {
         Stay focused <br /> whenever, wherever
        </p>
       </AnimatedDiv>
-      <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7 ">
+      <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7 lg:text-[16px]">
        We&apos;re a growing family of 382,081 <br className="hidden lg:block" />{" "}
        designers and makers from
        <br className="hidden lg:block" /> around the world
@@ -367,28 +365,28 @@ const Projects = () => {
      </div>
     </div>
    </div>
-   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
-    <div className="flex flex-col flex-start">
-     <img className="pt-10" src={card2} alt="" />
+   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-0 lg:pt-[140px] lg:right-[3%] relative">
+    <div className="flex flex-col flex-start ">
+     <img className="pt-10 lg:max-w-[91%] relative" src={card2} alt="" />
      <AnimatedDiv ref={triangleRef} style={triangleProps}>
-      <img className="top-[-29px] relative" src={triangle} alt="" />
+      <img className="top-[-29px] relative lg:w-[32%]" src={triangle} alt="" />
      </AnimatedDiv>
     </div>
     <div className="flex flex-col items-start">
      <AnimatedDiv ref={shareRef} style={shareChatProps}>
       <img
-       className="chatcard hidden lg:block object-contain left-[-44%] pt-5 relative"
+       className="chatcard hidden lg:block object-contain left-[-44%] pt-5 lg:pt-0 relative lg:mt-[-20%] lg:w-[90%] lg:left-[-37%]"
        src={chatpro}
        alt=""
       />
      </AnimatedDiv>
-     <div className="px-20">
-      <p className="font-poppins text-2xl lg:text-4xl font-semibold">
+     <div className="px-20 lg:px-0 lg:pl-4">
+      <p className="font-poppins text-2xl lg:text-3xl font-semibold">
        <AnimatedDiv ref={sharePropsRef} style={shareProps}>
         Share files at the <br className="hidden lg:block" /> right time
        </AnimatedDiv>
       </p>
-      <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7">
+      <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7 lg:text-[16px]">
        We&apos;re a growing family of 382,081 <br className="hidden lg:block" />{" "}
        designers and makers from <br className="hidden lg:block" /> around the
        world
@@ -399,7 +397,7 @@ const Projects = () => {
      </div>
     </div>
    </div>
-   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-36 lg:pt-[140px] lg:right-[10%] relative">
+   <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-0 lg:pt-[140px] lg:right-[7%]  relative">
     <AnimatedDiv
      ref={ballRef}
      className="object-contain left-[11%] mt-[-30%] z-30 absolute lg:left-[15%]"
@@ -407,29 +405,29 @@ const Projects = () => {
     >
      <img src={ball} alt="" />
     </AnimatedDiv>
-    <AnimatedDiv ref={collaboCubeRef} className="z-40" style={collaCubeProps}>
+    {/* <AnimatedDiv ref={collaboCubeRef} className="z-40" style={collaCubeProps}>
      <img
       className="relative w-20 object-contain left-[1100%] top-[40%]"
       src={scube}
       alt=""
      />
-    </AnimatedDiv>
-    <img className="relative z-10" src={card3} alt="" />
-    <div className="flex flex-col items-start">
+    </AnimatedDiv> */}
+    <img className="relative z-10 lg:max-w-[60%]" src={card3} alt="" />
+    <div className="flex flex-col items-start lg:w-[29%]">
      <AnimatedDiv ref={planeRef} style={planeProps}>
       <img
-       className="plane hidden lg:block object-contain left-[-44%] pt-5 relative"
+       className="plane hidden lg:block object-contain left-[-44%] pt-5 lg:pt-0 relative lg:left-[-32%]"
        src={plane}
        alt=""
       />
      </AnimatedDiv>
-     <div className="px-20 ">
-      <p className="font-poppins text-2xl lg:text-4xl font-semibold">
+     <div className="px-20 lg:px-0 lg:pl-[11%] ">
+      <p className="font-poppins text-2xl lg:text-3xl font-semibold">
        <AnimatedDiv ref={collaboRef} style={collaboProps}>
         Collaborate from <br className="hidden lg:block" /> anywhere
        </AnimatedDiv>
       </p>
-      <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7">
+      <p className="font-inter text-[16px] lg:text-lg font-medium leading-6 py-7 lg:text-[16px]">
        <AnimatedDiv>
         We&apos;re a growing family of 382,081{" "}
         <br className="hidden lg:block" /> designers and makers from{" "}
