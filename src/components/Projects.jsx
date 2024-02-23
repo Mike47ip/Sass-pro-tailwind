@@ -24,7 +24,7 @@ const Projects = () => {
  const shareRef = useRef(null);
  const sharePropsRef = useRef(null);
  const ballRef = useRef(null);
- const collaboCubeRef = useRef(null);
+//  const collaboCubeRef = useRef(null);
  const planeRef = useRef(null);
  const collaboRef = useRef(null);
  const historyRef = useRef(null);
@@ -40,7 +40,7 @@ const Projects = () => {
  const [isCollaboVisible, setIsCollaboVisible] = useState(false);
  const [isScubeVisible, setIsScubeVisible] = useState(false);
  const [isTriangleVisible, setIsTriangleVisible] = useState(false);
- const [isCollaCubeVisible, setIsCollaCubeVisible] = useState(false);
+//  const [isCollaCubeVisible, setIsCollaCubeVisible] = useState(false);
  const [isBallVisible, setIsBallVisible] = useState(false);
  const [isHistoryVisible, setIsHIstorylVisible] = useState(false);
  const [isMegaChat1Visible, setIsMegaChat1lVisible] = useState(false);
@@ -100,11 +100,11 @@ const Projects = () => {
   config: { tension: 250, friction: 21, mass: 2 },
  });
 
- const collaCubeProps = useSpring({
-  opacity: isCollaCubeVisible ? 1 : 0,
-  transform: isCollaCubeVisible ? "translateY(0)" : "translateY(60px)",
-  config: { tension: 250, friction: 21, mass: 2 },
- });
+//  const collaCubeProps = useSpring({
+//   opacity: isCollaCubeVisible ? 1 : 0,
+//   transform: isCollaCubeVisible ? "translateY(0)" : "translateY(60px)",
+//   config: { tension: 250, friction: 21, mass: 2 },
+//  });
 
  const ballProps = useSpring({
   opacity: isBallVisible ? 1 : 0,
@@ -171,9 +171,9 @@ const Projects = () => {
   return handleIntersection(ballRef, setIsBallVisible);
  }, [ballRef]);
 
- useEffect(() => {
-  return handleIntersection(collaboCubeRef, setIsCollaCubeVisible);
- }, [collaboCubeRef]);
+//  useEffect(() => {
+//   return handleIntersection(collaboCubeRef, setIsCollaCubeVisible);
+//  }, [collaboCubeRef]);
 
  useEffect(() => {
   return handleIntersection(planeRef, setIsPlaneVisible);
@@ -442,17 +442,17 @@ const Projects = () => {
    </div>
 
    <div className="white-board-continter flex justify-center mt-20">
-    <div className="bg-custom-whiteboard w-[90%] rounded-3xl shadow-lg p-5 flex flex-col-reverse">
+    <div className="bg-custom-whiteboard w-[90%] rounded-3xl shadow-lg p-5 flex flex-col-reverse lg:flex-row lg:h-[36rem]">
      <div className=" lg:ml-20 lg:mt-40 lg:mb-40 lg:min-w-[60%] relative">
       <p className="text-custom-graytext text-sm lg:text-base font-bold">
        EASILY FIND WHAT YOU’RE LOOKING FOR
       </p>
-      <p className="font-poppins font-semibold text-3xl lg:text-[3.3rem] pt-7 leading-tight">
+      <p className="font-poppins font-semibold text-3xl  pt-7 lg:pt-1 leading-tight lg:text-[40px] lg:leading-snug">
        <AnimatedDiv ref={historyRef} style={historyProps}>
-        History you can see and search
+        History you can <br className="hidden lg:block" /> see and search
        </AnimatedDiv>
       </p>
-      <p className="font-poppins text-[15px] lg:text-lg py-7 text-custom-textboard ">
+      <p className="font-poppins text-[15px] py-7 text-custom-textboard lg:text-[16px]">
        We&apos;re a growing family of 382,081 designers <br /> and makers from
        around the world
       </p>
@@ -462,14 +462,14 @@ const Projects = () => {
      </div>
      <div className="flex justify-center items-center">
       <img
-       className="object-contain w-[60%] lg:right-[27%] relative"
+       className="object-contain w-[60%] lg:right-[27%] relative lg:min-w-[275%]"
        src={figure2}
        alt=""
       />
      </div>
      <AnimatedDiv
       ref={megaChat2Ref}
-      className="megaChat2 w-[24%] left-[55%] top-[10%] object-contain relative  lg:absolute lg:right-[1%]"
+      className="megaChat2 w-[24%] left-[55%] top-[10%] object-contain relative lg:hidden lg:absolute lg:right-[1%]"
       style={megaChat2Props}
      >
       <img src={megaChat2} alt="" />
@@ -480,6 +480,13 @@ const Projects = () => {
       style={megaChat1Props}
      >
       <img src={megaChat1} alt="" />
+     </AnimatedDiv>
+     <AnimatedDiv
+      ref={megaChat1Ref}
+      className="megaChat1 w-[24%] left-[25%]  object-contain relative mb-[-20%] lg:absolute lg:left-[71%]"
+      style={megaChat1Props}
+     >
+      <img src={megaChat2} alt="" />
      </AnimatedDiv>
     </div>
    </div>
