@@ -309,25 +309,25 @@ export const Integration = () => {
  return (
   <>
    <section>
-    <section className="flex flex-col lg:flex-row justify-center items-center gap-[100px]">
-     <div className=" w-[70%] lg:w-[40%]">
+    <section className="flex flex-col lg:flex-col justify-center items-center gap-[100px]">
+     <div className="lg:flex lg:flex-col lg:justify-center lg:items-center w-[70%] lg:w-[100%]">
       <p className=" text-custom-graytext font-bold py-4">AMAZING FEATURES</p>
       <h1 id="powerful" className="powerful">
        <AnimatedDiv
         ref={powerRef}
         style={powerProps}
-        className="powerful font-poppins text-3xl lg:text-6xl leading-snug font-semibold"
+        className="powerful font-poppins text-3xl lg:text-5xl leading-snug font-semibold"
        >
-        Powerful <br className="hidden lg:block" /> integrations
+        Powerful <br className="block lg:hidden" /> integrations
        </AnimatedDiv>
       </h1>
-      <div className="text-custom-textboard font-poppins lg:text-lg pt-6 ">
+      <div className="text-custom-textboard font-poppins lg:text-lg pt-6 lg:text-center">
        We&apos;re a growing family of 382,081 designers and{" "}
        <br className="hidden lg:block" /> makers from around the world
       </div>
      </div>
      <div className="grid grid-cols-3 items-center justify-center w-[60%] gap-0">
-      <div className="w-[60.33%] flex flex-col gap-12 lg:right-[-15] right-[30%] relative ">
+      <div className="w-[60.33%] flex flex-col gap-12 lg:right-[-10%] right-[30%] relative ">
        <AnimatedDiv
         className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-[160%] h-[130%] lg:w-[125px] lg:h-[125px]"
         style={notionProps}
@@ -368,7 +368,7 @@ export const Integration = () => {
         <img className="w-[90%]" src={figma} alt=""></img>
        </AnimatedDiv>
       </div>
-      <div className="w-[60.33%] flex flex-col gap-12 lg:left-[30%] left-[30%] relative   ">
+      <div className="w-[60.33%] flex flex-col gap-12 lg:left-[-10%] left-[30%] relative">
        <AnimatedDiv
         className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-[160%] h-[130%] lg:w-[125px] lg:h-[125px]"
         style={notionProps}
@@ -387,11 +387,11 @@ export const Integration = () => {
      </div>
     </section>
 
-    <section className="flex flex-col-reverse lg:flex-row items-center left-[-5%] relative pt-40">
+    <section className="flex flex-col-reverse lg:flex-row items-center left-[-5%] relative pt-40 lg:gap-28">
      <div className="flex flex-col justify-center items-center  lg:w-[45%]">
       <AnimatedDiv
        id="chatAsh"
-       className="lg:left-[5%] w-[37%] lg:mt-[10%] z-40 left-[10%] absolute"
+       className="lg:left-[5%] w-[37%] lg:mt-[-10%] z-40 left-[10%] absolute lg:w-[24%]"
        style={chatAshProps}
        ref={chatAshRef}
       >
@@ -399,14 +399,14 @@ export const Integration = () => {
       </AnimatedDiv>
       <AnimatedDiv
        id="chatAsh2"
-       className="lg:left-[30%] lg:mt-[5%] left-[55%] z-40 absolute"
+       className="lg:left-[30%] lg:mt-[-5%] left-[55%] z-40 absolute lg:w-[29%]"
        style={chatAsh2Props}
        ref={chatAsh2Ref}
       >
        <img src={chatAsh2} alt="" />
       </AnimatedDiv>
       <img
-       className=" relative left-[9%] lg:w-[90rem] mt-20"
+       className="relative left-[9%] lg:max-w-[160%] lg:left-[30%] mt-20 "
        src={figures3}
        alt=""
       />
@@ -416,13 +416,13 @@ export const Integration = () => {
       <AnimatedDiv
        style={busyProps}
        ref={busyRef}
-       className="font-poppins text-3xl lg:text-5xl leading-snug font-semibold tracking-tight"
+       className="font-poppins text-3xl lg:text-[41px] leading-snug font-semibold tracking-tight"
       >
        <h1>
         Your busy life <br className="hidden lg:block" /> deserves this
        </h1>
       </AnimatedDiv>
-      <div className="text-custom-textboard font-poppins lg:text-lg pt-6 ">
+      <div className="text-custom-textboard font-poppins lg:text-md pt-6 ">
        We&apos;re a growing family of 382,081 designers and <br /> makers from
        around the world
       </div>
@@ -432,22 +432,22 @@ export const Integration = () => {
      </div>
     </section>
 
-    <section className="flex flex-col-reverse  pt-28 pl-24 items-center">
-     <div className="lg:w-[55%]">
+    <section className="flex flex-col-reverse lg:flex-row  pt-28 pl-24 items-center ">
+     <div className="lg:w-[100%]">
       <p className=" text-custom-graytext font-bold py-4">AMAZING FEATURES</p>
       <AnimatedDiv
        style={neverProps}
        ref={neverRef}
-       className="font-poppins text-3xl lg:text-5xl leading-snug font-semibold tracking-tight"
+       className="font-poppins text-3xl lg:text-[41px] leading-snug font-semibold tracking-tight"
       >
        <h1>
         Never forget <br className="hidden lg:block" /> anything, <br /> ever
         again
        </h1>
       </AnimatedDiv>
-      <div className="text-custom-textboard font-poppins lg:text-lg pt-6 ">
-       We&apos;re a growing family of 382,081 designers and <br /> makers from
-       around the world
+      <div className="text-custom-textboard font-poppins lg:text-md pt-6 ">
+       We&apos;re a growing family of 382,081 designers and{" "}
+       <br className=" lg:hidden block" /> makers from around the world
       </div>
       <button className="flex text-lg items-center gap-2 font-bold mt-10  border-2 border-custom-blackboard border-solid rounded-2xl px-6 py-3 hover:bg-custom-blackboard hover:text-white">
        Find out more
@@ -456,12 +456,16 @@ export const Integration = () => {
      <div className="relative left-[-10%]">
       <AnimatedDiv style={cloudProps} ref={cloudsRef}>
        <img
-        className="absolute w-[50%] left-[7%] mt-[-14%] lg:right-[365px] lg:mt-[-2%]"
+        className="absolute w-[50%] left-[7%] mt-[-14%] lg:left-[20%] lg:mt-[-7%]"
         src={clouds}
         alt=""
        />
       </AnimatedDiv>
-      <img className="w-[100rem] ml-[7%]" src={Figures2} alt="" />
+      <img
+       className="w-[100rem] lg:min-w-[130%] ml-[7%]"
+       src={Figures2}
+       alt=""
+      />
      </div>
     </section>
 
@@ -473,7 +477,7 @@ export const Integration = () => {
          <img className="pt-12" src={histogram} alt="" />
         </AnimatedDiv>
         <img
-         className="absolute left-[-5%] mt-[-35%] lg:left-[-13%] lg:mt-[-30%]"
+         className="absolute left-[-5%] mt-[-35%] lg:left-[-20%] lg:mt-[-30%]"
          src={donut}
          alt=""
         />
@@ -650,12 +654,11 @@ export const Integration = () => {
      </div>
     </div>
     <div className="pt-24 flex justify-center">
-     <div className="bg-custom-blackboard flex flex-col lg:flex-row    lg:justify-start lg:items-center w-11/12  shadow-lg rounded-3xl">
-      <div className="lg:min-w-[65%] flex flex-col justify-center items-center lg:px-28 p-10 relative ">
-       <h1 className="font-poppins text-4xl lg:text-7xl leading-snug font-semibold tracking-tight text-white">
+     <div className="bg-custom-blackboard flex flex-col lg:flex-row    lg:justify-start lg:items-center w-11/12  shadow-lg rounded-3xl lg:h-[40rem]">
+      <div className="lg:min-w-[65%] flex flex-col justify-center items-center lg:items-start lg:px-10 p-10 relative ">
+       <h1 className="font-poppins text-4xl lg:text-[52px] leading-snug font-semibold tracking-tight text-white">
         <AnimatedDiv style={getProps} ref={getRef}>
-         Get started <br className="hidden lg:block" /> with Solo{" "}
-         <br className="hidden lg:block" /> today
+         Get started <br className="hidden lg:block" /> with Solo  today
         </AnimatedDiv>
        </h1>
        <div className="text-custom-textboard font-poppins text-base lg:text-lg pt-6 ">
@@ -668,7 +671,7 @@ export const Integration = () => {
       <div className="min-w-[100%]">
        <AnimatedDiv
         ref={megaChatRef}
-        className="absolute left-[35%] w-[24%] lg:mt-[8%] z-40"
+        className="absolute left-[35%] w-[24%] lg:mt-[8%] z-40 lg:left-[70%]"
         style={megaChatProps}
        >
         <img src={megaChat} alt="" />
