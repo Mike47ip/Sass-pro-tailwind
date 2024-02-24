@@ -171,7 +171,7 @@ const Body = () => {
     <div className="BoardWrapper flex justify-center">
      <div className="flex flex-col md:flex-row-reverse justify-center items-center lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] md:h-[25rem] lg:h-[40rem] rounded-3xl px-22">
       <div className="flex justify-center items-center md:pr-1 flex-col gap-8 relative md:w-[40%] lg:w-[35%] lg:top-[30%] z-20 text-white md:items-start">
-       <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-0">
+       <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-0 xl:text-6xl">
         <AnimatedDiv style={keeping}>
          Keeping it all <br className="md:block hidden" /> together
         </AnimatedDiv>
