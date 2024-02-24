@@ -322,7 +322,7 @@ const Projects = () => {
 
  return (
   <>
-   <p className="text-4xl lg:text-5xl font-semibold text-center pt-4 font-poppins leading-none ">
+   <p className="text-3xl lg:text-5xl font-semibold text-center pt-4 font-poppins leading-none ">
     <AnimatedDiv ref={seeRef} style={seeProps}>
      See what you can do <br /> in one app
     </AnimatedDiv>
