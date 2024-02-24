@@ -505,7 +505,7 @@ export const Integration = () => {
        </div>
       </div>
       <div className="flex flex-col w-full lg:w-[38%] justify-center">
-       <div className="h-44 font-poppins flex justify-center gap-5 items-start  border-b-4 border-solid border-custom-greytext">
+       <div className="md:h-[161px] h-30 font-poppins flex justify-center gap-5 items-start  border-b-4 border-solid border-custom-greytext pb-8">
         <img className="w-12" src={hand} alt="" />
         <div>
          <AnimatedDiv style={simpleProps} ref={simpleRef}>
@@ -517,7 +517,7 @@ export const Integration = () => {
          </p>
         </div>
        </div>
-       <div className="h-30 h-38 h-42 h-49 font-poppins flex justify-center gap-5 items-start  border-b-4 border-solid border-custom-greytext pt-5 pb-8">
+       <div className="md:h-44 h-49 font-poppins flex justify-center gap-5 items-start  border-b-4 border-solid border-custom-greytext pt-5 pb-8">
         <img className="w-12" src={play} alt="" />
         <div>
          <AnimatedDiv style={simpleProps} ref={simpleRef}>
@@ -529,7 +529,7 @@ export const Integration = () => {
          </p>
         </div>
        </div>
-       <div className="h-30 h-38 h-42 h-44 font-poppins flex justify-center gap-5 items-start  border-b-4 border-solid border-custom-greytext pt-5">
+       <div className=" md:h-44 h-49 font-poppins flex justify-center gap-5 items-start  border-b-4 border-solid border-custom-greytext pt-5 pb-8">
         <img className="w-12" src={clock} alt="" />
         <div>
          <AnimatedDiv style={saveProps} ref={saveRef}>
