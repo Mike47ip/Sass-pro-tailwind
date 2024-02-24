@@ -69,19 +69,23 @@ const Body = () => {
     bikeThreshold = windowHeight * 1.7;
    } else if (window.innerWidth > 768) {
     bikeThreshold = windowHeight * 1.4;
-   }
+   } if (window.innerWidth < 413) {
+    bikeThreshold = windowHeight * 0.5;
+   } 
 
    let fastThreshold = windowHeight * 3.4;
    if (window.innerWidth < 768) {
     fastThreshold = windowHeight * 4.5;
    } else if (window.innerWidth > 768) {
     fastThreshold = windowHeight * 2.3;
-   } else if (window.innerWidth > 1023) {
-    fastThreshold = windowHeight * 3;
+   } if (window.innerWidth < 413) {
+    fastThreshold = windowHeight * 2.5;
    }
    let phoneThreshold = windowHeight * 1.7;
    if (window.innerWidth > 768) {
     phoneThreshold = windowHeight * 1.3;
+   } else if (window.innerWidth < 413) {
+    phoneThreshold = windowHeight * 1;
    }
    console.log("phone:", phoneThreshold);
 
@@ -171,12 +175,12 @@ const Body = () => {
     <div className="BoardWrapper flex justify-center">
      <div className="flex flex-col md:flex-row-reverse justify-center items-center lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] md:h-[25rem] lg:h-[40rem] rounded-3xl px-22">
       <div className="flex justify-center items-center md:pr-1 flex-col gap-8 relative md:w-[40%] lg:w-[35%] lg:top-[30%] z-20 text-white md:items-start">
-       <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-0 xl:text-6xl">
+       <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-0 xl:text-6xl text-center md:text-start">
         <AnimatedDiv style={keeping}>
          Keeping it all <br className="md:block hidden" /> together
         </AnimatedDiv>
        </p>
-       <p className="text-custom-textboard md:text-start md:px-0 font-inter px-5 font-bold">
+       <p className="text-custom-textboard md:text-start md:px-0 font-inter px-5 font-bold text-center">
         Just invite your team, Solo does all the heavy-lifting.
        </p>
        <button className="px-3 py-4 text-white w-[200px] border-solid border-2 rounded-2xl font-inter font-bold hover:bg-white hover:text-black transform trasition-all ease-in">

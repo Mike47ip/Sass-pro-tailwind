@@ -489,13 +489,6 @@ const Projects = () => {
      >
       <img src={megaChat1} alt="" />
      </AnimatedDiv>
-     <AnimatedDiv
-      ref={megaChat1Ref}
-      className="megaChat1 w-[24%] left-[25%]  object-contain relative mb-[-20%] lg:absolute lg:left-[71%]"
-      style={megaChat1Props}
-     >
-      <img src={megaChat2} alt="" />
-     </AnimatedDiv>
     </div>
    </div>
    <Svg />

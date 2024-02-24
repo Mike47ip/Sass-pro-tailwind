@@ -6,7 +6,7 @@ const Navbar = () => {
   <>
    <div className="NavWrapper flex px-10 lg:px-28 py-12 font-inter font-semibold items-center justify-between">
     <div className="w-36">
-     <img className="object-contain min-w-36" src={solo} alt="" />
+     <img className="object-contain min-w-14" src={solo} alt="" />
     </div>
     <ul className="MenuList hidden gap-10 text-custom-additional">
      <li>Downloads</li>
@@ -26,8 +26,8 @@ const Navbar = () => {
      <button className="HamburgerMenu w-60 flex  flex-col gap-2 justify-center items-end lg:hidden">
       <span className="hidden w-[14%] border-2 border-black transform rotate-45 "></span>
       <span className="hidden w-[14%] border-2 border-black transform relative mt-[-5%]   rotate-[-45deg] "></span>
-      <span className="w-[14%] border-2 border-black transform "></span>
-      <span className="w-[14%] border-2 border-black transform relative "></span>
+      <span className="w-[10%] border-2 border-black transform "></span>
+      <span className="w-[10%] border-2 border-black transform relative "></span>
      </button>
     </div>
    </div>
