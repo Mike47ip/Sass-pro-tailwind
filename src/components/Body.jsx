@@ -110,22 +110,23 @@ const Body = () => {
   <>
    <section className="relative">
     <div className="flex flex-col gap-16 justify-center items-center overflow-hidden  md:flex-row md:px-14">
-     <div className="Paragraph pt-5 md:flex md:flex-col md:items-start md:min-w-[65%] lg:min-w-[50%]">
+     <div className="Paragraph pt-5 md:flex md:flex-col md:items-start md:min-w-[65%] lg:min-w-[50%] xl:pl-[5%] xl:pt-[10%]">
       <p className="text-center text-custom-graytext font-bold pb-8 lg:text-sm">
        RISK-FREE 30 DAY TRIAL
       </p>
-      <div className="Props font-inter font-bold text-5xl lg:text-5xl text-center leading-none md:text-start ">
+      <div className="Props font-inter font-bold text-5xl lg:text-5xl text-center leading-none md:text-start xl:text-7xl">
        The best way <br /> to organize <br />{" "}
        <AnimatedDiv style={props}>your work.</AnimatedDiv>
       </div>
       <div className="text-custom-textboard text-center lg:text-start font-poppins text-lg pt-6">
-       Organize your tasks, lists and <br /> reminders in one app.
+       Organize your tasks, lists and <br className="block xl:hidden" />{" "}
+       reminders in one app.
       </div>
       <div className="flex flex-col justify-center items-center gap-6 pt-10 text-lg font-inter md:flex-row md:w-[100%] lg:w-[90%] md:justify-start">
-       <button className="bg-custom-primary px-6 md:px-3 md:w-[30%] py-4 font-bold md:text-base w-[45%] text-white rounded-2xl hover:bg-custom-deepcoral">
+       <button className="bg-custom-primary px-6 md:px-3 md:w-[30%] py-4 font-bold md:text-base w-[45%] text-white rounded-2xl hover:bg-custom-deepcoral xl:w-[25%]">
         Try it free
        </button>
-       <button className="flex justify-center items-center gap-2 md:gap-1 md:w-[50%] font-semibold  border-2 border-black border-solid rounded-2xl px-6 md:px-3 md:text-base py-4 hover:bg-black hover:text-white">
+       <button className="flex justify-center items-center gap-2 md:gap-1 md:w-[50%] font-semibold border-2 border-black border-solid rounded-2xl px-6 md:px-3 md:text-base py-4 hover:bg-black hover:text-white xl:w-[40%]">
         <ion-icon name="play"></ion-icon>Watch how it works
        </button>
       </div>
@@ -157,12 +158,12 @@ const Body = () => {
     <p className="hidden  md:block text-center md:pt-32  text-custom-textboard font-inter">
      Thousands of teams worldwide are using Solo
     </p>
-    <div className="hidden md: w-[100%] md:flex justify-center items-center px-5 gap-4 pt-5 pb-32">
-     <img className="w-[20%]" src={goldlines} alt="" />
-     <img className="w-[20%]" src={rotashow} alt="" />
-     <img className="w-[20%]" src={travelers} alt="" />
-     <img className="w-[20%]" src={velocity} alt="" />
-     <img className="w-[20%]" src={waves} alt="" />
+    <div className="hidden md: md:flex justify-center items-center px-5 gap-8 pt-5 pb-32">
+     <img className="w-[13%]" src={goldlines} alt="" />
+     <img className="w-[13%]" src={rotashow} alt="" />
+     <img className="w-[13%]" src={travelers} alt="" />
+     <img className="w-[13%]" src={velocity} alt="" />
+     <img className="w-[13%]" src={waves} alt="" />
     </div>
    </section>
 
@@ -171,7 +172,9 @@ const Body = () => {
      <div className="flex flex-col md:flex-row-reverse justify-center items-center lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] md:h-[25rem] lg:h-[40rem] rounded-3xl px-22">
       <div className="flex justify-center items-center md:pr-1 flex-col gap-8 relative md:w-[40%] lg:w-[35%] lg:top-[30%] z-20 text-white md:items-start">
        <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-0">
-        <AnimatedDiv style={keeping}>Keeping it all <br className="md:block hidden" /> together</AnimatedDiv>
+        <AnimatedDiv style={keeping}>
+         Keeping it all <br className="md:block hidden" /> together
+        </AnimatedDiv>
        </p>
        <p className="text-custom-textboard md:text-start md:px-0 font-inter px-5 font-bold">
         Just invite your team, Solo does all the heavy-lifting.
@@ -188,13 +191,13 @@ const Body = () => {
         }}
        >
         <img
-         className="relative object-contain w-[65%]   ml-[44%] mt-[2%] z-40 lg:left-[-4%] lg:mt-[45%]"
+         className="relative object-contain w-[65%]   ml-[44%] mt-[2%] z-40 lg:left-[-4%] lg:mt-[45%] xl:w-[51%]"
          src={chat1}
          alt=""
         />
        </AnimatedDiv>
        <AnimatedDiv
-        className="chat2 relative object-contain w-[54%] mt-[20%] ml-[-12%] lg:mt-[10%] z-40 lg:left-[-4%] lg:w-[53%]"
+        className="chat2 relative object-contain w-[54%] mt-[20%] ml-[-12%] lg:mt-[10%] z-40 lg:left-[-4%] lg:w-[53%] selection:marker: xl:mt-[-10%]"
         style={{
          ...chat2Props,
         }}
@@ -202,7 +205,7 @@ const Body = () => {
         <img src={chat2} alt="" />
        </AnimatedDiv>
        <AnimatedDiv
-        className="relative w-[55%] ml-[20%] mt-[-80%] lg:mt-[-80%] lg:left-[-4%] lg:w-[77%] z-20 "
+        className="relative w-[55%] ml-[20%] mt-[-80%] lg:mt-[-80%] lg:left-[-4%] lg:w-[77%] z-20 xl:mt-[-54%]"
         style={phoneProps}
        >
         <img src={iphone} alt="" />
@@ -218,8 +221,8 @@ const Body = () => {
     </div>
     <div className="gradientContainer flex justify-center">
      <div className="gradient w-11/12 mt-[-15px] z-10 md:h-[15rem] rounded-b-2xl flex justify-center items-center">
-      <ul className="md:w-[100%] md:p-10 pt-32 flex flex-col md:flex-row md:justify-center  md:items-center font-poppins gap-24 md:gap-11 lg:gap-20">
-       <li className="px-10 py-5  flex flex-col gap-4">
+      <ul className="md:w-[100%] md:p-10 pt-32 flex flex-col md:flex-row md:justify-center md:items-center font-poppins gap-24 md:gap-11 lg:gap-20 xl:gap-32">
+       <li className="px-10 py-5 flex flex-col gap-4">
         <span className="lg:text-7xl text-6xl font-semibold text-center">
          100<span style={{ verticalAlign: "super", fontSize: "24px" }}>+</span>
         </span>{" "}

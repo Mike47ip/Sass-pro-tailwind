@@ -24,7 +24,7 @@ const Projects = () => {
  const shareRef = useRef(null);
  const sharePropsRef = useRef(null);
  const ballRef = useRef(null);
-//  const collaboCubeRef = useRef(null);
+ //  const collaboCubeRef = useRef(null);
  const planeRef = useRef(null);
  const collaboRef = useRef(null);
  const historyRef = useRef(null);
@@ -40,7 +40,7 @@ const Projects = () => {
  const [isCollaboVisible, setIsCollaboVisible] = useState(false);
  const [isScubeVisible, setIsScubeVisible] = useState(false);
  const [isTriangleVisible, setIsTriangleVisible] = useState(false);
-//  const [isCollaCubeVisible, setIsCollaCubeVisible] = useState(false);
+ //  const [isCollaCubeVisible, setIsCollaCubeVisible] = useState(false);
  const [isBallVisible, setIsBallVisible] = useState(false);
  const [isHistoryVisible, setIsHIstorylVisible] = useState(false);
  const [isMegaChat1Visible, setIsMegaChat1lVisible] = useState(false);
@@ -100,11 +100,11 @@ const Projects = () => {
   config: { tension: 250, friction: 21, mass: 2 },
  });
 
-//  const collaCubeProps = useSpring({
-//   opacity: isCollaCubeVisible ? 1 : 0,
-//   transform: isCollaCubeVisible ? "translateY(0)" : "translateY(60px)",
-//   config: { tension: 250, friction: 21, mass: 2 },
-//  });
+ //  const collaCubeProps = useSpring({
+ //   opacity: isCollaCubeVisible ? 1 : 0,
+ //   transform: isCollaCubeVisible ? "translateY(0)" : "translateY(60px)",
+ //   config: { tension: 250, friction: 21, mass: 2 },
+ //  });
 
  const ballProps = useSpring({
   opacity: isBallVisible ? 1 : 0,
@@ -171,9 +171,9 @@ const Projects = () => {
   return handleIntersection(ballRef, setIsBallVisible);
  }, [ballRef]);
 
-//  useEffect(() => {
-//   return handleIntersection(collaboCubeRef, setIsCollaCubeVisible);
-//  }, [collaboCubeRef]);
+ //  useEffect(() => {
+ //   return handleIntersection(collaboCubeRef, setIsCollaCubeVisible);
+ //  }, [collaboCubeRef]);
 
  useEffect(() => {
   return handleIntersection(planeRef, setIsPlaneVisible);
@@ -335,7 +335,11 @@ const Projects = () => {
     >
      <img src={scube} alt="" />
     </AnimatedDiv>
-    <img className="pt-10 lg:min-w-[54%] lg:pl-[3%] " src={card1} alt="" />
+    <img
+     className="pt-10 lg:min-w-[54%] lg:pl-[3%] xl:min-w-[45%] xl:ml-[10%] "
+     src={card1}
+     alt=""
+    />
     <div className="flex flex-col items-start lg:w-[150%]">
      <AnimatedDiv ref={arrowRef} style={arrowProps}>
       <img
@@ -367,7 +371,11 @@ const Projects = () => {
    </div>
    <div className="flex justify-center flex-col  items-center lg:flex-row gap-9 lg:gap-0 lg:pt-[140px] lg:right-[3%] relative">
     <div className="flex flex-col flex-start ">
-     <img className="pt-10 lg:max-w-[91%] relative" src={card2} alt="" />
+     <img
+      className="pt-10 lg:max-w-[91%] relative xl:max-w-[97%] xl:ml-[-6%]"
+      src={card2}
+      alt=""
+     />
      <AnimatedDiv ref={triangleRef} style={triangleProps}>
       <img className="top-[-29px] relative lg:w-[32%]" src={triangle} alt="" />
      </AnimatedDiv>
@@ -375,12 +383,12 @@ const Projects = () => {
     <div className="flex flex-col items-start">
      <AnimatedDiv ref={shareRef} style={shareChatProps}>
       <img
-       className="chatcard hidden lg:block object-contain left-[-44%] pt-5 lg:pt-0 relative lg:mt-[-20%] lg:w-[90%] lg:left-[-37%]"
+       className="chatcard hidden lg:block object-contain left-[-44%] pt-5 lg:pt-0 relative lg:mt-[-20%] lg:w-[90%] lg:left-[-37%] xl:left-[-30%]"
        src={chatpro}
        alt=""
       />
      </AnimatedDiv>
-     <div className="px-20 lg:px-0 lg:pl-4">
+     <div className="px-20 lg:px-0 lg:pl-4 xl:pl-7">
       <p className="font-poppins text-2xl lg:text-3xl font-semibold">
        <AnimatedDiv ref={sharePropsRef} style={shareProps}>
         Share files at the <br className="hidden lg:block" /> right time
@@ -462,7 +470,7 @@ const Projects = () => {
      </div>
      <div className="flex justify-center items-center">
       <img
-       className="object-contain w-[60%] lg:right-[27%] relative lg:min-w-[275%]"
+       className="object-contain w-[60%] lg:right-[27%] relative lg:min-w-[275%] xl:min-w-[220%]"
        src={figure2}
        alt=""
       />

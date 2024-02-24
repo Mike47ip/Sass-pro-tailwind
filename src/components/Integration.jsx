@@ -309,8 +309,8 @@ export const Integration = () => {
  return (
   <>
    <section>
-    <section className="flex flex-col lg:flex-col justify-center items-center gap-[100px]">
-     <div className="lg:flex lg:flex-col lg:justify-center lg:items-center w-[70%] lg:w-[100%]">
+    <section className="Power flex flex-col lg:flex-col justify-center items-center gap-[100px] xl:gap-[10%] xl:px-28 xl:flex-row">
+     <div className="lg:flex lg:flex-col lg:justify-center lg:items-center w-[70%] lg:w-[100%] xl:items-start xl:w-[50%]">
       <p className=" text-custom-graytext font-bold py-4">AMAZING FEATURES</p>
       <h1 id="powerful" className="powerful">
        <AnimatedDiv
@@ -318,15 +318,15 @@ export const Integration = () => {
         style={powerProps}
         className="powerful font-poppins text-3xl lg:text-5xl leading-snug font-semibold"
        >
-        Powerful <br className="block lg:hidden" /> integrations
+        Powerful <br className="block lg:hidden xl:block" /> integrations
        </AnimatedDiv>
       </h1>
-      <div className="text-custom-textboard font-poppins lg:text-lg pt-6 lg:text-center">
+      <div className="text-custom-textboard font-poppins lg:text-lg pt-6 lg:text-center xl:text-start">
        We&apos;re a growing family of 382,081 designers and{" "}
        <br className="hidden lg:block" /> makers from around the world
       </div>
      </div>
-     <div className="grid grid-cols-3 items-center justify-center w-[60%] gap-0">
+     <div className="SVG grid grid-cols-3 items-center justify-center w-[60%] gap-0">
       <div className="w-[60.33%] flex flex-col gap-12 lg:right-[-10%] right-[30%] relative ">
        <AnimatedDiv
         className="p-6 bg-white rounded-3xl shadow-lg flex justify-center w-[160%] h-[130%] lg:w-[125px] lg:h-[125px]"
@@ -365,7 +365,11 @@ export const Integration = () => {
         style={ui8Props}
         ref={ui8Ref}
        >
-        <img className="w-[90%]" src={figma} alt=""></img>
+        <img
+         className="w-[80%] md:w-[60%] lg:w-[60%] "
+         src={figma}
+         alt=""
+        ></img>
        </AnimatedDiv>
       </div>
       <div className="w-[60.33%] flex flex-col gap-12 lg:left-[-10%] left-[30%] relative">
@@ -391,7 +395,7 @@ export const Integration = () => {
      <div className="flex flex-col justify-center items-center  lg:w-[45%]">
       <AnimatedDiv
        id="chatAsh"
-       className="lg:left-[5%] w-[37%] lg:mt-[-10%] z-40 left-[10%] absolute lg:w-[24%]"
+       className="lg:left-[5%] w-[37%] lg:mt-[-10%] z-40 left-[12%] absolute lg:w-[24%] xl:left-[7%]"
        style={chatAshProps}
        ref={chatAshRef}
       >
@@ -399,7 +403,7 @@ export const Integration = () => {
       </AnimatedDiv>
       <AnimatedDiv
        id="chatAsh2"
-       className="lg:left-[30%] lg:mt-[-5%] left-[55%] z-40 absolute lg:w-[29%]"
+       className="lg:left-[27%] lg:mt-[-5%] left-[55%] z-40 absolute lg:w-[29%] xl:left-[30%]"
        style={chatAsh2Props}
        ref={chatAsh2Ref}
       >
@@ -658,7 +662,7 @@ export const Integration = () => {
       <div className="lg:min-w-[65%] flex flex-col justify-center items-center lg:items-start lg:px-10 p-10 relative ">
        <h1 className="font-poppins text-4xl lg:text-[52px] leading-snug font-semibold tracking-tight text-white">
         <AnimatedDiv style={getProps} ref={getRef}>
-         Get started <br className="hidden lg:block" /> with Solo  today
+         Get started <br className="hidden lg:block" /> with Solo today
         </AnimatedDiv>
        </h1>
        <div className="text-custom-textboard font-poppins text-base lg:text-lg pt-6 ">

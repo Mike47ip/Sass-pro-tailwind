@@ -36,12 +36,6 @@
  animation: moveChat2 4s ease-in-out infinite;
 }
 
-/* @media (max-width: 1142px) {
-  .MenuList {
-    display: none;
-  }
-} */
-
 @media (min-width: 1188px) {
  .MenuList {
   display: flex !important;
@@ -53,3 +47,4 @@
     display: flex;
   }
 }
+
