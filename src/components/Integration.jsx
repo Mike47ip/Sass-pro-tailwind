@@ -481,7 +481,7 @@ export const Integration = () => {
          <img className="pt-12" src={histogram} alt="" />
         </AnimatedDiv>
         <img
-         className="absolute left-[-5%] mt-[-35%] lg:left-[-20%] lg:mt-[-30%]"
+         className="absolute left-[-5%] mt-[-35%] lg:left-[-20%] lg:mt-[-27%] xl:left-[-15%]"
          src={donut}
          alt=""
         />

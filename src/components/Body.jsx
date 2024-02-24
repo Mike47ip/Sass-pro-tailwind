@@ -191,7 +191,7 @@ const Body = () => {
         }}
        >
         <img
-         className="relative object-contain w-[65%]   ml-[44%] mt-[2%] z-40 lg:left-[-4%] lg:mt-[45%] xl:w-[51%]"
+         className="relative object-contain w-[65%]   ml-[44%] mt-[2%] z-40 lg:left-[-4%] lg:mt-[45%] xl:w-[51%] xl:left-[-9%]"
          src={chat1}
          alt=""
         />
