@@ -430,7 +430,7 @@ export const Integration = () => {
        We&apos;re a growing family of 382,081 designers and <br /> makers from
        around the world
       </div>
-      <button className="flex text-lg items-center font-bold mt-10  border-2 border-custom-blackboard border-solid rounded-2xl px-6 py-3 hover:bg-custom-blackboard hover:text-white">
+      <button className="flex text-lg items-center font-bold mt-10  border-2 border-custom-blackboard border-solid rounded-2xl px-6 py-3 hover:bg-custom-blackboard hover:text-white whitespace-nowrap">
        Launch Solo Desktop App
       </button>
      </div>
