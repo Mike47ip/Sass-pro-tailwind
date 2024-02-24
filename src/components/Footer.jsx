@@ -7,19 +7,21 @@ const Footer = () => {
   <>
    <div className="flex flex-col lg:flex-row justify-center items-center py-24 px-14">
     <div className="flex flex-col lg:flex-row justify-center lg:w-[100%] lg:justify-between items-center lg:justify-content xl:flex-col xl:items-start">
-     <div className="">
-      <img
-       className="flex justify-center items-center object-contain w-36"
-       src={solo}
-       alt=""
-      />
+     <div>
+      <div className="flex flex-col items-center">
+       <img
+        className="flex flex-col justify-center items-center object-contain w-36"
+        src={solo}
+        alt=""
+       />
+      </div>
       <p className="text-poppins text-center lg:text-start text-custom-textboard text-lg py-3">
        Join millions of people who <br className="block lg:hidden" /> organize
        work <br className="hidden lg:block" /> and life with{" "}
        <br className="block lg:hidden" /> Solo App.
       </p>
      </div>
-     <div className="flex gap-6">
+     <div className="flex justify-center gap-6">
       <img src={apple} alt="" />
       <img src={google} alt="" />
      </div>

@@ -399,7 +399,7 @@ const Projects = () => {
        designers and makers from <br className="hidden lg:block" /> around the
        world
       </p>
-      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+      <button className="flex text-lg items-center gap-2 font-bold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white mb-12">
        Watch how it works
       </button>
      </div>
@@ -488,13 +488,6 @@ const Projects = () => {
       style={megaChat1Props}
      >
       <img src={megaChat1} alt="" />
-     </AnimatedDiv>
-     <AnimatedDiv
-      ref={megaChat1Ref}
-      className="megaChat1 w-[24%] left-[25%]  object-contain relative mb-[-20%] lg:absolute lg:left-[71%]"
-      style={megaChat1Props}
-     >
-      <img src={megaChat2} alt="" />
      </AnimatedDiv>
     </div>
    </div>
