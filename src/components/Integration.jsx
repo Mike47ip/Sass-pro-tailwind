@@ -517,7 +517,7 @@ export const Integration = () => {
          </p>
         </div>
        </div>
-       <div className="h-30 h-38 h-42 h-44 font-poppins flex justify-center gap-5 items-start  border-b-4 border-solid border-custom-greytext pt-5">
+       <div className="h-30 h-38 h-42 h-49 font-poppins flex justify-center gap-5 items-start  border-b-4 border-solid border-custom-greytext pt-5 pb-8">
         <img className="w-12" src={play} alt="" />
         <div>
          <AnimatedDiv style={simpleProps} ref={simpleRef}>
