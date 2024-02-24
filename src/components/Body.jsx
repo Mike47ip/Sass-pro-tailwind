@@ -21,6 +21,7 @@ const Body = () => {
  const [isVisible, setIsVisible] = useState(false);
  const [isBikeVisible, setIsBikeVisible] = useState(false);
  const [isFastVisible, setIsFastVisible] = useState(false);
+ const [isPhonetVisible, setIsPhoneVisible] = useState(false);
 
  const props = useSpring({
   opacity: isVisible ? 1 : 0,
@@ -50,6 +51,12 @@ const Body = () => {
   config: { tension: 250, friction: 21 },
  });
 
+ const phoneProps = useSpring({
+  opacity: isPhonetVisible ? 1 : 0,
+  transform: isPhonetVisible ? "translateY(0)" : "translateY(50px)",
+  config: { tension: 250, friction: 60 },
+ });
+
  useEffect(() => {
   let lastScrollTop = 0;
 
@@ -57,8 +64,26 @@ const Body = () => {
    const scrollPosition = window.scrollY;
    const windowHeight = window.innerHeight;
    const threshold = windowHeight * 0.1;
-   const bikeThreshold = windowHeight * 1.5;
-   const fastThreshold = windowHeight * 2.9;
+   let bikeThreshold = windowHeight * 3;
+   if (window.innerWidth < 768) {
+    bikeThreshold = windowHeight * 1.7;
+   } else if (window.innerWidth > 768) {
+    bikeThreshold = windowHeight * 1.4;
+   }
+
+   let fastThreshold = windowHeight * 3.4;
+   if (window.innerWidth < 768) {
+    fastThreshold = windowHeight * 4.5;
+   } else if (window.innerWidth > 768) {
+    fastThreshold = windowHeight * 2.3;
+   } else if (window.innerWidth > 1023) {
+    fastThreshold = windowHeight * 3;
+   }
+   let phoneThreshold = windowHeight * 1.7;
+   if (window.innerWidth > 768) {
+    phoneThreshold = windowHeight * 1.3;
+   }
+   console.log("phone:", phoneThreshold);
 
    const scrollDirection = scrollPosition > lastScrollTop ? "down" : "up";
 
@@ -67,6 +92,7 @@ const Body = () => {
 
    setIsBikeVisible(scrollPosition > bikeThreshold);
    setIsFastVisible(scrollPosition > fastThreshold);
+   setIsPhoneVisible(scrollPosition > phoneThreshold);
 
    lastScrollTop = scrollPosition;
   };
@@ -82,27 +108,30 @@ const Body = () => {
 
  return (
   <>
-   <section className="relative overflow-hidden">
-    <div className="flex overflow-hidden">
-     <div className="Paragraph pl-24 pr-5 pt-32">
-      <p className="font-bold text-sm py-5">RISK-FREE 30 DAY TRIAL</p>
-      <div className="font-inter font-bold text-7xl leading-none">
+   <section className="relative">
+    <div className="flex flex-col gap-16 justify-center items-center overflow-hidden  md:flex-row md:px-14">
+     <div className="Paragraph pt-5 md:flex md:flex-col md:items-start md:min-w-[65%] lg:min-w-[50%] xl:pl-[5%] xl:pt-[10%]">
+      <p className="text-center text-custom-graytext font-bold pb-8 lg:text-sm">
+       RISK-FREE 30 DAY TRIAL
+      </p>
+      <div className="Props font-inter font-bold text-5xl lg:text-5xl text-center leading-none md:text-start xl:text-7xl">
        The best way <br /> to organize <br />{" "}
        <AnimatedDiv style={props}>your work.</AnimatedDiv>
       </div>
-      <div className=" text-xl pt-6">
-       Organize your tasks, lists and reminders in one app.
+      <div className="text-custom-textboard text-center lg:text-start font-poppins text-lg pt-6">
+       Organize your tasks, lists and <br className="block xl:hidden" />{" "}
+       reminders in one app.
       </div>
-      <div className="flex gap-6 pt-10 text-lg font-inter">
-       <button className="bg-custom-primary px-6 py-4 font-bold text-white rounded-2xl hover:bg-custom-deepcoral">
+      <div className="flex flex-col justify-center items-center gap-6 pt-10 text-lg font-inter md:flex-row md:w-[100%] lg:w-[90%] md:justify-start">
+       <button className="bg-custom-primary px-6 md:px-3 md:w-[30%] py-4 font-bold md:text-base w-[45%] text-white rounded-2xl hover:bg-custom-deepcoral xl:w-[25%]">
         Try it free
        </button>
-       <button className="flex items-center gap-2 font-semibold  border-2 border-black border-solid rounded-2xl px-6 py-3 hover:bg-black hover:text-white">
+       <button className="flex justify-center items-center gap-2 md:gap-1 md:w-[50%] font-semibold border-2 border-black border-solid rounded-2xl px-6 md:px-3 md:text-base py-4 hover:bg-black hover:text-white xl:w-[40%]">
         <ion-icon name="play"></ion-icon>Watch how it works
        </button>
       </div>
      </div>
-     <div>
+     <div className="md:w-[50%]">
       <AnimatedDiv
        style={{
         ...useSpring({
@@ -111,89 +140,109 @@ const Body = () => {
          config: { tension: 100, friction: 20 },
         }),
        }}
-       className={isVisible ? "animate" : ""}
+       className="max-w-[80%]"
       >
-       <img className="bike absolute" src={bike} alt="" />
+       <img
+        className="bike object-contain max-w-[40%] absolute md:w-[100%] md:mt-[-120%] md:min-w-[150%] md:right-[50%] lg:mt-[-50%] lg:right-[43%] lg:min-w-[90%]"
+        src={bike}
+        alt=""
+       />
       </AnimatedDiv>
-      <img className="Figures overflow-hidden" src={Figures} alt="" />
+      <img
+       className="Figures overflow-hidden md:absolute md:w-[90%] md:left-[40%] md:mt-[-30%] lg:w-[85%] lg:mt-[-20%]"
+       src={Figures}
+       alt=""
+      />
      </div>
     </div>
-    <p className="text-center text-custom-textboard font-inter">
+    <p className="hidden  md:block text-center md:pt-32  text-custom-textboard font-inter">
      Thousands of teams worldwide are using Solo
     </p>
-    <div className="flex justify-center gap-4 pt-5 pb-32">
-     <img src={goldlines} alt="" />
-     <img src={rotashow} alt="" />
-     <img src={travelers} alt="" />
-     <img src={velocity} alt="" />
-     <img src={goldlines} alt="" />
-     <img src={waves} alt="" />
+    <div className="hidden md: md:flex justify-center items-center px-5 gap-8 pt-5 pb-32">
+     <img className="w-[13%]" src={goldlines} alt="" />
+     <img className="w-[13%]" src={rotashow} alt="" />
+     <img className="w-[13%]" src={travelers} alt="" />
+     <img className="w-[13%]" src={velocity} alt="" />
+     <img className="w-[13%]" src={waves} alt="" />
     </div>
    </section>
 
    <section>
     <div className="BoardWrapper flex justify-center">
-     <div className="flex justify-center items-start black-board bg-custom-blackboard w-11/12 h-[690px] rounded-3xl px-22">
-      <div className="w-[50%]">
+     <div className="flex flex-col md:flex-row-reverse justify-center items-center lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] md:h-[25rem] lg:h-[40rem] rounded-3xl px-22">
+      <div className="flex justify-center items-center md:pr-1 flex-col gap-8 relative md:w-[40%] lg:w-[35%] lg:top-[30%] z-20 text-white md:items-start">
+       <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-0">
+        <AnimatedDiv style={keeping}>
+         Keeping it all <br className="md:block hidden" /> together
+        </AnimatedDiv>
+       </p>
+       <p className="text-custom-textboard md:text-start md:px-0 font-inter px-5 font-bold">
+        Just invite your team, Solo does all the heavy-lifting.
+       </p>
+       <button className="px-3 py-4 text-white w-[200px] border-solid border-2 rounded-2xl font-inter font-bold hover:bg-white hover:text-black transform trasition-all ease-in">
+        Schedule a demo
+       </button>
+      </div>
+      <div className="w-[50%] md:mt-[-20%]">
        <AnimatedDiv
         className="chat1"
         style={{
          ...chat1Props,
         }}
        >
-        <img className="relative mt-] z-40 left-[-10%] mt-[20%]" src={chat1} alt="" />
+        <img
+         className="relative object-contain w-[65%]   ml-[44%] mt-[2%] z-40 lg:left-[-4%] lg:mt-[45%] xl:w-[51%] xl:left-[-9%]"
+         src={chat1}
+         alt=""
+        />
        </AnimatedDiv>
        <AnimatedDiv
-        className="chat2"
+        className="chat2 relative object-contain w-[54%] mt-[20%] ml-[-12%] lg:mt-[10%] z-40 lg:left-[-4%] lg:w-[53%] selection:marker: xl:mt-[-10%]"
         style={{
          ...chat2Props,
         }}
        >
-        <img className="relative mt-[-200px] left-[37%]" src={chat2} alt="" />
+        <img src={chat2} alt="" />
        </AnimatedDiv>
-       <img className="absolute top-[170%] left-[19%] w-[16.7rem] z-20" src={iphone} alt="" />
-       <img className="absolute z-10 left-[7%] mt-[-1%]" src={stairs} alt="" />
-       <img className="ml-[-29%] mt-[7%]" src={concave} alt="" />
-      </div>
-      <div className="flex flex-col gap-8 relative w-[35%] top-[30%] z-20 text-white">
-       <p className="font-inter font-semibold text-6xl">
-        <AnimatedDiv style={keeping}>
-         Keeping it all <br /> together
-        </AnimatedDiv>
-       </p>
-       <p className="text-custom-textboard font-inter font-bold">
-        Just invite your team, Solo does all the <br /> heavy-lifting.
-       </p>
-       <button className="px-3 py-4 text-white w-[200px] border-solid border-2 rounded-2xl font-inter font-bold hover:bg-white hover:text-black transform trasition-all ease-in">
-        Schedule a demo
-       </button>
+       <AnimatedDiv
+        className="relative w-[55%] ml-[20%] mt-[-80%] lg:mt-[-80%] lg:left-[-4%] lg:w-[77%] z-20 xl:mt-[-54%]"
+        style={phoneProps}
+       >
+        <img src={iphone} alt="" />
+       </AnimatedDiv>
+       <img
+        className="w-[64%] mt-[-15%] ml-[-1%] absolute z-10 lg:left-[4%] lg:mt-[-17%] lg:w-[67%]"
+        src={stairs}
+        alt=""
+       />
+       <img className="hidden ml-[-29%] mt-[7%]" src={concave} alt="" />
       </div>
      </div>
     </div>
     <div className="gradientContainer flex justify-center">
-     <div className="gradient w-[75rem] h-[15rem] rounded-b-2xl flex justify-center items-center">
-      <ul className="p-10 flex  font-poppins gap-24">
-       <li className="px-10 py-5 flex flex-col gap-4 text ">
-        <span className="text-7xl font-semibold">
-         100<span style={{ verticalAlign: "super", fontSize: "30px" }}>+</span>
+     <div className="gradient w-11/12 mt-[-15px] z-10 md:h-[15rem] rounded-b-2xl flex justify-center items-center">
+      <ul className="md:w-[100%] md:p-10 pt-32 flex flex-col md:flex-row md:justify-center md:items-center font-poppins gap-24 md:gap-11 lg:gap-20 xl:gap-32">
+       <li className="px-10 py-5 flex flex-col gap-4">
+        <span className="lg:text-7xl text-6xl font-semibold text-center">
+         100<span style={{ verticalAlign: "super", fontSize: "24px" }}>+</span>
         </span>{" "}
-        <span className="bg-white text-center p-1 text-xs rounded-2xl shadow-xl">
+        <span className="bg-white  md:whitespace-nowrap  text-center p-1 text-xs rounded-2xl shadow-xl">
          Countries supported
         </span>
        </li>
-       <li className="px-10 py-5 flex flex-col gap-4 ">
-        <span className="text-7xl font-semibold text-center">
+       <li className="px-10 py-5  flex flex-col gap-4">
+        <span className="lg:text-7xl text-6xl font-semibold text-center">
          28<span style={{ fontSize: "24px" }}>m</span>
         </span>{" "}
-        <span className="bg-white text-center p-1 text-xs rounded-2xl shadow-xl">
+        <span className="bg-white  md:whitespace-nowrap  text-center p-1 text-xs rounded-2xl shadow-xl">
          Downloads on App Store
         </span>
        </li>
-       <li className="px-10 py-5 flex flex-col gap-4">
-        <span className="text-7xl font-semibold">
+       <li className="px-10 py-5 md:pt-0 pb-20 md:pb-0 flex flex-col gap-4 text-center">
+        <span className="lg:text-7xl text-6xl font-semibold">
          16<span style={{ fontSize: "24px" }}>m</span>
         </span>{" "}
-        <span className="bg-white text-center p-1 text-xs rounded-2xl shadow-xl">
+        <span className="bg-white  md:whitespace-nowrap  text-center p-1 text-xs rounded-2xl shadow-xl">
          Verified Users
         </span>
        </li>
@@ -202,11 +251,11 @@ const Body = () => {
     </div>
     <div className="pt-36 font-poppins">
      <p className="text-center text-custom-graytext font-bold">INSTANT SETUP</p>
-     <p className="text-5xl font-semibold text-center pt-4">
+     <p className="text-4xl lg:text-5xl font-semibold text-center pt-4">
       <AnimatedDiv style={fastProps}>Fast, simple & effortless.</AnimatedDiv>
      </p>
-     <div className="flex pt-16 justify-center gap-16">
-      <div className="flex flex-col items-center gap-4  border-r-4 border-custom-border py-12 pr-16">
+     <div className="flex pt-16 flex-col md:flex-row justify-center items-center gap-6 lg:gap-16 lg:px-4">
+      <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0   border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
        <svg
         className="laptop"
         xmlns="http://www.w3.org/2000/svg"
@@ -222,9 +271,9 @@ const Body = () => {
        <span className="bg-custom-graytext text-white px-3 py-1.5 rounded-2xl text-xs">
         Step 1
        </span>
-       <p className="opacity-80">Download the app</p>
+       <p className="opacity-80 lg:whitespace-nowrap">Download the app</p>
       </div>
-      <div className="flex flex-col items-center gap-4  border-r-4 border-custom-border py-12 pr-16">
+      <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0   border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
        <svg
         className="cloud"
         xmlns="http://www.w3.org/2000/svg"
@@ -240,9 +289,9 @@ const Body = () => {
        <span className="bg-custom-graytext text-white px-3 py-1.5 rounded-2xl text-xs">
         Step 2
        </span>
-       <p className="opacity-80">Invite teammates</p>
+       <p className="opacity-80 lg:whitespace-nowrap">Invite teammates</p>
       </div>
-      <div className="flex flex-col items-center gap-4  border-r-4 border-custom-border py-12 pr-16">
+      <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0   border-b-4 border-custom-border lg:border-r-4 lg:border-custom-border py-12 lg:pr-16">
        <svg
         className="globe"
         xmlns="http://www.w3.org/2000/svg"
@@ -258,9 +307,9 @@ const Body = () => {
        <span className="bg-custom-graytext text-white px-3 py-1.5 rounded-2xl text-xs">
         Step 3
        </span>
-       <p className="opacity-80">Create workspace</p>
+       <p className="opacity-80 lg:whitespace-nowrap">Create workspace</p>
       </div>
-      <div className="flex flex-col items-center gap-4 py-10 ">
+      <div className="flex flex-col items-center gap-4 w-1/3 md:border-r-2  md:border-b-0  py-10 ">
        <svg
         className="chart"
         xmlns="http://www.w3.org/2000/svg"
@@ -276,7 +325,7 @@ const Body = () => {
        <span className="bg-custom-graytext text-white px-3 py-1.5 rounded-2xl text-xs">
         Step 4
        </span>
-       <p className="opacity-80">Track performance</p>
+       <p className="opacity-80 lg:whitespace-nowrap">Track performance</p>
       </div>
      </div>
     </div>
