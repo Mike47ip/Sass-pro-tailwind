@@ -675,7 +675,7 @@ export const Integration = () => {
       <div className="min-w-[100%]">
        <AnimatedDiv
         ref={megaChatRef}
-        className="absolute left-[35%] w-[24%] lg:mt-[8%] z-40 lg:left-[70%]"
+        className="absolute left-[35%] w-[24%] lg:mt-[8%] z-40 lg:left-[70%] xl:left-[63%]"
         style={megaChatProps}
        >
         <img src={megaChat} alt="" />
