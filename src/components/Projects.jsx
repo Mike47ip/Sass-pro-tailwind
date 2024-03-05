@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring";
-import { Svg } from "./svg";
+// import { Svg } from "./svg";
 import { Integration } from "./Integration";
 import card1 from "../assets/Images/card1.png";
 import arrow from "../assets/Images/arrow.png";
@@ -491,7 +491,7 @@ const Projects = () => {
      </AnimatedDiv>
     </div>
    </div>
-   <Svg />
+   {/* <Svg /> */}
    <Integration />
   </>
  );

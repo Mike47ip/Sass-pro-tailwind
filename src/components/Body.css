@@ -48,3 +48,15 @@
   }
 }
 
+/* Example CSS */
+.carousel .dot {
+  background-color: #2C353D !important; 
+  /* display: none !important;  */
+}
+
+.slick-track {
+  display: flex !important;
+  gap: 100px;
+}
+
+

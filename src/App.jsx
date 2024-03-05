@@ -5,12 +5,12 @@ import Footer from "./components/Footer";
 
 function App() {
  return (
-  <>
+  <div className="mx-auto lg:px-6 p-4">
    <Navbar />
    <Body />
    <Projects />
    <Footer />
-  </>
+  </div>
  );
 }
 

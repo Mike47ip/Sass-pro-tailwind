@@ -20,6 +20,9 @@ import clock from "../assets/Images/clock.svg";
 import star from "../assets/Images/star-fill.svg";
 import Bricks from "../assets/Images/Bricks.png";
 import megaChat from "../assets/Images/megaChat.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const Integration = () => {
  const AnimatedDiv = animated.div;
@@ -53,6 +56,24 @@ export const Integration = () => {
  const [isMegaChatVisible, setIsMegaChatVisible] = useState(false);
  const [isHIstoVisible, setIsHistoVisible] = useState(false);
  const [isSaveVisible, setIsSaveVisible] = useState(false);
+
+ const sliderRef = useRef(null);
+
+ const handlePrevClick = () => {
+  sliderRef.current.slickPrev();
+ };
+
+ const handleNextClick = () => {
+  sliderRef.current.slickNext();
+ };
+
+ const settings = {
+  infinite: true,
+  arrows: false,
+  dots: false,
+  slidesToShow: 3,
+  swipeToSlide: true,
+ };
 
  const powerProps = useSpring({
   opacity: isPowerVisible ? 1 : 0,
@@ -222,89 +243,6 @@ export const Integration = () => {
  useEffect(() => {
   return handleIntersection(megaChatRef, setIsMegaChatVisible);
  }, [megaChatRef]);
-
- useEffect(() => {
-  const handleScroll = () => {
-   //  const scrollPosition = window.scrollY;
-   //  const powerfulOffset = document.getElementById("powerful").offsetTop;
-   //  const notionOffset = document.getElementById("notionDiv").offsetTop;
-   //  const ui8Offset = document.getElementById("ui8Div").offsetTop;
-   const windowHeight = window.innerHeight;
-   //  const powerThreshold = powerfulOffset - windowHeight * 0.56;
-   //  const notionThreshold = notionOffset - windowHeight * 0.6;
-   //  const ui8Threshold = ui8Offset - windowHeight * 0.56;
-   //  let chatAshThreshold = windowHeight * 13.0;
-   //  if (window.innerWidth < 768) {
-   //   chatAshThreshold = windowHeight * 16.4;
-   //  }
-   let chatAsh2Threshold = windowHeight * 13.1;
-   if (window.innerWidth < 768) {
-    chatAsh2Threshold = windowHeight * 16.2;
-   }
-   //  let busyThreshold = windowHeight * 13.1;
-   //  if (window.innerWidth < 768) {
-   //   busyThreshold = windowHeight * 15.7;
-   //  }
-   //  let neverThreshold = windowHeight * 14.4;
-   //  if (window.innerWidth < 768) {
-   //   neverThreshold = windowHeight * 17.8;
-   //  }
-
-   //  const cloudThreshold = windowHeight * 14.6;
-   //  let increaseThreshold = windowHeight * 16.2;
-   //  if (window.innerWidth < 768) {
-   //   increaseThreshold = windowHeight * 18.5;
-   //  }
-   //  let histoThreshold = windowHeight * 16.1;
-   //  if (window.innerWidth < 768) {
-   //   histoThreshold = windowHeight * 19.1;
-   //  }
-   //  let simpleThreshold = windowHeight * 16.3;
-   //  if (window.innerWidth < 768) {
-   //   simpleThreshold = windowHeight * 19.8;
-   //  }
-   //  let whatThreshold = windowHeight * 17.3;
-   //  if (window.innerWidth < 768) {
-   //   whatThreshold = windowHeight * 20.8;
-   //  }
-   //  let getThreshold = windowHeight * 18.9;
-   //  if (window.innerWidth < 768) {
-   //   getThreshold = windowHeight * 22;
-   //  }
-   //  let megaChatThreshold = windowHeight * 19.1;
-   //  if (window.innerWidth < 768) {
-   //   megaChatThreshold = windowHeight * 22.4;
-   //  }
-   //  let saveThreshold = windowHeight * 16.5;
-   //  if (window.innerWidth < 768) {
-   //   saveThreshold = windowHeight * 20;
-   //  }
-
-   console.log("ChatASh:", chatAsh2Threshold);
-
-   //  setIsPowerVisible(scrollPosition > powerThreshold);
-   //  setIsNotionVisible(scrollPosition > notionThreshold);
-   //  setIsUi8Visible(scrollPosition > ui8Threshold);
-   //  setIsChatAshVisible(scrollPosition > chatAshThreshold);
-   //  setIsChatAsh2Visible(scrollPosition > chatAsh2Threshold);
-   //  setIsNeverVisible(scrollPosition > neverThreshold);
-   //  setIsBusyVisible(scrollPosition > busyThreshold);
-   //  setIsCloudVisible(scrollPosition > cloudThreshold);
-   //  setIsIncreaseVisible(scrollPosition > increaseThreshold);
-   //  setIsSimpleVisible(scrollPosition > simpleThreshold);
-   //  setIsWhatVisible(scrollPosition > whatThreshold);
-   //  setIsGetVisible(scrollPosition > getThreshold);
-   //  setIsMegaChatVisible(scrollPosition > megaChatThreshold);
-   //  setIsHistoVisible(scrollPosition > histoThreshold);
-   //  setIsSaveVisible(scrollPosition > saveThreshold);
-  };
-
-  window.addEventListener("scroll", handleScroll);
-
-  return () => {
-   window.removeEventListener("scroll", handleScroll);
-  };
- }, []);
 
  return (
   <>
@@ -550,113 +488,120 @@ export const Integration = () => {
      </AnimatedDiv>
     </h3>
 
-    <div className="flex justify-center gap-24 p-8 overflow-x-auto ">
-     <div className="min-w-[20rem] font-poppins font-semibold text-lg lg:text-2xl  text-center ">
-      <p className=" h-[200px]">
-       &quot;I used to have a hard time figuring out how to organize online
-       meetings, Solo helped me to find a great solution and stay ahead of
-       time&quot;
+    <Slider ref={sliderRef} {...settings}>
+     <div className="!flex flex-col items-center justify-center">
+      <p className="text-center font-poppins text-[23.5px] font-semibold">
+       &quot; Solo keeps things <br /> simple, the best apps of <br /> the year
+       I have ever seen used. The upcoming updates will be more complete&quot;
       </p>
-      <div className="flex justify-center gap-5 pt-8">
+      <div className="flex justify-center w-20 gap-5 pt-20 ">
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
       </div>
-      <p className="lg:text-xl font-poppins font-semibold pt-7">Ama Serwaa</p>
-      <span className="font-poppins text-custom-textboard text-base font-medium">
-       via. Apple Store
-      </span>
+      <p className="lg:text-xl font-poppins font-semibold pt-7 ">Ama Serwaa</p>
+      <span>via. Apple Store</span>
      </div>
-     <div className="min-w-[20rem] font-poppins font-semibold text-lg lg:text-2xl  text-center ">
-      <p className=" h-[200px]">
-       &quot;Solo keeps things simple, the best apps of the year I&quot;ve ever
-       used. I’ sure that the upcoming updates will be more complete..&quot;
+     <div className="!flex flex-col items-center justify-center">
+      <p className="text-center font-poppins text-[23.5px] font-semibold">
+       &quot; I use to have a hard <br /> time figuring out how to organize
+       online <br /> meetings, Solo helped me find a great solution for this
+       year&quot;
       </p>
-      <div className="flex justify-center gap-5 pt-8">
+      <div className="flex justify-center w-20 gap-5 pt-20 ">
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
       </div>
-      <p className="lg:text-xl font-poppins font-semibold pt-7">
-       Godfred Sugar
-      </p>
-      <span className="font-poppins text-custom-textboard text-base font-medium">
-       via. Apple Store
-      </span>
+      <p className="lg:text-xl font-poppins font-semibold pt-7 ">Nana Adjei</p>
+      <span>via. Sony Ericson</span>
      </div>
-     <div className="min-w-[20rem] font-poppins font-semibold text-lg lg:text-2xl  text-center ">
-      <p className=" h-[200px]">
-       &quot;Solo makes life easier to me. With Solo you can organize your work
-       and life in seconds&quot;
+     <div className="!flex flex-col items-center justify-center">
+      <p className="text-center font-poppins text-[23.5px] font-semibold">
+       &quot; I use to have a hard <br /> time figuring out how to organize
+       online <br /> meetings, Solo helped me find a great solution for this
+       year&quot;
       </p>
-      <div className="flex justify-center gap-5 pt-8">
+      <div className="flex justify-center w-20 gap-5 pt-20 ">
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
       </div>
-      <p className="lg:text-xl font-poppins font-semibold pt-7">Nana Adjei</p>
-      <span className="font-poppins text-custom-textboard text-base font-medium">
-       via. Apple Store
-      </span>
-     </div>
-     <div className="min-w-[20rem] font-poppins font-semibold text-lg lg:text-2xl  text-center ">
-      <p className=" h-[200px]">
-       &quot;Solo makes life easier to me. With Solo you can organize your work
-       and life in seconds&quot;
+      <p className="lg:text-xl font-poppins font-semibold pt-7 ">
+       Sugar Godfred
       </p>
-      <div className="flex justify-center gap-5 pt-8">
+      <span>via. Black Berry</span>
+     </div>
+     <div className="!flex flex-col items-center justify-center">
+      <p className="text-center font-poppins text-[23.5px] font-semibold">
+       &quot; Solo keeps things <br /> simple, the best apps of <br /> the year
+       I have ever seen used. The upcoming updates will be more complete&quot;
+      </p>
+      <div className="flex justify-center w-20 gap-5 pt-20 ">
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
       </div>
-      <p className="lg:text-xl font-poppins font-semibold pt-7">Nana Adjei</p>
-      <span className="font-poppins text-custom-textboard text-base font-medium">
-       via. Apple Store
-      </span>
-     </div>
-     <div className="min-w-[20rem] font-poppins font-semibold text-lg lg:text-2xl  text-center ">
-      <p className=" h-[200px]">
-       &quot;Solo makes life easier to me. With Solo you can organize your work
-       and life in seconds&quot;
+      <p className="lg:text-xl font-poppins font-semibold pt-7 ">
+       Albert Baffour
       </p>
-      <div className="flex justify-center gap-5 pt-8">
+      <span>via. Apple Store</span>
+     </div>
+     <div className="!flex flex-col items-center justify-center">
+      <p className="text-center font-poppins text-[23.5px] font-semibold">
+       &quot; I use to have a hard <br /> time figuring out how to organize
+       online <br /> meetings, Solo helped me find a great solution for this
+       year&quot;
+      </p>
+      <div className="flex justify-center w-20 gap-5 pt-20 ">
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
       </div>
-      <p className="lg:text-xl font-poppins font-semibold pt-7">Nana Adjei</p>
-      <span className="font-poppins text-custom-textboard text-base font-medium">
-       via. Apple Store
-      </span>
+      <p className="lg:text-xl font-poppins font-semibold pt-7 ">Isaac Ofori</p>
+      <span>via. Apple Store</span>
      </div>
-     <div className="min-w-[20rem] font-poppins font-semibold text-lg lg:text-2xl  text-center ">
-      <p className=" h-[200px]">
-       &quot;Solo makes life easier to me. With Solo you can organize your work
-       and life in seconds&quot;
+     <div className="!flex flex-col items-center justify-center">
+      <p className="text-center font-poppins text-[23.5px] font-semibold">
+       &quot; Solo keeps things <br /> simple, the best apps of <br /> the year
+       I have ever seen used. The upcoming updates will be more complete&quot;
       </p>
-      <div className="flex justify-center gap-5 pt-8">
+      <div className="flex justify-center w-20 gap-5 pt-20 ">
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
        <img src={star} alt="" />
       </div>
-      <p className="lg:text-xl font-poppins font-semibold pt-7">Nana Adjei</p>
-      <span className="font-poppins text-custom-textboard text-base font-medium">
-       via. Apple Store
-      </span>
+      <p className="lg:text-xl font-poppins font-semibold pt-7 ">
+       Paul Asamoah
+      </p>
+      <span>via. Google Play</span>
      </div>
+    </Slider>
+
+    <div className="flex justify-center pt-10">
+     <button onClick={handleNextClick}>
+      <span className="material-symbols-outlined text-5xl transform rotate-180">
+       trending_flat
+      </span>
+     </button>
+     <button className="w-20" onClick={handlePrevClick}>
+      <span className="material-symbols-outlined text-5xl ">trending_flat</span>
+     </button>
+     <button className="button"></button>
     </div>
+
     <div className="pt-24 flex justify-center">
      <div className="bg-custom-blackboard flex flex-col lg:flex-row    lg:justify-start lg:items-center w-11/12  shadow-lg rounded-3xl lg:h-[40rem]">
       <div className="lg:min-w-[65%] flex flex-col justify-center items-center lg:items-start lg:px-10 p-10 relative ">

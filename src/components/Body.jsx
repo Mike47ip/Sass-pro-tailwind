@@ -68,22 +68,24 @@ const Body = () => {
    if (window.innerWidth < 768) {
     bikeThreshold = windowHeight * 1.7;
    } else if (window.innerWidth > 768) {
-    bikeThreshold = windowHeight * 1.4;
-   } if (window.innerWidth < 413) {
+    bikeThreshold = windowHeight * 0.3;
+   }
+   if (window.innerWidth < 413) {
     bikeThreshold = windowHeight * 0.5;
-   } 
+   }
 
    let fastThreshold = windowHeight * 3.4;
    if (window.innerWidth < 768) {
     fastThreshold = windowHeight * 4.5;
    } else if (window.innerWidth > 768) {
     fastThreshold = windowHeight * 2.3;
-   } if (window.innerWidth < 413) {
+   }
+   if (window.innerWidth < 413) {
     fastThreshold = windowHeight * 2.5;
    }
    let phoneThreshold = windowHeight * 1.7;
    if (window.innerWidth > 768) {
-    phoneThreshold = windowHeight * 1.3;
+    phoneThreshold = windowHeight * 0.35;
    } else if (window.innerWidth < 413) {
     phoneThreshold = windowHeight * 1;
    }
@@ -130,7 +132,7 @@ const Body = () => {
        <button className="bg-custom-primary px-6 md:px-3 md:w-[30%] py-4 font-bold md:text-base w-[45%] text-white rounded-2xl hover:bg-custom-deepcoral xl:w-[25%]">
         Try it free
        </button>
-       <button className="flex justify-center items-center gap-2 md:gap-1 md:w-[50%] font-semibold border-2 border-black border-solid rounded-2xl px-6 md:px-3 md:text-base py-4 hover:bg-black hover:text-white xl:w-[40%]">
+       <button className="flex justify-center items-center gap-2 md:gap-1 md:w-[50%] font-semibold border-2 border-black border-solid rounded-2xl px-6 md:px-3 md:text-base py-4 hover:bg-black hover:text-white xl:w-[45%]">
         <ion-icon name="play"></ion-icon>Watch how it works
        </button>
       </div>
@@ -153,7 +155,7 @@ const Body = () => {
        />
       </AnimatedDiv>
       <img
-       className="Figures overflow-hidden md:absolute md:w-[90%] md:left-[40%] md:mt-[-30%] lg:w-[85%] lg:mt-[-20%]"
+       className="overflow-hidden md:absolute md:w-[90%] md:left-[40%] md:mt-[-30%] lg:w-[85%] lg:mt-[-20%]"
        src={Figures}
        alt=""
       />
@@ -175,7 +177,7 @@ const Body = () => {
     <div className="BoardWrapper flex justify-center">
      <div className="flex flex-col md:flex-row-reverse justify-center items-center lg:items-start black-board bg-custom-blackboard w-11/12 z-20 h-[690px] md:h-[25rem] lg:h-[40rem] rounded-3xl px-22">
       <div className="flex justify-center items-center md:pr-1 flex-col gap-8 relative md:w-[40%] lg:w-[35%] lg:top-[30%] z-20 text-white md:items-start">
-       <p className="font-inter font-semibold text-4xl relative mt-[-30%] md:mt-0 xl:text-6xl text-center md:text-start">
+       <p className="font-inter font-semibold text-4xl md:text-5xl relative mt-[-30%] md:mt-0 xl:text-6xl text-center md:text-start">
         <AnimatedDiv style={keeping}>
          Keeping it all <br className="md:block hidden" /> together
         </AnimatedDiv>
