@@ -591,13 +591,13 @@ export const Integration = () => {
     </Slider>
 
     <div className="flex justify-center pt-10">
-     <button onClick={handleNextClick}>
+     <button className="focus:text-custom-textboard" onClick={handleNextClick}>
       <span className="material-symbols-outlined text-5xl transform rotate-180">
        trending_flat
       </span>
      </button>
-     <button className="w-20" onClick={handlePrevClick}>
-      <span className="material-symbols-outlined text-5xl ">trending_flat</span>
+     <button className="focus:text-custom-textboard" onClick={handlePrevClick}>
+      <span className="material-symbols-outlined text-5xl">trending_flat</span>
      </button>
      <button className="button"></button>
     </div>
