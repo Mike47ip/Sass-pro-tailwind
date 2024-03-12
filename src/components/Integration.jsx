@@ -67,13 +67,37 @@ export const Integration = () => {
   sliderRef.current.slickNext();
  };
 
- const settings = {
+const settings = {
   infinite: true,
   arrows: false,
   dots: false,
-  slidesToShow: 3,
   swipeToSlide: true,
- };
+  slidesToShow: 3,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 1,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
 
  const powerProps = useSpring({
   opacity: isPowerVisible ? 1 : 0,
@@ -488,7 +512,7 @@ export const Integration = () => {
      </AnimatedDiv>
     </h3>
 
-    <Slider ref={sliderRef} {...settings}>
+    <Slider  ref={sliderRef} {...settings}>
      <div className="!flex flex-col items-center justify-center">
       <p className="text-center font-poppins text-[23.5px] font-semibold">
        &quot; Solo keeps things <br /> simple, the best apps of <br /> the year

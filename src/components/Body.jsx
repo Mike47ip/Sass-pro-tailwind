@@ -70,8 +70,8 @@ const Body = () => {
    } else if (window.innerWidth > 768) {
     bikeThreshold = windowHeight * 0.3;
    }
-   if (window.innerWidth < 413) {
-    bikeThreshold = windowHeight * 0.5;
+   if (window.innerWidth > 1023) {
+    bikeThreshold = windowHeight * 1.5;
    }
 
    let fastThreshold = windowHeight * 3.4;
@@ -88,6 +88,9 @@ const Body = () => {
     phoneThreshold = windowHeight * 0.35;
    } else if (window.innerWidth < 413) {
     phoneThreshold = windowHeight * 1;
+   }
+   if (window.innerWidth > 1023) {
+    phoneThreshold = windowHeight * 1.4;
    }
    console.log("phone:", phoneThreshold);
 

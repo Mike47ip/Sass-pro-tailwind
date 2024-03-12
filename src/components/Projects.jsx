@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring";
-// import { Svg } from "./svg";
+import { Svg } from "./svg";
 import { Integration } from "./Integration";
 import card1 from "../assets/Images/card1.png";
 import arrow from "../assets/Images/arrow.png";
@@ -164,8 +164,12 @@ const Projects = () => {
  }, [triangleRef]);
 
  useEffect(() => {
-  return handleIntersection(shareRef, setIsShareVisible);
+  return handleIntersection(shareRef, setIsShareChatVisible);
  }, [shareRef]);
+ 
+ useEffect(() => {
+  return handleIntersection(sharePropsRef, setIsShareVisible);
+ }, [sharePropsRef]);
 
  useEffect(() => {
   return handleIntersection(ballRef, setIsBallVisible);
@@ -239,8 +243,8 @@ const Projects = () => {
   // let lastScrollTop = 0;
 
   const handleScroll = () => {
-   const scrollPosition = window.scrollY;
-   const windowHeight = window.innerHeight;
+  //  const scrollPosition = window.scrollY;
+  //  const windowHeight = window.innerHeight;
    //  let seeThreshold = windowHeight * 4.7;
    //  if (window.innerWidth < 768) {
    //   seeThreshold = windowHeight * 7;
@@ -254,10 +258,10 @@ const Projects = () => {
    //  if (window.innerWidth < 768) {
    //   shareThreshold = windowHeight * 9.8;
    //  }
-   let shareChatProps = windowHeight * 6.45;
-   if (window.innerWidth < 768) {
-    shareChatProps = windowHeight * 9.7;
-   }
+  //  let shareChatProps = windowHeight * 6.45;
+  //  if (window.innerWidth < 768) {
+  //   shareChatProps = windowHeight * 9.7;
+  //  }
    //  let triangleProps1 = windowHeight * 6.9;
    //  if (window.innerWidth < 768) {
    //   triangleProps1 = windowHeight * 9.7;
@@ -297,7 +301,7 @@ const Projects = () => {
    //  setIsArrowVisible(scrollPosition > arrowThreshold);
    //  setIsStayVisible(scrollPosition > stayThreshold);
    //  setIsShareVisible(scrollPosition > shareThreshold);
-   setIsShareChatVisible(scrollPosition > shareChatProps);
+  //  setIsShareChatVisible(scrollPosition > shareChatProps);
    //  setIsPlaneVisible(scrollPosition > sharePlaneProps);
    //  setIsCollaboVisible(scrollPosition > collaboPlaneProps);
    //  setIsScubeVisible(scrollPosition > scubeProps1);
@@ -413,13 +417,6 @@ const Projects = () => {
     >
      <img src={ball} alt="" />
     </AnimatedDiv>
-    {/* <AnimatedDiv ref={collaboCubeRef} className="z-40" style={collaCubeProps}>
-     <img
-      className="relative w-20 object-contain left-[1100%] top-[40%]"
-      src={scube}
-      alt=""
-     />
-    </AnimatedDiv> */}
     <img className="relative z-10 lg:max-w-[60%]" src={card3} alt="" />
     <div className="flex flex-col items-start lg:w-[29%]">
      <AnimatedDiv ref={planeRef} style={planeProps}>
@@ -470,28 +467,28 @@ const Projects = () => {
      </div>
      <div className="flex justify-center items-center">
       <img
-       className="object-contain w-[60%] lg:right-[27%] relative lg:min-w-[275%] xl:min-w-[220%]"
+       className="object-contain w-[60%] mt-[7%] lg:mt-[19%] lg:right-[27%] relative lg:min-w-[275%] xl:min-w-[220%]"
        src={figure2}
        alt=""
       />
      </div>
      <AnimatedDiv
       ref={megaChat2Ref}
-      className="megaChat2 w-[24%] left-[55%] top-[10%] object-contain relative lg:hidden lg:absolute lg:right-[1%]"
+      className="megaChat2 w-[20%] lg:w-[20%] ml-[55%] lg:ml-[20%] object-contain relative mb-[-20%] lg:absolute lg:left-[55%]"
       style={megaChat2Props}
      >
       <img src={megaChat2} alt="" />
      </AnimatedDiv>
      <AnimatedDiv
       ref={megaChat1Ref}
-      className="megaChat1 w-[19%] left-[25%]  object-contain relative mb-[-20%] lg:absolute lg:left-[55%]"
+      className="megaChat1 w-[18%] left-[25%] object-contain relative lg:mb-[-20%] lg:absolute lg:left-[55%]"
       style={megaChat1Props}
      >
       <img src={megaChat1} alt="" />
      </AnimatedDiv>
     </div>
    </div>
-   {/* <Svg /> */}
+   <Svg />
    <Integration />
   </>
  );
