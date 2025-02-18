@@ -1,12 +1,14 @@
 import solo from "../assets/Images/solo.png";
+import logoLight from "../assets/Images/logoLight.png"
 import "./Body.css";
 
-const Navbar = () => {
+const Navbar = ({darkMode}) => {
+
  return (
   <>
    <div className="NavWrapper flex px-10 lg:px-28 py-12 font-inter font-semibold items-center justify-between">
     <div className="w-36">
-     <img className="object-contain min-w-14" src={solo} alt="" />
+     <img className="object-contain min-w-14 text-red" src={ darkMode ? logoLight : solo} alt="" />
     </div>
     <ul className="MenuList hidden gap-10 text-custom-additional">
      <li>Downloads</li>

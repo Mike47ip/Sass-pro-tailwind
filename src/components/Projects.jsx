@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { Svg } from "./svg";
-import { Integration } from "./Integration";
+import { Integration } from "./Integration.jsx";
 import card1 from "../assets/Images/card1.png";
 import arrow from "../assets/Images/arrow.png";
 import card2 from "../assets/Images/card2.png";

@@ -11,15 +11,6 @@ body {
 
 /* Dark Mode Styles */
 .dark {
-  background-color: #1f2937;
+  background-color: rgb(30,37,43);
   color: #f3f4f6;
-}
-
-.dark a {
-  color: #f3f4f6;
-}
-
-.dark button {
-  background-color: #d1d5db;
-  color: #1f2937;
 }

@@ -17,7 +17,7 @@ import cubes from "../assets/Images/cubes.png";
 
 const AnimatedDiv = animated.div;
 
-const Body = () => {
+const Body = ({darkMode}) => {
  const [isVisible, setIsVisible] = useState(false);
  const [isBikeVisible, setIsBikeVisible] = useState(false);
  const [isFastVisible, setIsFastVisible] = useState(false);
@@ -119,7 +119,7 @@ const Body = () => {
   <>
    <section className="relative">
     <div className="flex flex-col gap-16 justify-center items-center overflow-hidden  md:flex-row md:px-14">
-     <div className="Paragraph pt-5 md:flex md:flex-col md:items-start md:min-w-[65%] lg:min-w-[50%] xl:pl-[5%] xl:pt-[10%]">
+    <div className={`Paragraph pt-5 md:flex md:flex-col md:items-start md:min-w-[65%] lg:min-w-[50%] xl:pl-[5%] xl:pt-[10%] ${darkMode ? 'text-yellow-950' : ''}`}>
       <p className="text-center text-custom-graytext font-bold pb-8 lg:text-sm">
        RISK-FREE 30 DAY TRIAL
       </p>
@@ -348,4 +348,6 @@ const Body = () => {
   </>
  );
 };
+
+
 export default Body;
